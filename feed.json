@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Maintaining Brains",
+    "description": "",
+    "home_page_url": "https://www.maintainingbrains.ca",
+    "feed_url": "https://www.maintainingbrains.ca/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Erin Mazerolle"
+    },
+    "items": [
+    ]
+}
