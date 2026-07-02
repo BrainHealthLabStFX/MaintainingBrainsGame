@@ -9,5 +9,20 @@
         "name": "Erin Mazerolle"
     },
     "items": [
+        {
+            "id": "https://www.maintainingbrains.ca/game-development-workshop.html",
+            "url": "https://www.maintainingbrains.ca/game-development-workshop.html",
+            "title": "Game development workshop",
+            "summary": "The Canadian Research Chair (Tier 2) in Brain Health Literacy hosted the inaugural Game Development for Knowledge Mobilization workshop on May 1, 2026 at St. Francis Xavier University (StFX). We played and developed two games from groups at StFX and one game from a group&hellip;",
+            "content_html": "<p>The Canadian Research Chair (Tier 2) in Brain Health Literacy hosted the inaugural Game Development for Knowledge Mobilization workshop on May 1, 2026 at St. Francis Xavier University (StFX). We played and developed two games from groups at StFX and one game from a group at Dalhousie University.</p>",
+            "author": {
+                "name": "Erin Mazerolle"
+            },
+            "tags": [
+                   "News"
+            ],
+            "date_published": "2026-07-02T14:58:36-03:00",
+            "date_modified": "2026-07-02T14:58:36-03:00"
+        }
     ]
 }
