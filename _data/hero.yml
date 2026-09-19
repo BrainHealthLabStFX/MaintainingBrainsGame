@@ -1,18 +1,18 @@
-section_id: "home"
-headline: "Learning how to maintain your brain through play!"
-body: "Lifestyle changes could delay or prevent 45% of cognitive impairment, but the general public is typically not aware of this potential. We co-created the Maintaining Brains Game to share research on strategies to maintain and improve brain health!"
-image: "/assets/images/real/IMG_9999.jpeg"
-focal_point: "object-center"
+section_id: home
+headline: Learn to maintain your brain through play!
+body: Lifestyle changes could delay or prevent 45% of cognitive impairment, but the general public is typically not aware of this potential. We co-created the Maintaining Brains Game to share research on strategies to maintain and improve brain health!
+image: /assets/images/real/IMG_9999.jpeg
+focal_point: object-center
 highlights:
-  - icon: "extension"
-    text: "Hands-on Straw & Pipe Cleaner Brain Models"
-  - icon: "psychology"
-    text: "Cognitive Resilience & Strategy Cards"
-  - icon: "diversity_3"
-    text: "Co-Created with Lived Experience & Educators"
-  - icon: "verified_user"
-    text: "Trauma-Informed & Strengths-Based Care"
-button1_text: "Download Game Materials"
-button1_url: "#download"
-button2_text: "Educators & Curriculum"
-button2_url: "#educators"
+  - icon: extension
+    text: Hands-on Straw & Pipe Cleaner Brain Models
+  - icon: psychology
+    text: Cognitive Resilience & Strategy Cards
+  - icon: diversity_3
+    text: Co-Created with Lived Experience & Educators
+  - icon: verified_user
+    text: Trauma-Informed & Strengths-Based Care
+button1_text: Download Game Materials
+button1_url: '#download'
+button2_text: Educators & Curriculum
+button2_url: '#educators'
