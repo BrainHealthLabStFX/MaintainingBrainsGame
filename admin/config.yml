@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: BrainHealthLabStFX/MaintainingBrainsGame
+  name: git-gateway
   branch: main
-  site_domain: maintainingbrains.netlify.app
 
 media_folder: "assets/images/uploads"
 public_folder: "assets/images/uploads"
