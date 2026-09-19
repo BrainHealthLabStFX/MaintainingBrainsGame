@@ -580,7 +580,7 @@
                             <i class="fa-solid fa-brain"></i>
                         </div>
                         <div>
-                            <span class="font-extrabold text-xl text-white group-hover:text-pink-200 transition-colors block leading-tight">Maintaining Brains</span>
+                            <span id="footer-title" class="font-extrabold text-xl text-white group-hover:text-pink-200 transition-colors block leading-tight">Maintaining Brains</span>
                             <span id="footer-tagline" class="text-xs text-pink-200 font-semibold">Learning how to maintain your brain through play!</span>
                         </div>
                     </a>
@@ -593,11 +593,11 @@
                     </div>
                     <div class="flex items-center gap-2.5">
                         <span class="material-symbols-outlined text-pink-300 text-base">domain</span>
-                        <span>Department of Psychology • St. Francis Xavier University</span>
+                        <span id="footer-department">Department of Psychology</span> • <span id="footer-institution">St. Francis Xavier University</span>
                     </div>
                     <div class="flex items-center gap-2.5">
                         <span class="material-symbols-outlined text-pink-300 text-base">location_on</span>
-                        <span>Antigonish, Nova Scotia, Canada</span>
+                        <span id="footer-location">Antigonish, Nova Scotia, Canada</span>
                     </div>
                 </div>
             </div>
@@ -745,9 +745,9 @@
                     }
                     const heroBtns = section.querySelectorAll('.flex.flex-col a');
                     if (heroBtns.length >= 2) {
-                        if (hero.button1_text) heroBtns[0].childNodes[2].nodeValue = " " + hero.button1_text;
+                        if (hero.button1_text) heroBtns[0].lastChild.textContent = " " + hero.button1_text;
                         if (hero.button1_url) heroBtns[0].href = hero.button1_url;
-                        if (hero.button2_text) heroBtns[1].childNodes[2].nodeValue = " " + hero.button2_text;
+                        if (hero.button2_text) heroBtns[1].lastChild.textContent = " " + hero.button2_text;
                         if (hero.button2_url) heroBtns[1].href = hero.button2_url;
                     }
                 }
@@ -1086,6 +1086,22 @@
                     if (settings.tagline) {
                         const taglineEl = document.getElementById('footer-tagline');
                         if (taglineEl) taglineEl.textContent = settings.tagline;
+                    }
+                    if (settings.title) {
+                        const titleEl = document.getElementById('footer-title');
+                        if (titleEl) titleEl.textContent = settings.title;
+                    }
+                    if (settings.department) {
+                        const deptEl = document.getElementById('footer-department');
+                        if (deptEl) deptEl.textContent = settings.department;
+                    }
+                    if (settings.institution) {
+                        const instEl = document.getElementById('footer-institution');
+                        if (instEl) instEl.textContent = settings.institution;
+                    }
+                    if (settings.location) {
+                        const locEl = document.getElementById('footer-location');
+                        if (locEl) locEl.textContent = settings.location;
                     }
                 }
 
