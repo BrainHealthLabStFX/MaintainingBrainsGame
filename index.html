@@ -80,6 +80,28 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-pink selection:text-white">
 
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-brand-pink border-pink-100 mb-6"></div>
+        <p class="text-brand-darkPink font-extrabold text-xl animate-pulse">Loading Content...</p>
+    </div>
+
+    <!-- Password Overlay -->
+    <div id="password-overlay" class="fixed inset-0 z-[110] bg-brand-bgLight flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-500">
+        <div class="bg-white p-10 rounded-[2rem] shadow-2xl max-w-sm w-full text-center border border-pink-100 mx-4">
+            <div class="w-16 h-16 rounded-2xl bg-brand-pink text-white flex items-center justify-center font-bold text-2xl mx-auto mb-6 shadow-lg shadow-pink-300">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">Protected Site</h2>
+            <p class="text-slate-500 mb-8 font-medium">Please enter the password to view this content.</p>
+            <form id="password-form" onsubmit="event.preventDefault(); window.checkPassword();">
+                <input type="password" id="site-password-input" class="w-full px-5 py-4 rounded-2xl border-2 border-pink-100 focus:border-brand-pink focus:outline-none mb-4 font-medium" placeholder="Enter password...">
+                <button type="submit" class="w-full bg-brand-pink text-white font-black py-4 rounded-2xl hover:bg-brand-darkPink transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-pink-200">Unlock Site</button>
+            </form>
+            <p id="password-error" class="text-brand-pink text-sm mt-4 hidden font-bold bg-pink-50 py-2 rounded-lg">Incorrect password, please try again.</p>
+        </div>
+    </div>
+
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-pink-200/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -644,20 +666,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                const fetchYaml = async (url) => {
-                    const cacheBuster = `?t=${Date.now()}`;
-                    try {
-                        const res = await fetch(url + cacheBuster);
-                        if (res.ok) {
-                            const text = await res.text();
-                            return jsyaml.load(text);
-                        }
-                    } catch (err) {
-                        console.error(`Failed to load or parse ${url}:`, err);
+            const fetchYaml = async (url) => {
+                const cacheBuster = `?t=${Date.now()}`;
+                try {
+                    const res = await fetch(url + cacheBuster);
+                    if (res.ok) {
+                        const text = await res.text();
+                        return jsyaml.load(text);
                     }
-                    return null;
-                };
+                } catch (err) {
+                    console.error(`Failed to load or parse ${url}:`, err);
+                }
+                return null;
+            };
+
+            const settings = await fetchYaml('/_data/settings.yml');
+            
+            const startHydration = async () => {
+                try {
+                    const passOverlay = document.getElementById('password-overlay');
+                    if (passOverlay) {
+                        passOverlay.classList.add('opacity-0', 'pointer-events-none');
+                        setTimeout(() => passOverlay.classList.add('hidden'), 500);
+                    }
 
                 // 1. Hero
                 const hero = await fetchYaml('/_data/hero.yml');
@@ -1004,8 +1035,7 @@
                     }
                 }
 
-                // 10. Fetch global settings
-                const settings = await fetchYaml('/_data/settings.yml');
+                // 10. Global settings email logic
                 if (settings && settings.email) {
                     document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
                         link.href = `mailto:${settings.email}`;
@@ -1013,10 +1043,43 @@
                     });
                 }
 
-            } catch (e) {
+                // Hide loading overlay when done
+                const loadOverlay = document.getElementById('loading-overlay');
+                if (loadOverlay) {
+                    loadOverlay.classList.add('opacity-0', 'pointer-events-none');
+                    setTimeout(() => loadOverlay.remove(), 700);
+                }
 
+            } catch (e) {
                 console.log('CMS data hydration active', e);
+                const loadOverlay = document.getElementById('loading-overlay');
+                if (loadOverlay) loadOverlay.remove();
             }
+        };
+
+        if (settings && settings.password_protected && settings.site_password) {
+            const passOverlay = document.getElementById('password-overlay');
+            const loadOverlay = document.getElementById('loading-overlay');
+            const errorMsg = document.getElementById('password-error');
+            
+            if (loadOverlay) loadOverlay.classList.add('hidden');
+            if (passOverlay) {
+                passOverlay.classList.remove('hidden');
+                setTimeout(() => passOverlay.classList.remove('opacity-0'), 50);
+            }
+
+            window.checkPassword = () => {
+                const input = document.getElementById('site-password-input');
+                if (input && input.value === settings.site_password) {
+                    if (loadOverlay) loadOverlay.classList.remove('hidden');
+                    startHydration();
+                } else {
+                    if (errorMsg) errorMsg.classList.remove('hidden');
+                }
+            };
+        } else {
+            startHydration();
+        }
         });
     </script>
 

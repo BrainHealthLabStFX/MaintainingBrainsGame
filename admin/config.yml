@@ -230,6 +230,8 @@ collections:
         name: "contact_data"
         fields:
           - { label: "Project Title", name: "title", widget: "string", required: false }
+          - { label: "Enable Password Protection", name: "password_protected", widget: "boolean", default: false, required: false }
+          - { label: "Site Password", name: "site_password", widget: "string", required: false, comment: "Password required to view the site if protection is enabled" }
           - { label: "Contact Email", name: "email", widget: "string", required: false, comment: "Global contact email used across header and buttons" }
           - { label: "Department", name: "department", widget: "string", required: false }
           - { label: "Institution", name: "institution", widget: "string", required: false }
