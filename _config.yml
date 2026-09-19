@@ -1,0 +1,24 @@
+title: Maintaining Brains
+description: Learning how to maintain your brain through play! Evidence-based learning tool by Mazerolle Lab at StFX.
+url: "https://maintainingbrains.ca"
+baseurl: ""
+
+lab:
+  name: Mazerolle Lab
+  institution: St. Francis Xavier University
+  department: Department of Psychology
+  location: Antigonish, Nova Scotia, Canada
+  email: emazerol@stfx.ca
+
+brand_colors:
+  primary: "#D25299"
+  dark_pink: "#942663"
+  light_pink: "#e18cbb"
+  title_gray: "#716f81"
+  stfx_navy: "#002A5C"
+
+github_repo: https://github.com/BrainHealthLabStFX/MaintainingBrainsGame
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

@@ -1,0 +1,86 @@
+backend:
+  name: github
+  repo: BrainHealthLabStFX/MaintainingBrainsGame
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  # 1. Global Navigation & Site Settings
+  - name: "settings"
+    label: "⚙️ Site Settings & Contact"
+    files:
+      - file: "_data/settings.yml"
+        label: "Contact Email & Location Details"
+        name: "contact"
+        fields:
+          - { label: "Project Title", name: "title", widget: "string", default: "Maintaining Brains" }
+          - { label: "Contact Email", name: "email", widget: "string", default: "emazerol@stfx.ca" }
+          - { label: "Department", name: "department", widget: "string", default: "Department of Psychology" }
+          - { label: "Institution", name: "institution", widget: "string", default: "St. Francis Xavier University" }
+          - { label: "Location", name: "location", widget: "string", default: "Antigonish, Nova Scotia, Canada" }
+
+  # 2. Hero Banner & Top Strip
+  - name: "hero_section"
+    label: "🚀 Hero & Highlight Strip"
+    files:
+      - file: "_data/hero.yml"
+        label: "Hero Headline & Highlights Strip"
+        name: "hero"
+        fields:
+          - { label: "Hero Main Headline", name: "headline", widget: "string", default: "Learning how to maintain your brain through play!" }
+          - { label: "Hero Body Paragraph", name: "body", widget: "text" }
+          - { label: "Hero Image", name: "image", widget: "image" }
+          - { 
+              label: "Photo Focal Point Alignment", 
+              name: "focal_point", 
+              widget: "select", 
+              options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
+              default: "object-center",
+              hint: "Select where the image should focus when cropped on different screen sizes (e.g. object-top focuses on faces)"
+            }
+          - { label: "Highlight Strip Items", name: "highlights", widget: "list", fields: [
+              { label: "Icon Name (Material Symbol)", name: "icon", widget: "string", default: "extension" },
+              { label: "Highlight Text", name: "text", widget: "string" }
+            ]}
+
+  # 3. Section 1: Creators & Origin
+  - name: "creators_section"
+    label: "🌱 Creators & Origin"
+    files:
+      - file: "_data/creators.yml"
+        label: "Co-Creation Text & Details"
+        name: "creators"
+        fields:
+          - { label: "Section Title", name: "title", widget: "string", default: "How The Game Was Created" }
+          - { label: "Paragraph 1 (CIHR Workshop)", name: "p1", widget: "text" }
+          - { label: "Paragraph 2 (Youth & Actua Co-Creation)", name: "p2", widget: "text" }
+          - { label: "Workshop Image", name: "image", widget: "image" }
+          - { 
+              label: "Photo Focal Point Alignment", 
+              name: "focal_point", 
+              widget: "select", 
+              options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
+              default: "object-center",
+              hint: "Select where the image should focus when cropped (e.g. object-top for faces)"
+            }
+
+  # 4. Photo Gallery
+  - name: "photos"
+    label: "📸 Photo Gallery"
+    file: "_data/photos.yml"
+    fields:
+      - { label: "Photos List", name: "photos", widget: "list", fields: [
+          { label: "Title", name: "title", widget: "string" },
+          { label: "Image", name: "image", widget: "image" },
+          { 
+            label: "Photo Focal Point Alignment", 
+            name: "focal_point", 
+            widget: "select", 
+            options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
+            default: "object-center",
+            hint: "Select where the image should focus when cropped (e.g. object-top for faces)"
+          },
+          { label: "Description", name: "description", widget: "text" }
+        ]}

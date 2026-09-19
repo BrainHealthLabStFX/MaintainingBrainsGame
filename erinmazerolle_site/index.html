@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Erin Mazerolle | Brain Health Lab @ StFX</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        lab: {
+                            navy: '#0A192F',
+                            deepBlue: '#002A5C',
+                            royalBlue: '#1E40AF',
+                            teal: '#0D9488',
+                            gold: '#D4AF37',
+                            pinkAccent: '#D25299',
+                            bgSlate: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(10, 25, 47, 0.92);
+            backdrop-filter: blur(12px);
+        }
+        .hero-pattern {
+            background: linear-gradient(135deg, #0A192F 0%, #002A5C 60%, #1E3A8A 100%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 42, 92, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-lab-teal selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800 text-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-lab-deepBlue to-lab-teal text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-teal-900/30 group-hover:scale-105 transition-all">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl text-white tracking-tight block leading-none">Brain Health Lab</span>
+                    <span class="text-xs text-slate-400 font-medium">Dr. Erin Mazerolle • StFX University</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-300">
+                <a href="#about" class="hover:text-lab-teal transition-colors">Home</a>
+                <a href="#aims" class="hover:text-lab-teal transition-colors">Research Aims</a>
+                <a href="#news" class="hover:text-lab-teal transition-colors">News & Lab Updates</a>
+                <a href="#projects" class="hover:text-lab-teal transition-colors">Initiatives</a>
+                <a href="#team" class="hover:text-lab-teal transition-colors">Team</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="mailto:emazerol@stfx.ca" class="bg-lab-teal hover:bg-teal-600 text-white font-bold text-sm px-6 py-2.5 rounded-full shadow-lg shadow-teal-900/40 transition-all flex items-center gap-2 hover:scale-105">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Contact Dr. Mazerolle</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="relative pt-32 pb-24 md:pt-40 md:pb-32 hero-pattern text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6 text-lab-gold">
+                        <i class="fa-solid fa-award text-lab-teal"></i>
+                        Canada Research Chair in Brain Health Literacy
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+                        Interdisciplinary <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 via-sky-200 to-white">Neuroscience & Neuroimaging</span> Research
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mb-8 font-normal leading-relaxed">
+                        Led by <strong>Dr. Erin Mazerolle</strong> at St. Francis Xavier University, our lab combines functional brain imaging (fNIRS, fMRI), open science, and community engagement to advance cognitive health resilience.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-start gap-4">
+                        <a href="#aims" class="w-full sm:w-auto bg-lab-teal hover:bg-teal-600 text-white font-extrabold px-8 py-4 rounded-full shadow-xl transition-all flex items-center justify-center gap-2 hover:scale-105">
+                            <i class="fa-solid fa-compass"></i>
+                            Explore Research Aims
+                        </a>
+                        <a href="../index.html" class="w-full sm:w-auto border-2 border-lab-pinkAccent text-white font-bold px-8 py-4 rounded-full backdrop-blur-sm hover:bg-lab-pinkAccent/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-gamepad text-lab-pinkAccent"></i>
+                            Visit Maintaining Brains Game Project →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 relative">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 text-left shadow-2xl">
+                        <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-lab-teal to-blue-500 text-white flex items-center justify-center text-4xl font-extrabold mb-4 border-4 border-white/20 shadow-md">
+                            EM
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Dr. Erin Mazerolle</h3>
+                        <p class="text-xs text-teal-200 font-semibold mb-4">Associate Professor • StFX University</p>
+                        <div class="text-xs text-slate-300 leading-relaxed space-y-2 border-t border-white/10 pt-4">
+                            <p><i class="fa-solid fa-graduation-cap text-lab-teal mr-2"></i><strong>Dept:</strong> Psychology & Computer Science</p>
+                            <p><i class="fa-solid fa-location-dot text-lab-teal mr-2"></i><strong>Location:</strong> Antigonish, Nova Scotia</p>
+                            <p><i class="fa-solid fa-envelope text-lab-teal mr-2"></i><a href="mailto:emazerol@stfx.ca" class="underline hover:text-white">emazerol@stfx.ca</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Broad Research Aims -->
+    <section id="aims" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-left">
+            <div class="max-w-3xl mb-16">
+                <span class="text-lab-teal font-extrabold text-xs uppercase tracking-widest block mb-2">Core Philosophy</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">Our Three Primary Research Aims</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Aim 1 -->
+                <div class="card-hover bg-slate-50 border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between text-left">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-lab-deepBlue text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-md">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-lab-teal block mb-1">Aim 1</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Brain Health Literacy</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Improving public brain health literacy through community-engaged research, including game-based learning initiatives like the <em>Maintaining Brains Game</em> project.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <a href="../index.html" class="text-xs font-bold text-lab-pinkAccent hover:underline flex items-center gap-1">
+                            Explore Game Outreach Project <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Aim 2 -->
+                <div class="card-hover bg-slate-50 border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between text-left">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-lab-deepBlue text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-md">
+                            <i class="fa-solid fa-wave-square"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-lab-teal block mb-1">Aim 2</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Clinical Translation of Neuroimaging</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Translating advanced brain imaging techniques (fNIRS, fMRI) into accessible, portable, low-cost clinical tools for dementia, concussions, and stroke care.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <span class="text-xs font-semibold text-slate-400">fNIRS & MRI Translation</span>
+                    </div>
+                </div>
+
+                <!-- Aim 3 -->
+                <div class="card-hover bg-slate-50 border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between text-left">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-lab-deepBlue text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-md">
+                            <i class="fa-solid fa-arrows-spin"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-lab-teal block mb-1">Aim 3</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Open Science & Reproducibility</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Improving the reproducibility and transparency of functional brain imaging research through Open Educational Resources (OER) and open data sharing.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200">
+                        <span class="text-xs font-semibold text-slate-400">Open Science Champion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sister Project Banner (Cross-Linking to Maintaining Brains) -->
+    <section class="py-16 bg-gradient-to-r from-slate-900 via-lab-deepBlue to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-8 text-left">
+            <div class="flex items-center gap-6">
+                <div class="w-16 h-16 rounded-2xl bg-lab-pinkAccent text-white flex items-center justify-center text-3xl font-bold shadow-lg shadow-pink-900/50 shrink-0">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-lab-pinkAccent block mb-1">Featured Outreach Initiative</span>
+                    <h3 class="text-2xl font-extrabold text-white">The Maintaining Brains Game Project</h3>
+                    <p class="text-slate-300 text-sm max-w-xl mt-1">
+                        Our flagship community game-based learning tool co-created with educators, youth, and clinicians across Nova Scotia.
+                    </p>
+                </div>
+            </div>
+
+            <a href="../index.html" class="bg-lab-pinkAccent hover:bg-pink-600 text-white font-bold px-8 py-4 rounded-full shadow-xl transition-all shrink-0 hover:scale-105 flex items-center gap-2">
+                <span>Explore maintainingbrains.ca</span>
+                <i class="fa-solid fa-external-link"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- News & Updates Section -->
+    <section id="news" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 text-left">
+            <div class="max-w-3xl mb-12">
+                <span class="text-lab-teal font-extrabold text-xs uppercase tracking-widest block mb-2">Latest News</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">Mazerolle Lab Announcements</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <!-- News 1 -->
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-8 shadow-sm">
+                    <span class="text-xs font-bold text-lab-teal uppercase tracking-wider block mb-2">September 2026</span>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Dr. Erin Mazerolle Named Tier II Canada Research Chair</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Dr. Mazerolle was awarded a prestigious Tier II Canada Research Chair in Brain Health Literacy to expand community-engaged neuroscience research at StFX.
+                    </p>
+                </div>
+
+                <!-- News 2 -->
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-8 shadow-sm">
+                    <span class="text-xs font-bold text-lab-teal uppercase tracking-wider block mb-2">Recent Lab Additions</span>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Welcoming New Postdoctoral & Student Trainees</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Welcoming postdoctoral researcher Dr. Jason Payne, research project manager Akhil Chaudhary, and summer research award trainees!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-14 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-lab-deepBlue to-lab-teal text-white flex items-center justify-center font-bold text-2xl shadow-lg">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+                <div>
+                    <div class="font-extrabold text-lg text-white">Brain Health Lab</div>
+                    <div class="text-xs text-slate-400">Dr. Erin Mazerolle • St. Francis Xavier University</div>
+                    <div class="text-xs text-slate-400">Antigonish, Nova Scotia, Canada</div>
+                </div>
+            </div>
+
+            <div class="text-left md:text-right">
+                <a href="mailto:emazerol@stfx.ca" class="text-teal-300 hover:text-white font-bold text-sm transition-colors flex items-center justify-start md:justify-end gap-2 mb-2">
+                    <i class="fa-solid fa-envelope"></i> emazerol@stfx.ca
+                </a>
+                <div class="text-xs text-slate-500">
+                    &copy; 2026 Dr. Erin Mazerolle & Mazerolle Lab. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
