@@ -118,7 +118,7 @@
             <nav class="hidden lg:flex items-center gap-7 text-sm font-extrabold text-brand-pink">
                 <a href="#about" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Home</a>
                 <a href="#creators" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Creators</a>
-                <a href="#teachers" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">For Teachers</a>
+                <a href="#educators" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Educators</a>
                 <a href="#download" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Download</a>
                 <a href="#research" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Research</a>
                 <a href="#tools" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Tools</a>
@@ -143,7 +143,7 @@
             <nav class="flex flex-col gap-4 font-extrabold text-base">
                 <a href="#about" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Home</a>
                 <a href="#creators" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Creators</a>
-                <a href="#teachers" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">For Teachers</a>
+                <a href="#educators" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Educators</a>
                 <a href="#download" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Download</a>
                 <a href="#research" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Research</a>
                 <a href="#tools" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Tools</a>
@@ -175,9 +175,9 @@
                             <span class="material-symbols-outlined text-xl">download</span>
                             Download Game Materials
                         </a>
-                        <a href="#teachers" class="w-full sm:w-auto border-2 border-white/80 hover:border-white text-white font-extrabold px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                        <a href="#educators" class="w-full sm:w-auto border-2 border-white/80 hover:border-white text-white font-extrabold px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/10 transition-all flex items-center justify-center gap-2">
                             <span class="material-symbols-outlined text-xl">school</span>
-                            For Teachers & Curriculum
+                            Educators & Curriculum
                         </a>
                     </div>
                 </div>
@@ -266,11 +266,11 @@
 
 
 
-    <!-- Section 2: For Teachers & Nova Scotia Curriculum -->
-    <section id="teachers" class="py-20 bg-brand-bgLight border-b border-pink-100 text-left">
+    <!-- Section 2: Educators & Nova Scotia Curriculum -->
+    <section id="educators" class="py-20 bg-brand-bgLight border-b border-pink-100 text-left">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-3xl mb-12">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">For Educators & Teachers</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">For Educators</h2>
                 <p class="text-slate-700 text-base leading-relaxed font-medium">
                     The Maintaining Brains Game provides educators with an engaging way to introduce students to concepts related to brain health, cognition, and lifelong wellness.
                 </p>
@@ -309,7 +309,7 @@
 
                 <div class="lg:col-span-5 space-y-6">
                     <div class="bg-white rounded-3xl p-8 border border-pink-200/80 shadow-sm">
-                        <h4 class="font-bold text-slate-900 text-lg mb-2">Are you a teacher using the game?</h4>
+                        <h4 class="font-bold text-slate-900 text-lg mb-2">Are you an educator using the game?</h4>
                         <p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
                             If you use Maintaining Brains in your classroom outside Nova Scotia, we'd love to hear how it went!
                         </p>
@@ -810,37 +810,37 @@
                     }
                 }
 
-                // 4. Teachers Section
-                const t = await fetchYaml('/_data/teachers.yml');
-                if (t) {
-                    const section = document.querySelector('section#teachers');
+                // 4. Educators Section
+                const educators = await fetchYaml('/_data/educators.yml');
+                if (educators) {
+                    const section = document.querySelector('section#educators');
                     if (section) {
-                        if (t.section_id) section.id = t.section_id;
+                        if (educators.section_id) section.id = educators.section_id;
 
-                        if (t.title) {
+                        if (educators.title) {
                             const titleEl = section.querySelector('h2');
-                            if (titleEl) titleEl.textContent = t.title;
+                            if (titleEl) titleEl.textContent = educators.title;
                         }
-                        if (t.body) {
+                        if (educators.body) {
                             const bodyEl = section.querySelector('.max-w-3xl p');
-                            if (bodyEl) bodyEl.textContent = t.body;
+                            if (bodyEl) bodyEl.textContent = educators.body;
                         }
-                        if (t.curriculum_title) {
+                        if (educators.curriculum_title) {
                             const titleEl = section.querySelector('h3');
-                            if (titleEl) titleEl.innerHTML = `<span class="material-symbols-outlined text-brand-pink text-2xl">workspace_premium</span> ${t.curriculum_title}`;
+                            if (titleEl) titleEl.innerHTML = `<span class="material-symbols-outlined text-brand-pink text-2xl">workspace_premium</span> ${educators.curriculum_title}`;
                         }
-                        if (t.curriculum_body) {
+                        if (educators.curriculum_body) {
                             const bodyEl = section.querySelector('h3 + p');
-                            if (bodyEl) bodyEl.innerHTML = t.curriculum_body;
+                            if (bodyEl) bodyEl.innerHTML = educators.curriculum_body;
                         }
-                        if (t.discussion_questions_title) {
+                        if (educators.discussion_questions_title) {
                             const titleEl = section.querySelector('h4.text-brand-fuschiaText');
-                            if (titleEl) titleEl.textContent = t.discussion_questions_title;
+                            if (titleEl) titleEl.textContent = educators.discussion_questions_title;
                         }
-                        if (t.questions && Array.isArray(t.questions)) {
+                        if (educators.questions && Array.isArray(educators.questions)) {
                             const listEl = section.querySelector('ul');
                             if (listEl) {
-                                listEl.innerHTML = t.questions.map(q => 
+                                listEl.innerHTML = educators.questions.map(q => 
                                     `<li class="flex items-start gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
                                         <span class="material-symbols-outlined text-brand-pink text-xl shrink-0 mt-0.5">help_outline</span>
                                         <span>${q.question || q}</span>
@@ -848,25 +848,25 @@
                                 ).join('');
                             }
                         }
-                        if (t.feedback_title) {
+                        if (educators.feedback_title) {
                             const titleEl = section.querySelector('.lg\:col-span-5 h4');
-                            if (titleEl) titleEl.textContent = t.feedback_title;
+                            if (titleEl) titleEl.textContent = educators.feedback_title;
                         }
-                        if (t.feedback_body) {
+                        if (educators.feedback_body) {
                             const bodyEl = section.querySelector('.lg\:col-span-5 h4 + p');
-                            if (bodyEl) bodyEl.textContent = t.feedback_body;
+                            if (bodyEl) bodyEl.textContent = educators.feedback_body;
                         }
-                        if (t.feedback_button_text) {
+                        if (educators.feedback_button_text) {
                             const btn = section.querySelector('.lg\:col-span-5 a');
-                            if (btn) btn.innerHTML = `<span class="material-symbols-outlined text-lg">mail</span> ${t.feedback_button_text}`;
+                            if (btn) btn.innerHTML = `<span class="material-symbols-outlined text-lg">mail</span> ${educators.feedback_button_text}`;
                         }
-                        if (t.image) {
+                        if (educators.image) {
                             const img = section.querySelector('.photo-card img');
-                            if (img) img.src = t.image;
+                            if (img) img.src = educators.image;
                         }
-                        if (t.image_caption) {
+                        if (educators.image_caption) {
                             const caption = section.querySelector('.photo-card .p-4');
-                            if (caption) caption.textContent = t.image_caption;
+                            if (caption) caption.textContent = educators.image_caption;
                         }
                     }
                 }

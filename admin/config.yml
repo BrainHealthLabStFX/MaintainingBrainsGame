@@ -67,8 +67,8 @@ collections:
               - { label: "Highlight Text", name: "text", widget: "string", required: false }
           - { label: "Download Button Text", name: "button1_text", widget: "string", required: false }
           - { label: "Download Button URL", name: "button1_url", widget: "string", required: false }
-          - { label: "Teachers Button Text", name: "button2_text", widget: "string", required: false }
-          - { label: "Teachers Button URL", name: "button2_url", widget: "string", required: false }
+          - { label: "Educators Button Text", name: "button2_text", widget: "string", required: false }
+          - { label: "Educators Button URL", name: "button2_url", widget: "string", required: false }
 
   - name: "creators_section"
     label: "Section 2: Creators & Origin"
@@ -104,14 +104,14 @@ collections:
           - { label: "Photo Card Title", name: "image_title", widget: "string", required: false }
           - { label: "Photo Card Caption", name: "image_caption", widget: "text", required: false }
 
-  - name: "teachers_section"
-    label: "Section 3: For Teachers"
+  - name: "educators_section"
+    label: "Section 3: Educators"
     files:
-      - file: "_data/teachers.yml"
-        label: "Teachers Content"
-        name: "teachers_data"
+      - file: "_data/educators.yml"
+        label: "Educators Content"
+        name: "educators_data"
         fields:
-          - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "teachers", comment: "URL anchor (#teachers)" }
+          - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "educators", comment: "URL anchor (#educators)" }
           - { label: "Title", name: "title", widget: "string", required: false }
           - { label: "Intro Body", name: "body", widget: "text", required: false }
           - { label: "Curriculum Title", name: "curriculum_title", widget: "string", required: false }
@@ -127,8 +127,8 @@ collections:
           - { label: "Feedback Card Title", name: "feedback_title", widget: "string", required: false }
           - { label: "Feedback Card Body", name: "feedback_body", widget: "text", required: false }
           - { label: "Feedback Button Text", name: "feedback_button_text", widget: "string", required: false }
-          - { label: "Teacher Image", name: "image", widget: "image", required: false }
-          - { label: "Teacher Image Caption", name: "image_caption", widget: "string", required: false }
+          - { label: "Educator Image", name: "image", widget: "image", required: false }
+          - { label: "Educator Image Caption", name: "image_caption", widget: "string", required: false }
 
   - name: "download_section"
     label: "Section 4: Download Game"
