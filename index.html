@@ -709,7 +709,7 @@
                         setTimeout(() => passOverlay.classList.add('hidden'), 500);
                     }
 
-                // 1. Hero
+                try { // 1. Hero
                 const hero = await fetchYaml('/_data/hero.yml');
                 if (hero) {
                     const section = document.querySelector('section#home');
@@ -752,7 +752,8 @@
                     }
                 }
 
-                // 2. Menu Links
+                } catch(e) { console.error("Hero error", e); }
+                try { // 2. Menu Links
                 const menuData = await fetchYaml('/_data/menu.yml');
                 if (menuData && menuData.menu_links && Array.isArray(menuData.menu_links)) {
                     const nav = document.querySelector('header nav');
@@ -769,7 +770,8 @@
                     }
                 }
 
-                // 3. Creators Section
+                } catch(e) { console.error("Menu error", e); }
+                try { // 3. Creators Section
                 const c = await fetchYaml('/_data/creators.yml');
                 if (c) {
                     const section = document.querySelector('section#about');
@@ -818,7 +820,8 @@
                     }
                 }
 
-                // 4. Educators Section
+                } catch(e) { console.error("Creators error", e); }
+                try { // 4. Educators Section
                 const educators = await fetchYaml('/_data/educators.yml');
                 if (educators) {
                     const section = document.querySelector('section#educators');
@@ -879,7 +882,8 @@
                     }
                 }
 
-                // 5. Download Section
+                } catch(e) { console.error("Educators error", e); }
+                try { // 5. Download Section
                 const d = await fetchYaml('/_data/download.yml');
                 if (d) {
                     const section = document.querySelector('section#download');
@@ -926,7 +930,8 @@
                     }
                 }
 
-                // 6. Research Section
+                } catch(e) { console.error("Download error", e); }
+                try { // 6. Research Section
                 const r = await fetchYaml('/_data/research.yml');
                 if (r) {
                     const section = document.querySelector('section#research');
@@ -959,7 +964,8 @@
                     }
                 }
 
-                // 7. Tools Section
+                } catch(e) { console.error("Research error", e); }
+                try { // 7. Tools Section
                 const tools = await fetchYaml('/_data/tools.yml');
                 if (tools) {
                     const section = document.querySelector('section#tools');
@@ -985,7 +991,8 @@
                     }
                 }
 
-                // 8. Partners (Collaborators) Section
+                } catch(e) { console.error("Tools error", e); }
+                try { // 8. Partners (Collaborators) Section
                 const col = await fetchYaml('/_data/collaborators.yml');
                 if (col) {
                     const section = document.querySelector('section#partners');
@@ -1031,7 +1038,8 @@
                     }
                 }
 
-                // 9. Fetch supporters
+                } catch(e) { console.error("Partners error", e); }
+                try { // 9. Fetch supporters
                 const sup = await fetchYaml('/_data/partners.yml');
                 if (sup) {
                     // It's possible sup is just an object containing `partners` array
@@ -1055,7 +1063,8 @@
                 }
 
 
-                // 9. Attribution Section
+                } catch(e) { console.error("Supporters error", e); }
+                try { // 9. Attribution Section
                 const attribution = await fetchYaml('/_data/attribution.yml');
                 if (attribution) {
                     const attrSection = document.getElementById('footer-attribution');
@@ -1075,7 +1084,8 @@
                     }
                 }
 
-                // 10. Global settings email logic
+                } catch(e) { console.error("Attribution error", e); }
+                try { // 10. Global settings email logic
                 if (settings) {
                     if (settings.email) {
                         document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
@@ -1104,6 +1114,8 @@
                         if (locEl) locEl.textContent = settings.location;
                     }
                 }
+
+                } catch(e) { console.error("Settings error", e); }
 
                 // Hide loading overlay when done
                 const loadOverlay = document.getElementById('loading-overlay');
