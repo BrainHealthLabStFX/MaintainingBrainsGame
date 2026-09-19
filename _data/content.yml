@@ -1,4 +1,4 @@
-# 1. Navigation Menu Links
+# Navigation Bar Links
 menu_links:
   - label: "Home"
     url: "#about"
@@ -15,7 +15,15 @@ menu_links:
   - label: "Partners"
     url: "#partners"
 
-# 2. Teachers Section
+# Section 2: Creators & Origin
+creators:
+  title: "How The Game Was Created"
+  p1: "We co-created our initial draft, the Maintain Your Brain Game, at a workshop funded by the Canadian Institutes of Health Research (CIHR). The workshop brought together people with lived experience of cognitive impairment, Indigenous educators, South Asian educators, healthcare providers, and academic researchers."
+  p2: "Since then, we co-created Maintaining Brains with high school teachers and the national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments."
+  image: "assets/images/real/Workshop-1-2.jpeg"
+  focal_point: "object-center"
+
+# Section 3: For Teachers
 teachers:
   title: "For Educators & Teachers"
   body: "The Maintaining Brains Game provides educators with an engaging way to introduce students to concepts related to brain health, cognition, and lifelong wellness."
@@ -23,24 +31,24 @@ teachers:
   curriculum_body: "We reviewed English program Nova Scotia curriculum outcomes and guidelines to identify specific outcomes that the Maintaining Brains Game helps achieve in high school science, health, and psychology classes."
   discussion_questions_title: "Student Discussion Questions (Created by IB Psychology Students)"
   questions:
-    - "Why is it important to think about brain health throughout life?"
-    - "How do everyday lifestyle choices influence cognitive wellness and reserve?"
-    - "What is one thing you learned that you can apply in your own daily life?"
-    - "How can communities support healthy aging and brain resilience?"
+    - question: "Why is it important to think about brain health throughout life?"
+    - question: "How do everyday lifestyle choices influence cognitive wellness and reserve?"
+    - question: "What is one thing you learned that you can apply in your own daily life?"
+    - question: "How can communities support healthy aging and brain resilience?"
   feedback_title: "Are you a teacher using the game?"
   feedback_body: "If you use Maintaining Brains in your classroom outside Nova Scotia, we'd love to hear how it went!"
 
-# 3. Download Section
+# Section 4: Download Package
 download:
   title: "Download Game Materials"
   body: "Everything you need to facilitate and play the Maintaining Brains Game in your classroom or community group. Download complete PDF card packages and instruction sheets."
   button_label: "Download Game Package"
   button_url: "#"
   printing_tips:
-    - "Print on white, blue, or yellow paper matching the filename color code."
-    - "Files include full crop marks and bleeds for professional laser cutters."
-    - "Recommended paper weight: 65 - 90 lb cardstock."
-    - "Laminating increases durability, though cards become thicker to handle."
+    - tip: "Print on white, blue, or yellow paper matching the filename color code."
+    - tip: "Files include full crop marks and bleeds for professional laser cutters."
+    - tip: "Recommended paper weight: 65 - 90 lb cardstock."
+    - tip: "Laminating increases durability, though cards become thicker to handle."
   materials_needed:
     - icon: "science"
       name: "Plastic Straws"
@@ -51,7 +59,7 @@ download:
     - icon: "masks"
       name: "Face Masks"
 
-# 4. Research Section
+# Section 5: Research & Publications
 research:
   title: "Research & Publications"
   items:
@@ -66,7 +74,7 @@ research:
       link_text: "Download Honours Thesis →"
       link_url: "https://www.maintainingbrains.ca/research.html"
 
-# 5. Tools Section
+# Section 6: Custom Card Generator Tool
 tools:
   title: "Tool To Create Custom Game Cards"
   body: "Want to make your own custom version of the Maintaining Brains Game or populate card templates directly from a spreadsheet? Use our open-source generator tool!"

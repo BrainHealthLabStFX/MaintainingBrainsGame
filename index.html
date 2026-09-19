@@ -685,7 +685,31 @@
                         }
                     }
 
-                    // 2. Teachers Section
+                    // 2. Creators Section
+                    if (content.creators) {
+                        const c = content.creators;
+                        if (c.title) {
+                            const titleEl = document.querySelector('#creators-title');
+                            if (titleEl) titleEl.textContent = c.title;
+                        }
+                        if (c.p1) {
+                            const p1El = document.querySelector('#creators-p1');
+                            if (p1El) p1El.innerHTML = c.p1;
+                        }
+                        if (c.p2) {
+                            const p2El = document.querySelector('#creators-p2');
+                            if (p2El) p2El.innerHTML = c.p2;
+                        }
+                        if (c.image) {
+                            const img = document.querySelector('#creators-image');
+                            if (img) {
+                                img.src = c.image;
+                                if (c.focal_point) img.className = `w-full h-80 object-cover ${c.focal_point}`;
+                            }
+                        }
+                    }
+
+                    // 3. Teachers Section
                     if (content.teachers) {
                         const t = content.teachers;
                         if (t.title) {
@@ -696,9 +720,20 @@
                             const bodyEl = document.querySelector('#teachers p');
                             if (bodyEl) bodyEl.textContent = t.body;
                         }
+                        if (t.questions && Array.isArray(t.questions)) {
+                            const listEl = document.querySelector('#teachers ul');
+                            if (listEl) {
+                                listEl.innerHTML = t.questions.map(q => 
+                                    `<li class="flex items-start gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
+                                        <span class="material-symbols-outlined text-brand-pink text-xl shrink-0 mt-0.5">help_outline</span>
+                                        <span>${q.question || q}</span>
+                                    </li>`
+                                ).join('');
+                            }
+                        }
                     }
 
-                    // 3. Download Section
+                    // 4. Download Section
                     if (content.download) {
                         const d = content.download;
                         if (d.title) {
@@ -713,9 +748,13 @@
                             const btnSpan = document.querySelector('#download a span:last-child');
                             if (btnSpan) btnSpan.textContent = d.button_label;
                         }
+                        if (d.button_url) {
+                            const btn = document.querySelector('#download a');
+                            if (btn) btn.href = d.button_url;
+                        }
                     }
 
-                    // 4. Tools Section
+                    // 5. Tools Section
                     if (content.tools) {
                         const tools = content.tools;
                         if (tools.title) {
@@ -726,6 +765,28 @@
                             const bodyEl = document.querySelector('#tools p');
                             if (bodyEl) bodyEl.textContent = tools.body;
                         }
+                        if (tools.button_label) {
+                            const btnSpan = document.querySelector('#tools a span:last-child');
+                            if (btnSpan) btnSpan.textContent = tools.button_label;
+                        }
+                        if (tools.button_url) {
+                            const btn = document.querySelector('#tools a');
+                            if (btn) btn.href = tools.button_url;
+                        }
+                    }
+                }
+
+                // Fetch global settings
+                const settingsRes = await fetch('/_data/settings.yml');
+                if (settingsRes.ok) {
+                    const settingsText = await settingsRes.text();
+                    const settings = jsyaml.load(settingsText);
+
+                    if (settings.email) {
+                        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                            link.href = `mailto:${settings.email}`;
+                            if (link.textContent.includes('@')) link.textContent = settings.email;
+                        });
                     }
                 }
             } catch (e) {

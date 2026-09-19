@@ -6,155 +6,158 @@ media_folder: "assets/images/uploads"
 public_folder: "assets/images/uploads"
 
 collections:
-  # 1. Global Navigation Menu
+  # 1. Navigation Links
   - name: "navigation"
-    label: "🔗 Navigation Menu Links"
+    label: "Header Navigation"
     files:
       - file: "_data/content.yml"
-        label: "Header Nav Links"
+        label: "Menu Links"
         name: "menu"
         fields:
           - { label: "Menu Links", name: "menu_links", widget: "list", fields: [
-              { label: "Link Label", name: "label", widget: "string" },
-              { label: "Target URL / Section Anchor (e.g. #about)", name: "url", widget: "string" }
+              { label: "Label", name: "label", widget: "string" },
+              { label: "URL Anchor", name: "url", widget: "string" }
             ]}
 
-  # 2. Hero Banner Section
+  # 2. Hero Banner
   - name: "hero_section"
-    label: "1. 🚀 Hero Banner & Top Strip"
+    label: "Section 1: Hero Banner"
     files:
       - file: "_data/hero.yml"
-        label: "Hero Headline, Paragraph & Image"
+        label: "Hero Content"
         name: "hero"
         fields:
-          - { label: "Hero Main Headline", name: "headline", widget: "string", default: "Learning how to maintain your brain through play!" }
-          - { label: "Hero Body Paragraph", name: "body", widget: "text" }
+          - { label: "Main Headline", name: "headline", widget: "string" }
+          - { label: "Body Paragraph", name: "body", widget: "text" }
           - { label: "Hero Image", name: "image", widget: "image" }
           - { 
-              label: "Photo Focal Point Alignment", 
-              name: "focal_point", 
-              widget: "select", 
-              options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
-              default: "object-center",
-              hint: "Select focus area for cropped photos on different screens"
-            }
-          - { label: "Highlight Strip Items", name: "highlights", widget: "list", fields: [
-              { label: "Icon Name (Material Symbol)", name: "icon", widget: "string", default: "extension" },
-              { label: "Highlight Text", name: "text", widget: "string" }
-            ]}
-
-  # 3. Creators & Origin Section
-  - name: "creators_section"
-    label: "2. 🌱 Creators & Origin"
-    files:
-      - file: "_data/creators.yml"
-        label: "Co-Creation Text & Details"
-        name: "creators"
-        fields:
-          - { label: "Section Title", name: "title", widget: "string", default: "How The Game Was Created" }
-          - { label: "Paragraph 1 (CIHR Workshop)", name: "p1", widget: "text" }
-          - { label: "Paragraph 2 (Youth & Actua Co-Creation)", name: "p2", widget: "text" }
-          - { label: "Workshop Image", name: "image", widget: "image" }
-          - { 
-              label: "Photo Focal Point Alignment", 
+              label: "Photo Focus", 
               name: "focal_point", 
               widget: "select", 
               options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
               default: "object-center"
             }
+          - { label: "Highlights", name: "highlights", widget: "list", fields: [
+              { label: "Icon", name: "icon", widget: "string" },
+              { label: "Text", name: "text", widget: "string" }
+            ]}
 
-  # 4. Teachers Section
-  - name: "teachers_section"
-    label: "3. 🎓 For Teachers & Educators"
+  # 3. Creators & Origin
+  - name: "creators_section"
+    label: "Section 2: Creators & Origin"
     files:
       - file: "_data/content.yml"
-        label: "Curriculum Outcomes & Discussion Questions"
+        label: "Creators Content"
+        name: "creators"
+        fields:
+          - { label: "Title", name: "creators.title", widget: "string" }
+          - { label: "Paragraph 1", name: "creators.p1", widget: "text" }
+          - { label: "Paragraph 2", name: "creators.p2", widget: "text" }
+          - { label: "Workshop Image", name: "creators.image", widget: "image" }
+          - { 
+              label: "Photo Focus", 
+              name: "creators.focal_point", 
+              widget: "select", 
+              options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
+              default: "object-center"
+            }
+
+  # 4. For Teachers
+  - name: "teachers_section"
+    label: "Section 3: For Teachers"
+    files:
+      - file: "_data/content.yml"
+        label: "Teachers Content"
         name: "teachers"
         fields:
-          - { label: "Section Title", name: "teachers.title", widget: "string" }
-          - { label: "Section Body", name: "teachers.body", widget: "text" }
+          - { label: "Title", name: "teachers.title", widget: "string" }
+          - { label: "Intro Body", name: "teachers.body", widget: "text" }
           - { label: "Curriculum Title", name: "teachers.curriculum_title", widget: "string" }
           - { label: "Curriculum Body", name: "teachers.curriculum_body", widget: "text" }
           - { label: "Discussion Questions Title", name: "teachers.discussion_questions_title", widget: "string" }
-          - { label: "Discussion Questions List", name: "teachers.questions", widget: "list", field: { label: "Question", name: "question", widget: "string" } }
-          - { label: "Teacher Feedback Box Title", name: "teachers.feedback_title", widget: "string" }
-          - { label: "Teacher Feedback Box Body", name: "teachers.feedback_body", widget: "text" }
+          - { label: "Discussion Questions", name: "teachers.questions", widget: "list", fields: [
+              { label: "Question", name: "question", widget: "string" }
+            ]}
+          - { label: "Feedback Card Title", name: "teachers.feedback_title", widget: "string" }
+          - { label: "Feedback Card Body", name: "teachers.feedback_body", widget: "text" }
 
-  # 5. Download Section
+  # 5. Download Materials
   - name: "download_section"
-    label: "4. 📦 Download Game Package"
+    label: "Section 4: Download Game"
     files:
       - file: "_data/content.yml"
-        label: "Download Links, Printing Tips & Setup Materials"
+        label: "Download Content"
         name: "download"
         fields:
-          - { label: "Section Title", name: "download.title", widget: "string" }
-          - { label: "Section Body", name: "download.body", widget: "text" }
-          - { label: "Download Button Label", name: "download.button_label", widget: "string" }
-          - { label: "Download File URL / Link", name: "download.button_url", widget: "string" }
-          - { label: "Printing Tips List", name: "download.printing_tips", widget: "list", field: { label: "Tip", name: "tip", widget: "string" } }
-          - { label: "Materials Needed List", name: "download.materials_needed", widget: "list", fields: [
-              { label: "Material Symbol Icon", name: "icon", widget: "string" },
-              { label: "Material Item Name", name: "name", widget: "string" }
+          - { label: "Title", name: "download.title", widget: "string" }
+          - { label: "Body", name: "download.body", widget: "text" }
+          - { label: "Button Label", name: "download.button_label", widget: "string" }
+          - { label: "Button URL", name: "download.button_url", widget: "string" }
+          - { label: "Printing Tips", name: "download.printing_tips", widget: "list", fields: [
+              { label: "Tip", name: "tip", widget: "string" }
+            ]}
+          - { label: "Materials Needed", name: "download.materials_needed", widget: "list", fields: [
+              { label: "Icon", name: "icon", widget: "string" },
+              { label: "Material Name", name: "name", widget: "string" }
             ]}
 
-  # 6. Research Section
+  # 6. Research & Publications
   - name: "research_section"
-    label: "5. 🔬 Research & Publications"
+    label: "Section 5: Research"
     files:
       - file: "_data/content.yml"
-        label: "Posters & Honours Thesis"
+        label: "Research Publications"
         name: "research"
         fields:
-          - { label: "Section Title", name: "research.title", widget: "string" }
+          - { label: "Title", name: "research.title", widget: "string" }
           - { label: "Publication Cards", name: "research.items", widget: "list", fields: [
-              { label: "Category / Event Tag", name: "category", widget: "string" },
+              { label: "Category", name: "category", widget: "string" },
               { label: "Title", name: "title", widget: "string" },
               { label: "Authors / Citation", name: "authors", widget: "text" },
-              { label: "Download Button Text", name: "link_text", widget: "string" },
-              { label: "Download Link URL", name: "link_url", widget: "string" }
+              { label: "Link Text", name: "link_text", widget: "string" },
+              { label: "Link URL", name: "link_url", widget: "string" }
             ]}
 
-  # 7. Card Generator Tools Section
+  # 7. Card Generator Tools
   - name: "tools_section"
-    label: "6. 🛠️ Custom Card Generator Tool"
+    label: "Section 6: Card Generator"
     files:
       - file: "_data/content.yml"
-        label: "Open Source Tool Link"
+        label: "Tool Content"
         name: "tools"
         fields:
-          - { label: "Section Title", name: "tools.title", widget: "string" }
-          - { label: "Section Body", name: "tools.body", widget: "text" }
+          - { label: "Title", name: "tools.title", widget: "string" }
+          - { label: "Body", name: "tools.body", widget: "text" }
           - { label: "Button Label", name: "tools.button_label", widget: "string" }
-          - { label: "Tool Link URL", name: "tools.button_url", widget: "string" }
+          - { label: "Tool URL", name: "tools.button_url", widget: "string" }
 
-  # 8. Partners & Supporters Section
+  # 8. Partners
   - name: "partners_section"
-    label: "7. 🤝 Partners & Supporters"
+    label: "Section 7: Partners & Logos"
     files:
       - file: "_data/partners.yml"
-        label: "Research Supporters & Logos"
+        label: "Partner Logos"
         name: "partners"
         fields:
-          - { label: "Partners List", name: "partners", widget: "list", fields: [
-              { label: "Partner Name", name: "name", widget: "string" },
+          - { label: "Partners", name: "partners", widget: "list", fields: [
+              { label: "Name", name: "name", widget: "string" },
               { label: "Logo Image", name: "logo", widget: "image" },
               { label: "Website Link", name: "link", widget: "string" }
             ]}
 
   # 9. Photo Gallery
   - name: "photos_section"
-    label: "8. 📸 Photo Gallery"
+    label: "Section 8: Photo Gallery"
     files:
       - file: "_data/photos.yml"
-        label: "Workshop & Game Photo Cards"
+        label: "Photo Cards"
         name: "photos"
         fields:
-          - { label: "Photos List", name: "photos", widget: "list", fields: [
+          - { label: "Photos", name: "photos", widget: "list", fields: [
               { label: "Title", name: "title", widget: "string" },
               { label: "Image", name: "image", widget: "image" },
               { 
-                label: "Photo Focal Point Alignment", 
+                label: "Photo Focus", 
                 name: "focal_point", 
                 widget: "select", 
                 options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
@@ -165,14 +168,14 @@ collections:
 
   # 10. Site Settings & Footer Contact
   - name: "settings_section"
-    label: "⚙️ Site Settings & Contact"
+    label: "Site Contact Info"
     files:
       - file: "_data/settings.yml"
-        label: "Contact Email & Location Details"
+        label: "Contact & Location"
         name: "contact"
         fields:
-          - { label: "Project Title", name: "title", widget: "string", default: "Maintaining Brains" }
-          - { label: "Contact Email", name: "email", widget: "string", default: "emazerol@stfx.ca" }
-          - { label: "Department", name: "department", widget: "string", default: "Department of Psychology" }
-          - { label: "Institution", name: "institution", widget: "string", default: "St. Francis Xavier University" }
-          - { label: "Location", name: "location", widget: "string", default: "Antigonish, Nova Scotia, Canada" }
+          - { label: "Project Title", name: "title", widget: "string" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Department", name: "department", widget: "string" }
+          - { label: "Institution", name: "institution", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
