@@ -6,26 +6,25 @@ media_folder: "assets/images/uploads"
 public_folder: "assets/images/uploads"
 
 collections:
-  # 1. Global Navigation & Site Settings
-  - name: "settings"
-    label: "⚙️ Site Settings & Contact"
+  # 1. Global Navigation Menu
+  - name: "navigation"
+    label: "🔗 Navigation Menu Links"
     files:
-      - file: "_data/settings.yml"
-        label: "Contact Email & Location Details"
-        name: "contact"
+      - file: "_data/content.yml"
+        label: "Header Nav Links"
+        name: "menu"
         fields:
-          - { label: "Project Title", name: "title", widget: "string", default: "Maintaining Brains" }
-          - { label: "Contact Email", name: "email", widget: "string", default: "emazerol@stfx.ca" }
-          - { label: "Department", name: "department", widget: "string", default: "Department of Psychology" }
-          - { label: "Institution", name: "institution", widget: "string", default: "St. Francis Xavier University" }
-          - { label: "Location", name: "location", widget: "string", default: "Antigonish, Nova Scotia, Canada" }
+          - { label: "Menu Links", name: "menu_links", widget: "list", fields: [
+              { label: "Link Label", name: "label", widget: "string" },
+              { label: "Target URL / Section Anchor (e.g. #about)", name: "url", widget: "string" }
+            ]}
 
-  # 2. Hero Banner & Top Strip
+  # 2. Hero Banner Section
   - name: "hero_section"
-    label: "🚀 Hero & Highlight Strip"
+    label: "1. 🚀 Hero Banner & Top Strip"
     files:
       - file: "_data/hero.yml"
-        label: "Hero Headline & Highlights Strip"
+        label: "Hero Headline, Paragraph & Image"
         name: "hero"
         fields:
           - { label: "Hero Main Headline", name: "headline", widget: "string", default: "Learning how to maintain your brain through play!" }
@@ -37,16 +36,16 @@ collections:
               widget: "select", 
               options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
               default: "object-center",
-              hint: "Select where the image should focus when cropped on different screen sizes (e.g. object-top focuses on faces)"
+              hint: "Select focus area for cropped photos on different screens"
             }
           - { label: "Highlight Strip Items", name: "highlights", widget: "list", fields: [
               { label: "Icon Name (Material Symbol)", name: "icon", widget: "string", default: "extension" },
               { label: "Highlight Text", name: "text", widget: "string" }
             ]}
 
-  # 3. Section 1: Creators & Origin
+  # 3. Creators & Origin Section
   - name: "creators_section"
-    label: "🌱 Creators & Origin"
+    label: "2. 🌱 Creators & Origin"
     files:
       - file: "_data/creators.yml"
         label: "Co-Creation Text & Details"
@@ -61,13 +60,91 @@ collections:
               name: "focal_point", 
               widget: "select", 
               options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
-              default: "object-center",
-              hint: "Select where the image should focus when cropped (e.g. object-top for faces)"
+              default: "object-center"
             }
 
-  # 4. Photo Gallery
-  - name: "photos"
-    label: "📸 Photo Gallery"
+  # 4. Teachers Section
+  - name: "teachers_section"
+    label: "3. 🎓 For Teachers & Educators"
+    files:
+      - file: "_data/content.yml"
+        label: "Curriculum Outcomes & Discussion Questions"
+        name: "teachers"
+        fields:
+          - { label: "Section Title", name: "teachers.title", widget: "string" }
+          - { label: "Section Body", name: "teachers.body", widget: "text" }
+          - { label: "Curriculum Title", name: "teachers.curriculum_title", widget: "string" }
+          - { label: "Curriculum Body", name: "teachers.curriculum_body", widget: "text" }
+          - { label: "Discussion Questions Title", name: "teachers.discussion_questions_title", widget: "string" }
+          - { label: "Discussion Questions List", name: "teachers.questions", widget: "list", field: { label: "Question", widget: "string" } }
+          - { label: "Teacher Feedback Box Title", name: "teachers.feedback_title", widget: "string" }
+          - { label: "Teacher Feedback Box Body", name: "teachers.feedback_body", widget: "text" }
+
+  # 5. Download Section
+  - name: "download_section"
+    label: "4. 📦 Download Game Package"
+    files:
+      - file: "_data/content.yml"
+        label: "Download Links, Printing Tips & Setup Materials"
+        name: "download"
+        fields:
+          - { label: "Section Title", name: "download.title", widget: "string" }
+          - { label: "Section Body", name: "download.body", widget: "text" }
+          - { label: "Download Button Label", name: "download.button_label", widget: "string" }
+          - { label: "Download File URL / Link", name: "download.button_url", widget: "string" }
+          - { label: "Printing Tips List", name: "download.printing_tips", widget: "list", field: { label: "Tip", widget: "string" } }
+          - { label: "Materials Needed List", name: "download.materials_needed", widget: "list", fields: [
+              { label: "Material Symbol Icon", name: "icon", widget: "string" },
+              { label: "Material Item Name", name: "name", widget: "string" }
+            ]}
+
+  # 6. Research Section
+  - name: "research_section"
+    label: "5. 🔬 Research & Publications"
+    files:
+      - file: "_data/content.yml"
+        label: "Posters & Honours Thesis"
+        name: "research"
+        fields:
+          - { label: "Section Title", name: "research.title", widget: "string" }
+          - { label: "Publication Cards", name: "research.items", widget: "list", fields: [
+              { label: "Category / Event Tag", name: "category", widget: "string" },
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Authors / Citation", name: "authors", widget: "text" },
+              { label: "Download Button Text", name: "link_text", widget: "string" },
+              { label: "Download Link URL", name: "link_url", widget: "string" }
+            ]}
+
+  # 7. Card Generator Tools Section
+  - name: "tools_section"
+    label: "6. 🛠️ Custom Card Generator Tool"
+    files:
+      - file: "_data/content.yml"
+        label: "Open Source Tool Link"
+        name: "tools"
+        fields:
+          - { label: "Section Title", name: "tools.title", widget: "string" }
+          - { label: "Section Body", name: "tools.body", widget: "text" }
+          - { label: "Button Label", name: "tools.button_label", widget: "string" }
+          - { label: "Tool Link URL", name: "tools.button_url", widget: "string" }
+
+  # 8. Partners & Supporters Section
+  - name: "partners_section"
+    label: "7. 🤝 Partners & Supporters"
+    files:
+      - file: "_data/partners.yml"
+        label: "Research Supporters & Logos"
+        name: "partners"
+        fields:
+          - { label: "Partners List", name: "partners", widget: "list", fields: [
+              { label: "Partner Name", name: "name", widget: "string" },
+              { label: "Logo Image", name: "logo", widget: "image" },
+              { label: "Website Link", name: "link", widget: "string" }
+            ]}
+
+  # 9. Photo Gallery
+  - name: "photos_section"
+    label: "8. 📸 Photo Gallery"
     files:
       - file: "_data/photos.yml"
         label: "Workshop & Game Photo Cards"
@@ -81,8 +158,21 @@ collections:
                 name: "focal_point", 
                 widget: "select", 
                 options: ["object-center", "object-top", "object-bottom", "object-left", "object-right"],
-                default: "object-center",
-                hint: "Select where the image should focus when cropped (e.g. object-top for faces)"
+                default: "object-center"
               },
               { label: "Description", name: "description", widget: "text" }
             ]}
+
+  # 10. Site Settings & Footer Contact
+  - name: "settings_section"
+    label: "⚙️ Site Settings & Contact"
+    files:
+      - file: "_data/settings.yml"
+        label: "Contact Email & Location Details"
+        name: "contact"
+        fields:
+          - { label: "Project Title", name: "title", widget: "string", default: "Maintaining Brains" }
+          - { label: "Contact Email", name: "email", widget: "string", default: "emazerol@stfx.ca" }
+          - { label: "Department", name: "department", widget: "string", default: "Department of Psychology" }
+          - { label: "Institution", name: "institution", widget: "string", default: "St. Francis Xavier University" }
+          - { label: "Location", name: "location", widget: "string", default: "Antigonish, Nova Scotia, Canada" }

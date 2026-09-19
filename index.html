@@ -668,29 +668,63 @@
                     }
                 }
 
-                // Fetch creators section edits
-                const creatorsRes = await fetch('/_data/creators.yml');
-                if (creatorsRes.ok) {
-                    const creatorsText = await creatorsRes.text();
-                    const creators = jsyaml.load(creatorsText);
-                    
-                    if (creators.title) {
-                        const titleEl = document.querySelector('#creators-title');
-                        if (titleEl) titleEl.textContent = creators.title;
+                // Fetch comprehensive site content edits
+                const contentRes = await fetch('/_data/content.yml');
+                if (contentRes.ok) {
+                    const contentText = await contentRes.text();
+                    const content = jsyaml.load(contentText);
+
+                    // 1. Menu Links
+                    if (content.menu_links && Array.isArray(content.menu_links)) {
+                        const nav = document.querySelector('header nav');
+                        const mobileNav = document.querySelector('#mobile-menu nav');
+                        if (nav) {
+                            nav.innerHTML = content.menu_links.map(link => 
+                                `<a href="${link.url}" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">${link.label}</a>`
+                            ).join('');
+                        }
                     }
-                    if (creators.p1) {
-                        const p1El = document.querySelector('#creators-p1');
-                        if (p1El) p1El.innerHTML = creators.p1;
+
+                    // 2. Teachers Section
+                    if (content.teachers) {
+                        const t = content.teachers;
+                        if (t.title) {
+                            const titleEl = document.querySelector('#teachers h2');
+                            if (titleEl) titleEl.textContent = t.title;
+                        }
+                        if (t.body) {
+                            const bodyEl = document.querySelector('#teachers p');
+                            if (bodyEl) bodyEl.textContent = t.body;
+                        }
                     }
-                    if (creators.p2) {
-                        const p2El = document.querySelector('#creators-p2');
-                        if (p2El) p2El.innerHTML = creators.p2;
+
+                    // 3. Download Section
+                    if (content.download) {
+                        const d = content.download;
+                        if (d.title) {
+                            const titleEl = document.querySelector('#download h2');
+                            if (titleEl) titleEl.textContent = d.title;
+                        }
+                        if (d.body) {
+                            const bodyEl = document.querySelector('#download p');
+                            if (bodyEl) bodyEl.textContent = d.body;
+                        }
+                        if (d.button_label) {
+                            const btnSpan = document.querySelector('#download a span:last-child');
+                            if (btnSpan) btnSpan.textContent = d.button_label;
+                        }
                     }
-                    if (creators.image) {
-                        const img = document.querySelector('#creators-image');
-                        if (img) {
-                            img.src = creators.image;
-                            if (creators.focal_point) img.className = `w-full h-80 object-cover ${creators.focal_point}`;
+
+                    // 4. Tools Section
+                    if (content.tools) {
+                        const tools = content.tools;
+                        if (tools.title) {
+                            const titleEl = document.querySelector('#tools h3');
+                            if (titleEl) titleEl.textContent = tools.title;
+                        }
+                        if (tools.body) {
+                            const bodyEl = document.querySelector('#tools p');
+                            if (bodyEl) bodyEl.textContent = tools.body;
                         }
                     }
                 }
