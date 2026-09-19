@@ -1,4 +1,58 @@
-backend:
+import os
+import yaml
+import re
+
+# 1. Split content.yml into separate files
+if os.path.exists('_data/content.yml'):
+    with open('_data/content.yml', 'r') as f:
+        content = yaml.safe_load(f)
+    
+    if content:
+        if 'menu_links' in content:
+            with open('_data/menu.yml', 'w') as f:
+                yaml.dump({'menu_links': content['menu_links']}, f, sort_keys=False)
+        
+        sections = ['creators', 'teachers', 'download', 'research', 'tools', 'collaborators']
+        default_ids = {
+            'creators': 'creators',
+            'teachers': 'teachers',
+            'download': 'download',
+            'research': 'research',
+            'tools': 'tools',
+            'collaborators': 'partners'
+        }
+        for sec in sections:
+            if sec in content:
+                data = content[sec]
+                data['section_id'] = default_ids[sec]
+                with open(f'_data/{sec}.yml', 'w') as f:
+                    yaml.dump(data, f, sort_keys=False)
+    
+    # Delete content.yml
+    os.remove('_data/content.yml')
+
+# Ensure hero.yml has section_id
+if os.path.exists('_data/hero.yml'):
+    with open('_data/hero.yml', 'r') as f:
+        hero = yaml.safe_load(f)
+    if hero and 'section_id' not in hero:
+        hero = {'section_id': 'about', **hero}
+        with open('_data/hero.yml', 'w') as f:
+            yaml.dump(hero, f, sort_keys=False)
+
+# Ensure partners.yml has section_id
+if os.path.exists('_data/partners.yml'):
+    with open('_data/partners.yml', 'r') as f:
+        partners_list = yaml.safe_load(f)
+    # partners.yml is currently a list, so we must make it a dict to add section_id
+    if isinstance(partners_list, list):
+        partners_data = {'section_id': 'supporters', 'partners': partners_list}
+        with open('_data/partners.yml', 'w') as f:
+            yaml.dump(partners_data, f, sort_keys=False)
+
+
+# 2. Rewrite admin/config.yml
+config_yml = """backend:
   name: git-gateway
   branch: main
 
@@ -190,3 +244,8 @@ collections:
           - { label: "Department", name: "department", widget: "string", required: false }
           - { label: "Institution", name: "institution", widget: "string", required: false }
           - { label: "Location", name: "location", widget: "string", required: false }
+"""
+with open('admin/config.yml', 'w') as f:
+    f.write(config_yml)
+
+print("done python setup")

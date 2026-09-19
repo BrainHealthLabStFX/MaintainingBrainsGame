@@ -1,0 +1,15 @@
+menu_links:
+  - label: Home
+    url: '#about'
+  - label: Creators
+    url: '#creators'
+  - label: For Teachers
+    url: '#teachers'
+  - label: Download
+    url: '#download'
+  - label: Research
+    url: '#research'
+  - label: Tools
+    url: '#tools'
+  - label: Partners
+    url: '#partners'

@@ -1,5 +1,15 @@
-title: "How The Game Was Created"
-p1: "In summer 2024, our team hosted youth workshops funded by a CIHR Planning and Dissemination grant, in collaboration with X-Chem Outreach at StFX and Actua. Youth explored brain health research and co-created game ideas, artwork, and mechanics for sharing evidence-based brain health strategies."
-p2: "In fall 2024, IB Psychology students co-created discussion questions. The result is a print-and-play card game designed to spark conversations about how daily choices protect brain health."
-image: "/assets/images/real/Workshop-1-2.jpeg"
-focal_point: "object-center"
+section_id: creators
+title: How The Game Was Created
+p1: We co-created our initial draft, the Maintain Your Brain Game, at a workshop funded by the Canadian Institutes of Health Research (CIHR). The workshop brought together people with lived experience of cognitive impairment, Indigenous educators, South Asian educators, healthcare providers, and academic researchers.
+p2: Since then, we co-created Maintaining Brains with high school teachers and the national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments.
+image: assets/images/real/Workshop-1-2.jpeg
+focal_point: object-center
+badges:
+  - title: CIHR
+    subtitle: Workshop Grant
+  - title: Actua
+    subtitle: STEM Outreach
+  - title: Trauma
+    subtitle: Informed Design
+image_title: Co-Creators at Toronto Workshop
+image_caption: Collaborative development with educators, clinicians, and individuals with lived experience.

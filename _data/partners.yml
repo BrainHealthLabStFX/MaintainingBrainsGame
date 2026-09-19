@@ -1,15 +1,17 @@
-- name: Canadian Institutes of Health Research (CIHR)
-  logo: /assets/images/logos/CIHR-Logo.png
-  link: https://cihr-irsc.gc.ca
+section_id: supporters
+partners:
+  - name: Canadian Institutes of Health Research (CIHR)
+    logo: /assets/images/logos/CIHR-Logo.png
+    link: https://cihr-irsc.gc.ca
 
-- name: St. Francis Xavier University
-  logo: /assets/images/logos/STFX-Logo.png
-  link: https://www.stfx.ca
+  - name: St. Francis Xavier University
+    logo: /assets/images/logos/STFX-Logo.png
+    link: https://www.stfx.ca
 
-- name: Research Nova Scotia
-  logo: /assets/images/logos/ResearchNS-Logo.png
-  link: https://researchns.ca
+  - name: Research Nova Scotia
+    logo: /assets/images/logos/ResearchNS-Logo.png
+    link: https://researchns.ca
 
-- name: VAST
-  logo: /assets/images/logos/VASTlogo.webp
-  link: "#"
+  - name: VAST
+    logo: /assets/images/logos/VASTlogo.webp
+    link: "#"

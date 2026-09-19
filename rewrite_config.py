@@ -1,4 +1,4 @@
-backend:
+config = """backend:
   name: git-gateway
   branch: main
 
@@ -190,3 +190,8 @@ collections:
           - { label: "Department", name: "department", widget: "string", required: false }
           - { label: "Institution", name: "institution", widget: "string", required: false }
           - { label: "Location", name: "location", widget: "string", required: false }
+"""
+with open('admin/config.yml', 'w') as f:
+    f.write(config)
+
+print("Config rewritten")
