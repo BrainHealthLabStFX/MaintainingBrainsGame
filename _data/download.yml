@@ -4,16 +4,16 @@ body: "Everything you need to facilitate and play the Maintaining Brains Game in
 button_label: "Download Game Package"
 button_url: '#'
 printing_tips:
-  - tip: Print on white, blue, or yellow paper matching the filename color code.
-  - tip: Files include full crop marks and bleeds for professional laser cutters.
-  - tip: Recommended paper weight: 65 - 90 lb cardstock.
-  - tip: Laminating increases durability, though cards become thicker to handle.
+  - tip: "Print on white, blue, or yellow paper matching the filename color code."
+  - tip: "Files include full crop marks and bleeds for professional laser cutters."
+  - tip: "Recommended paper weight: 65 - 90 lb cardstock."
+  - tip: "Laminating increases durability, though cards become thicker to handle."
 materials_needed:
-  - icon: science
+  - icon: "science"
     name: "Plastic Straws"
-  - icon: hub
+  - icon: "hub"
     name: "Pipe Cleaners"
-  - icon: circle
+  - icon: "circle"
     name: "Glass Marbles"
-  - icon: masks
+  - icon: "masks"
     name: "Face Masks"
