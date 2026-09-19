@@ -11,7 +11,7 @@ collections:
     files:
       - file: "_data/menu.yml"
         label: "Menu Links"
-        name: "menu"
+        name: "menu_data"
         fields:
           - { label: "Menu Links", name: "menu_links", widget: "list", required: false, fields: [
               { label: "Label", name: "label", widget: "string", required: false },
@@ -23,7 +23,7 @@ collections:
     files:
       - file: "_data/hero.yml"
         label: "Hero Content"
-        name: "hero"
+        name: "hero_data"
         fields:
           - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "about" }
           - { label: "Main Headline", name: "headline", widget: "string", required: false }
@@ -51,7 +51,7 @@ collections:
     files:
       - file: "_data/creators.yml"
         label: "Creators Content"
-        name: "creators"
+        name: "creators_data"
         fields:
           - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "creators" }
           - { label: "Title", name: "title", widget: "string", required: false }
@@ -78,7 +78,7 @@ collections:
     files:
       - file: "_data/teachers.yml"
         label: "Teachers Content"
-        name: "teachers"
+        name: "teachers_data"
         fields:
           - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "teachers" }
           - { label: "Title", name: "title", widget: "string", required: false }
@@ -100,7 +100,7 @@ collections:
     files:
       - file: "_data/download.yml"
         label: "Download Content"
-        name: "download"
+        name: "download_data"
         fields:
           - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "download" }
           - { label: "Title", name: "title", widget: "string", required: false }
@@ -120,7 +120,7 @@ collections:
     files:
       - file: "_data/research.yml"
         label: "Research Publications"
-        name: "research"
+        name: "research_data"
         fields:
           - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "research" }
           - { label: "Title", name: "title", widget: "string", required: false }
@@ -137,7 +137,7 @@ collections:
     files:
       - file: "_data/tools.yml"
         label: "Tool Content"
-        name: "tools"
+        name: "tools_data"
         fields:
           - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "tools" }
           - { label: "Title", name: "title", widget: "string", required: false }
@@ -150,7 +150,7 @@ collections:
     files:
       - file: "_data/collaborators.yml"
         label: "Collaborators Content"
-        name: "collaborators"
+        name: "collaborators_data"
         fields:
           - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "partners" }
           - { label: "Title", name: "title", widget: "string", required: false }
@@ -169,10 +169,10 @@ collections:
     files:
       - file: "_data/partners.yml"
         label: "Supporter Logos"
-        name: "partners"
+        name: "partners_data"
         fields:
           - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "supporters" }
-          - { label: "Supporters", name: "partners", widget: "list", required: false, fields: [
+          - { label: "Supporters", name: "partners_data", widget: "list", required: false, fields: [
               { label: "Name", name: "name", widget: "string", required: false },
               { label: "Logo Image", name: "logo", widget: "image", required: false },
               { label: "Website Link", name: "link", widget: "string", required: false }
@@ -183,7 +183,7 @@ collections:
     files:
       - file: "_data/settings.yml"
         label: "Contact & Location"
-        name: "contact"
+        name: "contact_data"
         fields:
           - { label: "Project Title", name: "title", widget: "string", required: false }
           - { label: "Contact Email", name: "email", widget: "string", required: false }

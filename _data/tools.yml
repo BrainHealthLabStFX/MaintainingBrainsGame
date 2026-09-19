@@ -1,5 +1,5 @@
-section_id: tools
-title: Tool To Create Custom Game Cards
-body: Want to make your own custom version of the Maintaining Brains Game or populate card templates directly from a spreadsheet? Use our open-source generator tool!
-button_label: Open Card Generator Tool
-button_url: https://www.maintainingbrains.ca/tools.html
+section_id: "tools"
+title: "Tool To Create Custom Game Cards"
+body: "Want to make your own custom version of the Maintaining Brains Game or populate card templates directly from a spreadsheet? Use our open-source generator tool!"
+button_label: "Open Card Generator Tool"
+button_url: "https://www.maintainingbrains.ca/tools.html"
