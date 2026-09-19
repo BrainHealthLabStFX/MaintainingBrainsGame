@@ -647,10 +647,14 @@
             try {
                 const fetchYaml = async (url) => {
                     const cacheBuster = `?t=${Date.now()}`;
-                    const res = await fetch(url + cacheBuster);
-                    if (res.ok) {
-                        const text = await res.text();
-                        return jsyaml.load(text);
+                    try {
+                        const res = await fetch(url + cacheBuster);
+                        if (res.ok) {
+                            const text = await res.text();
+                            return jsyaml.load(text);
+                        }
+                    } catch (err) {
+                        console.error(`Failed to load or parse ${url}:`, err);
                     }
                     return null;
                 };
