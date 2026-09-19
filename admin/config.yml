@@ -5,6 +5,9 @@ backend:
 media_folder: "assets/images/uploads"
 public_folder: "assets/images/uploads"
 
+media_library:
+  name: default
+
 collections:
   # 1. Global Navigation & Site Settings
   - name: "settings"
