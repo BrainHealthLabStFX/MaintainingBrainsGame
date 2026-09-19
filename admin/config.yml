@@ -7,6 +7,17 @@ media_folder: "assets/images/uploads"
 public_folder: "assets/images/uploads"
 
 collections:
+  - name: "site_configuration"
+    label: "Site Configuration"
+    files:
+      - file: "_data/configuration.yml"
+        label: "Global Settings"
+        name: "configuration_data"
+        fields:
+          - { label: "Enable Password Protection", name: "password_protected", widget: "boolean", default: false, required: false }
+          - { label: "Site Password", name: "site_password", widget: "string", required: false, comment: "Password required to view the site if protection is enabled" }
+          - { label: "Favicon Image", name: "favicon", widget: "image", required: false, comment: "Upload an image (PNG/JPG/ICO) to use as the browser tab icon" }
+
   - name: "navigation"
     label: "Header Navigation"
     files:
@@ -230,8 +241,6 @@ collections:
         name: "contact_data"
         fields:
           - { label: "Project Title", name: "title", widget: "string", required: false }
-          - { label: "Enable Password Protection", name: "password_protected", widget: "boolean", default: false, required: false }
-          - { label: "Site Password", name: "site_password", widget: "string", required: false, comment: "Password required to view the site if protection is enabled" }
           - { label: "Contact Email", name: "email", widget: "string", required: false, comment: "Global contact email used across header and buttons" }
           - { label: "Department", name: "department", widget: "string", required: false }
           - { label: "Institution", name: "institution", widget: "string", required: false }

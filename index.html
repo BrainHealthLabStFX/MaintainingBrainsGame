@@ -680,7 +680,18 @@
                 return null;
             };
 
+            const config = await fetchYaml('/_data/configuration.yml');
             const settings = await fetchYaml('/_data/settings.yml');
+
+            if (config && config.favicon) {
+                let link = document.querySelector("link[rel~='icon']");
+                if (!link) {
+                    link = document.createElement('link');
+                    link.rel = 'icon';
+                    document.head.appendChild(link);
+                }
+                link.href = config.favicon;
+            }
             
             const startHydration = async () => {
                 try {
@@ -1057,7 +1068,7 @@
             }
         };
 
-        if (settings && settings.password_protected && settings.site_password) {
+        if (config && config.password_protected && config.site_password) {
             const passOverlay = document.getElementById('password-overlay');
             const loadOverlay = document.getElementById('loading-overlay');
             const errorMsg = document.getElementById('password-error');
@@ -1070,7 +1081,7 @@
 
             window.checkPassword = () => {
                 const input = document.getElementById('site-password-input');
-                if (input && input.value === settings.site_password) {
+                if (input && input.value === config.site_password) {
                     if (loadOverlay) loadOverlay.classList.remove('hidden');
                     startHydration();
                 } else {
