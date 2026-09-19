@@ -1,4 +1,7 @@
-backend:
+import re
+
+# 1. Update config.yml
+config_yml = """backend:
   name: git-gateway
   branch: main
 
@@ -190,3 +193,9 @@ collections:
           - { label: "Department", name: "department", widget: "string" }
           - { label: "Institution", name: "institution", widget: "string" }
           - { label: "Location", name: "location", widget: "string" }
+"""
+
+with open('admin/config.yml', 'w') as f:
+    f.write(config_yml)
+
+print("config.yml written")

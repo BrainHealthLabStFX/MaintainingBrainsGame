@@ -22,6 +22,15 @@ creators:
   p2: "Since then, we co-created Maintaining Brains with high school teachers and the national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments."
   image: "assets/images/real/Workshop-1-2.jpeg"
   focal_point: "object-center"
+  badges:
+    - title: "CIHR"
+      subtitle: "Workshop Grant"
+    - title: "Actua"
+      subtitle: "STEM Outreach"
+    - title: "Trauma"
+      subtitle: "Informed Design"
+  image_title: "Co-Creators at Toronto Workshop"
+  image_caption: "Collaborative development with educators, clinicians, and individuals with lived experience."
 
 # Section 3: For Teachers
 teachers:
@@ -37,6 +46,9 @@ teachers:
     - question: "How can communities support healthy aging and brain resilience?"
   feedback_title: "Are you a teacher using the game?"
   feedback_body: "If you use Maintaining Brains in your classroom outside Nova Scotia, we'd love to hear how it went!"
+  feedback_button_text: "Contact Us with Feedback"
+  image: "assets/images/real/X-Chem-1-2xl.jpeg"
+  image_caption: "X-Chem STEM Outreach Session at Dr. John Hugh Gillis High School"
 
 # Section 4: Download Package
 download:
@@ -80,3 +92,21 @@ tools:
   body: "Want to make your own custom version of the Maintaining Brains Game or populate card templates directly from a spreadsheet? Use our open-source generator tool!"
   button_label: "Open Card Generator Tool"
   button_url: "https://www.maintainingbrains.ca/tools.html"
+
+# Section 7: Collaborators
+collaborators:
+  title: "Our Partners"
+  body: "We love working with partners to co-create and evaluate customized versions of the Maintaining Brains Game for their audiences!"
+  items:
+    - icon: "groups"
+      name: "Actua"
+      description: "Canada's leading STEM outreach organization, collaborating to bring youth-focused brain health literacy to nationwide camps."
+    - icon: "biotech"
+      name: "X-Chem STEM Outreach"
+      description: "Based at StFX, bringing hands-on neuroscience workshops and game trials directly into local elementary and high schools."
+    - icon: "school"
+      name: "Dr. John Hugh Gillis Regional High School"
+      description: "Located in Antigonish, NS, collaborating on IB Psychology classroom testing and student discussion frameworks."
+  feedback_title: "Have you made a custom version of the game?"
+  feedback_body: "We'd love to hear how your students or community group used the game!"
+  feedback_button_text: "Let Us Know"
