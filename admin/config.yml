@@ -233,6 +233,22 @@ collections:
               - { label: "Logo Image File", name: "logo", widget: "image", required: false }
               - { label: "Website Link", name: "link", widget: "string", required: false }
 
+  - name: "attribution_section"
+    label: "Footer Attribution"
+    files:
+      - file: "_data/attribution.yml"
+        label: "Attribution Text"
+        name: "attribution_data"
+        fields:
+          - { label: "Attribution Text", name: "text", widget: "text", required: false, comment: "HTML tags like <strong> are allowed." }
+          - label: "FontAwesome Icons"
+            name: "icons"
+            widget: "list"
+            required: false
+            summary: "{{fields.icon}}"
+            fields:
+              - { label: "Icon Class", name: "icon", widget: "string", required: false, comment: "e.g. fa-creative-commons, fa-creative-commons-by" }
+
   - name: "settings_section"
     label: "Site Contact Info"
     files:

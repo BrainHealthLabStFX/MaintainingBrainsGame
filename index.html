@@ -595,7 +595,7 @@
             </div>
 
             <!-- Right Side: Creative Commons Attribution-NonCommercial-ShareAlike License Badge -->
-            <div class="md:col-span-5 text-left md:text-right space-y-3 pt-6 md:pt-0">
+            <div id="footer-attribution" class="md:col-span-5 text-left md:text-right space-y-3 pt-6 md:pt-0">
                 <div class="flex items-center justify-start md:justify-end gap-3 text-white text-2xl">
                     <i class="fa-brands fa-creative-commons hover:text-pink-200 transition-colors"></i>
                     <i class="fa-brands fa-creative-commons-by hover:text-pink-200 transition-colors"></i>
@@ -1042,6 +1042,27 @@
                                     </a>
                                 </div>
                             `).join('');
+                        }
+                    }
+                }
+
+
+                // 9. Attribution Section
+                const attribution = await fetchYaml('/_data/attribution.yml');
+                if (attribution) {
+                    const attrSection = document.getElementById('footer-attribution');
+                    if (attrSection) {
+                        if (attribution.text) {
+                            const p = attrSection.querySelector('p');
+                            if (p) p.innerHTML = attribution.text;
+                        }
+                        if (attribution.icons && Array.isArray(attribution.icons)) {
+                            const iconContainer = attrSection.querySelector('div.flex.items-center');
+                            if (iconContainer) {
+                                iconContainer.innerHTML = attribution.icons.map(item => 
+                                    item.icon ? `<i class="fa-brands ${item.icon} hover:text-pink-200 transition-colors"></i>` : ''
+                                ).join('');
+                            }
                         }
                     }
                 }
