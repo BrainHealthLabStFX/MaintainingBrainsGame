@@ -105,7 +105,7 @@ collections:
           - { label: "Photo Card Caption", name: "image_caption", widget: "text", required: false }
 
   - name: "educators_section"
-    label: "Section 3: Educators"
+    label: "Educators"
     files:
       - file: "_data/educators.yml"
         label: "Educators Content"
