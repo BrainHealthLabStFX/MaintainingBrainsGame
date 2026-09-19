@@ -1,6 +1,3 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -144,11 +141,11 @@ layout: null
                 <div class="lg:col-span-7 text-left">
 
                     <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
-                        {{ site.data.hero.headline | default: "Learning how to <span class='text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-amber-200 to-white'>maintain your brain</span> through play!" }}
+                        Learning how to <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-amber-200 to-white">maintain your brain</span> through play!
                     </h1>
                     
                     <p class="text-lg md:text-xl text-pink-100 max-w-2xl mb-8 font-medium leading-relaxed">
-                        {{ site.data.hero.body | default: "Lifestyle changes could delay or prevent 45% of cognitive impairment, but the general public is typically not aware of this potential. We co-created the Maintaining Brains Game to share research on strategies to maintain and improve brain health!" }}
+                        Lifestyle changes could delay or prevent <strong class="text-white underline decoration-brand-pink decoration-4">45% of cognitive impairment</strong>, but the general public is typically not aware of this potential. We co-created the <strong>Maintaining Brains Game</strong> to share research on strategies to maintain and improve brain health!
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-start gap-4">
@@ -165,7 +162,7 @@ layout: null
 
                 <div class="lg:col-span-5 relative">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 group">
-                        <img src="{{ site.data.hero.image | default: 'assets/images/real/IMG_9999.jpeg' }}" alt="Children engaged with hands-on tabletop brain model, straws, and cards" class="w-full h-auto object-cover {{ site.data.hero.focal_point | default: 'object-center' }} group-hover:scale-105 transition-transform duration-700">
+                        <img id="hero-image" src="assets/images/real/IMG_9999.jpeg" alt="Children engaged with hands-on tabletop brain model, straws, and cards" class="w-full h-auto object-cover object-center group-hover:scale-105 transition-transform duration-700">
                     </div>
                 </div>
             </div>
@@ -175,41 +172,30 @@ layout: null
     <!-- Playful Interactive Highlights Strip -->
     <section class="bg-gradient-to-r from-pink-100 via-pink-50 to-pink-100 border-y border-pink-200/70 py-6 text-left">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-pink-950 text-xs md:text-sm font-extrabold">
-            {% if site.data.hero.highlights %}
-              {% for item in site.data.hero.highlights %}
-              <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
-                      <span class="material-symbols-outlined text-xl">{{ item.icon }}</span>
-                  </span>
-                  <span>{{ item.text }}</span>
-              </div>
-              {% endfor %}
-            {% else %}
-              <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
-                      <span class="material-symbols-outlined text-xl">extension</span>
-                  </span>
-                  <span>Hands-on Straw & Pipe Cleaner Brain Models</span>
-              </div>
-              <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
-                      <span class="material-symbols-outlined text-xl">psychology</span>
-                  </span>
-                  <span>Cognitive Resilience & Strategy Cards</span>
-              </div>
-              <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
-                      <span class="material-symbols-outlined text-xl">diversity_3</span>
-                  </span>
-                  <span>Co-Created with Lived Experience & Educators</span>
-              </div>
-              <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
-                      <span class="material-symbols-outlined text-xl">verified_user</span>
-                  </span>
-                  <span>Trauma-Informed & Strengths-Based Care</span>
-              </div>
-            {% endif %}
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-xl">extension</span>
+                </span>
+                <span>Hands-on Straw & Pipe Cleaner Brain Models</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-xl">psychology</span>
+                </span>
+                <span>Cognitive Resilience & Strategy Cards</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-xl">diversity_3</span>
+                </span>
+                <span>Co-Created with Lived Experience & Educators</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-xl">verified_user</span>
+                </span>
+                <span>Trauma-Informed & Strengths-Based Care</span>
+            </div>
         </div>
     </section>
 
@@ -218,13 +204,13 @@ layout: null
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-6 text-left">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">{{ site.data.creators.title | default: "How The Game Was Created" }}</h2>
+                    <h2 id="creators-title" class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">How The Game Was Created</h2>
                     
-                    <p class="text-slate-700 mb-4 leading-relaxed font-medium">
-                        {{ site.data.creators.p1 | default: "We co-created our initial draft, the Maintain Your Brain Game, at a workshop funded by the Canadian Institutes of Health Research (CIHR). The workshop brought together people with lived experience of cognitive impairment, Indigenous educators, South Asian educators, healthcare providers, and academic researchers." }}
+                    <p id="creators-p1" class="text-slate-700 mb-4 leading-relaxed font-medium">
+                        We co-created our initial draft, the Maintain Your Brain Game, at a workshop funded by the Canadian Institutes of Health Research (CIHR). The workshop brought together people with lived experience of cognitive impairment, Indigenous educators, South Asian educators, healthcare providers, and academic researchers.
                     </p>
-                    <p class="text-slate-700 mb-6 leading-relaxed font-medium">
-                        {{ site.data.creators.p2 | default: "Since then, we co-created Maintaining Brains with high school teachers and the national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments." }}
+                    <p id="creators-p2" class="text-slate-700 mb-6 leading-relaxed font-medium">
+                        Since then, we co-created Maintaining Brains with high school teachers and the national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments.
                     </p>
 
                     <div class="grid grid-cols-3 gap-4 text-center">
@@ -245,7 +231,7 @@ layout: null
 
                 <div class="lg:col-span-6">
                     <div class="photo-card rounded-3xl overflow-hidden bg-white border border-pink-200/80 shadow-md">
-                        <img src="{{ site.data.creators.image | default: 'assets/images/real/Workshop-1-2.jpeg' }}" alt="Adult Co-Creation Workshop participants collaborating on brain models" class="w-full h-80 object-cover {{ site.data.creators.focal_point | default: 'object-center' }}">
+                        <img id="creators-image" src="assets/images/real/Workshop-1-2.jpeg" alt="Adult Co-Creation Workshop participants collaborating on brain models" class="w-full h-80 object-cover object-center">
                         <div class="p-6">
                             <h4 class="font-bold text-slate-900 text-lg mb-1">Co-Creators at Toronto Workshop</h4>
                             <p class="text-xs text-slate-600 font-medium">Collaborative development with educators, clinicians, and individuals with lived experience.</p>
@@ -255,6 +241,7 @@ layout: null
             </div>
         </div>
     </section>
+
 
 
     <!-- Section 2: For Teachers & Nova Scotia Curriculum -->
@@ -653,6 +640,66 @@ layout: null
     </script>
 
 
+    <!-- js-yaml library for parsing Decap CMS data files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch hero section edits
+                const heroRes = await fetch('/_data/hero.yml');
+                if (heroRes.ok) {
+                    const heroText = await heroRes.text();
+                    const hero = jsyaml.load(heroText);
+                    
+                    if (hero.headline) {
+                        const h1 = document.querySelector('#about h1');
+                        if (h1) h1.innerHTML = hero.headline;
+                    }
+                    if (hero.body) {
+                        const p = document.querySelector('#about p');
+                        if (p) p.innerHTML = hero.body;
+                    }
+                    if (hero.image) {
+                        const img = document.querySelector('#hero-image');
+                        if (img) {
+                            img.src = hero.image;
+                            if (hero.focal_point) img.className = `w-full h-auto object-cover ${hero.focal_point} group-hover:scale-105 transition-transform duration-700`;
+                        }
+                    }
+                }
+
+                // Fetch creators section edits
+                const creatorsRes = await fetch('/_data/creators.yml');
+                if (creatorsRes.ok) {
+                    const creatorsText = await creatorsRes.text();
+                    const creators = jsyaml.load(creatorsText);
+                    
+                    if (creators.title) {
+                        const titleEl = document.querySelector('#creators-title');
+                        if (titleEl) titleEl.textContent = creators.title;
+                    }
+                    if (creators.p1) {
+                        const p1El = document.querySelector('#creators-p1');
+                        if (p1El) p1El.innerHTML = creators.p1;
+                    }
+                    if (creators.p2) {
+                        const p2El = document.querySelector('#creators-p2');
+                        if (p2El) p2El.innerHTML = creators.p2;
+                    }
+                    if (creators.image) {
+                        const img = document.querySelector('#creators-image');
+                        if (img) {
+                            img.src = creators.image;
+                            if (creators.focal_point) img.className = `w-full h-80 object-cover ${creators.focal_point}`;
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log('CMS data hydration active', e);
+            }
+        });
+    </script>
+
     <!-- Netlify Identity Widget for CMS Authentication Redirects -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
@@ -668,5 +715,6 @@ layout: null
     </script>
 </body>
 </html>
+
 
 
