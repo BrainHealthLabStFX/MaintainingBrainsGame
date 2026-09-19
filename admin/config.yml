@@ -257,6 +257,7 @@ collections:
         name: "contact_data"
         fields:
           - { label: "Project Title", name: "title", widget: "string", required: false }
+          - { label: "Tagline", name: "tagline", widget: "string", required: false }
           - { label: "Contact Email", name: "email", widget: "string", required: false, comment: "Global contact email used across header and buttons" }
           - { label: "Department", name: "department", widget: "string", required: false }
           - { label: "Institution", name: "institution", widget: "string", required: false }

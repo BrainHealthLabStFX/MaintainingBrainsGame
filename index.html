@@ -573,7 +573,7 @@
                         </div>
                         <div>
                             <span class="font-extrabold text-xl text-white group-hover:text-pink-200 transition-colors block leading-tight">Maintaining Brains</span>
-                            <span class="text-xs text-pink-200 font-semibold">Learning how to maintain your brain through play!</span>
+                            <span id="footer-tagline" class="text-xs text-pink-200 font-semibold">Learning how to maintain your brain through play!</span>
                         </div>
                     </a>
                 </div>
@@ -1068,11 +1068,17 @@
                 }
 
                 // 10. Global settings email logic
-                if (settings && settings.email) {
-                    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-                        link.href = `mailto:${settings.email}`;
-                        if (link.textContent.includes('@')) link.textContent = settings.email;
-                    });
+                if (settings) {
+                    if (settings.email) {
+                        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                            link.href = `mailto:${settings.email}`;
+                            if (link.textContent.includes('@')) link.textContent = settings.email;
+                        });
+                    }
+                    if (settings.tagline) {
+                        const taglineEl = document.getElementById('footer-tagline');
+                        if (taglineEl) taglineEl.textContent = settings.tagline;
+                    }
                 }
 
                 // Hide loading overlay when done
