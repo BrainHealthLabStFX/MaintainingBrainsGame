@@ -5,14 +5,14 @@ image: /assets/images/real/IMG_9999.jpeg
 focal_point: object-center
 highlights:
   - icon: extension
-    text: Fun, hands-on learning
+    text: Hands-on Learning
   - icon: psychology
-    text: Cognitive Resilience & Strategy Cards
-  - icon: diversity_3
-    text: Co-Created with Lived Experience & Educators
-  - icon: verified_user
     text: Evidence-Based
+  - icon: diversity_3
+    text: Co-Created with Community
+  - icon: verified_user
+    text: Adaptable
 button1_text: Download Game Materials
 button1_url: '#download'
-button2_text: Educators & Curriculum
+button2_text: For Educators
 button2_url: '#educators'
