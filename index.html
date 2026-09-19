@@ -693,8 +693,7 @@
                             `).join('');
                         }
                     }
-                    
-                    const heroBtns = document.querySelectorAll('.flex.flex-col a, .flex.flex-row a');
+                    const heroBtns = section.querySelectorAll('.flex.flex-col a');
                     if (heroBtns.length >= 2) {
                         if (hero.button1_text) heroBtns[0].childNodes[2].nodeValue = " " + hero.button1_text;
                         if (hero.button1_url) heroBtns[0].href = hero.button1_url;
