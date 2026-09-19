@@ -720,7 +720,7 @@
                         if (h1) h1.innerHTML = hero.headline;
                     }
                     if (hero.body) {
-                        const p = document.querySelector('.max-w-2xl p');
+                        const p = section ? section.querySelector('p.max-w-2xl') : document.querySelector('p.max-w-2xl');
                         if (p) p.innerHTML = hero.body;
                     }
                     if (hero.image) {
