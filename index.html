@@ -288,20 +288,20 @@
                     <h4 class="font-extrabold text-brand-fuschiaText text-sm uppercase tracking-wider mb-4">Student Discussion Questions (Created by IB Psychology Students)</h4>
                     
                     <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
-                            <span class="material-symbols-outlined text-brand-pink text-xl shrink-0 mt-0.5">help_outline</span>
+                        <li class="flex items-center gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
+                            <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">help_outline</span>
                             <span>Why is it important to think about brain health throughout life?</span>
                         </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-2xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
-                            <span class="material-symbols-outlined text-brand-pink text-xl shrink-0 mt-0.5">help_outline</span>
+                        <li class="flex items-center gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-2xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
+                            <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">help_outline</span>
                             <span>How do everyday lifestyle choices influence cognitive wellness and reserve?</span>
                         </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
-                            <span class="material-symbols-outlined text-brand-pink text-xl shrink-0 mt-0.5">help_outline</span>
+                        <li class="flex items-center gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
+                            <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">help_outline</span>
                             <span>What is one thing you learned that you can apply in your own daily life?</span>
                         </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
-                            <span class="material-symbols-outlined text-brand-pink text-xl shrink-0 mt-0.5">help_outline</span>
+                        <li class="flex items-center gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
+                            <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">help_outline</span>
                             <span>How can communities support healthy aging and brain resilience?</span>
                         </li>
                     </ul>
@@ -358,19 +358,19 @@
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Tips for Printing Cards</h3>
                     
                     <ul class="space-y-3.5 text-sm text-slate-800 font-semibold">
-                        <li class="flex items-start gap-2.5">
+                        <li class="flex items-center gap-2.5">
                             <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">check_circle</span>
                             <span>Print on white, blue, or yellow paper matching the filename color code.</span>
                         </li>
-                        <li class="flex items-start gap-2.5">
+                        <li class="flex items-center gap-2.5">
                             <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">check_circle</span>
                             <span>Files include full crop marks and bleeds for professional laser cutters.</span>
                         </li>
-                        <li class="flex items-start gap-2.5">
+                        <li class="flex items-center gap-2.5">
                             <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">check_circle</span>
                             <span>Recommended paper weight: <strong>65 - 90 lb cardstock</strong>.</span>
                         </li>
-                        <li class="flex items-start gap-2.5">
+                        <li class="flex items-center gap-2.5">
                             <span class="material-symbols-outlined text-amber-600 text-xl shrink-0">info</span>
                             <span>Laminating increases durability, though cards become thicker to handle.</span>
                         </li>
@@ -852,8 +852,8 @@
                             const listEl = section.querySelector('ul');
                             if (listEl) {
                                 listEl.innerHTML = educators.questions.map(q => 
-                                    `<li class="flex items-start gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
-                                        <span class="material-symbols-outlined text-brand-pink text-xl shrink-0 mt-0.5">help_outline</span>
+                                    `<li class="flex items-center gap-3 text-sm text-slate-800 bg-pink-50/80 p-4 rounded-3xl border border-pink-200/70 font-semibold hover:border-pink-300 transition-colors">
+                                        <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">help_outline</span>
                                         <span>${q.question || q}</span>
                                     </li>`
                                 ).join('');
@@ -910,7 +910,7 @@
                             const listEl = section.querySelector('ul');
                             if (listEl) {
                                 listEl.innerHTML = d.printing_tips.map(tip => `
-                                    <li class="flex items-start gap-2.5">
+                                    <li class="flex items-center gap-2.5">
                                         <span class="material-symbols-outlined text-brand-pink text-xl shrink-0">check_circle</span>
                                         <span>${tip.tip || tip}</span>
                                     </li>
