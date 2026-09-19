@@ -3,7 +3,12 @@ backend:
   branch: main
 
 media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
+public_folder: "assets/images/uploads"
+
+media_library:
+  name: default
+  config:
+    max_file_size: 10485760
 
 collections:
   # 1. Global Navigation & Site Settings
