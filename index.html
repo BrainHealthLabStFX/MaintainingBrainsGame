@@ -646,7 +646,8 @@
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const fetchYaml = async (url) => {
-                    const res = await fetch(url);
+                    const cacheBuster = `?t=${Date.now()}`;
+                    const res = await fetch(url + cacheBuster);
                     if (res.ok) {
                         const text = await res.text();
                         return jsyaml.load(text);
