@@ -1,8 +1,8 @@
 menu_links:
   - label: Home
+    url: '#home'
+  - label: About
     url: '#about'
-  - label: Creators
-    url: '#creators'
   - label: Educators
     url: '#educators'
   - label: Download

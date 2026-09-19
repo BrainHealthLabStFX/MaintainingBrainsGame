@@ -41,7 +41,7 @@ collections:
         label: "Hero Content"
         name: "hero_data"
         fields:
-          - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "about", comment: "HTML element ID used for URL jumping (#about)" }
+          - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "home", comment: "HTML element ID used for URL jumping (#home)" }
           - { label: "Main Headline", name: "headline", widget: "string", required: false }
           - { label: "Body Paragraph", name: "body", widget: "text", required: false }
           - { label: "Hero Image", name: "image", widget: "image", required: false }
@@ -71,13 +71,13 @@ collections:
           - { label: "Educators Button URL", name: "button2_url", widget: "string", required: false }
 
   - name: "creators_section"
-    label: "Section 2: Creators & Origin"
+    label: "About"
     files:
       - file: "_data/creators.yml"
         label: "Creators Content"
         name: "creators_data"
         fields:
-          - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "creators", comment: "URL anchor (#creators)" }
+          - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "about", comment: "URL anchor (#about)" }
           - { label: "Section Title", name: "title", widget: "string", required: false }
           - { label: "Paragraph 1", name: "p1", widget: "text", required: false }
           - { label: "Paragraph 2", name: "p2", widget: "text", required: false }
@@ -193,7 +193,7 @@ collections:
           - { label: "Tool Target URL", name: "button_url", widget: "string", required: false }
 
   - name: "collaborators_section"
-    label: "Section 7: Collaborators"
+    label: "Partners"
     files:
       - file: "_data/collaborators.yml"
         label: "Collaborators Content"
@@ -216,7 +216,7 @@ collections:
           - { label: "Feedback Button Text", name: "feedback_button_text", widget: "string", required: false }
 
   - name: "supporters_section"
-    label: "Section 8: Supporter Logos"
+    label: "Supporters"
     files:
       - file: "_data/partners.yml"
         label: "Supporter Logos"
@@ -234,7 +234,7 @@ collections:
               - { label: "Website Link", name: "link", widget: "string", required: false }
 
   - name: "attribution_section"
-    label: "Footer Attribution"
+    label: "Footer - Attribution"
     files:
       - file: "_data/attribution.yml"
         label: "Attribution Text"
@@ -250,7 +250,7 @@ collections:
               - { label: "Icon Class", name: "icon", widget: "string", required: false, comment: "e.g. fa-creative-commons, fa-creative-commons-by" }
 
   - name: "settings_section"
-    label: "Site Contact Info"
+    label: "Footer - Contact"
     files:
       - file: "_data/settings.yml"
         label: "Contact & Location"
