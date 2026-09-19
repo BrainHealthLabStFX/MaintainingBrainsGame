@@ -76,7 +76,7 @@ collections:
           - { label: "Curriculum Title", name: "teachers.curriculum_title", widget: "string" }
           - { label: "Curriculum Body", name: "teachers.curriculum_body", widget: "text" }
           - { label: "Discussion Questions Title", name: "teachers.discussion_questions_title", widget: "string" }
-          - { label: "Discussion Questions List", name: "teachers.questions", widget: "list", field: { label: "Question", widget: "string" } }
+          - { label: "Discussion Questions List", name: "teachers.questions", widget: "list", field: { label: "Question", name: "question", widget: "string" } }
           - { label: "Teacher Feedback Box Title", name: "teachers.feedback_title", widget: "string" }
           - { label: "Teacher Feedback Box Body", name: "teachers.feedback_body", widget: "text" }
 
@@ -92,7 +92,7 @@ collections:
           - { label: "Section Body", name: "download.body", widget: "text" }
           - { label: "Download Button Label", name: "download.button_label", widget: "string" }
           - { label: "Download File URL / Link", name: "download.button_url", widget: "string" }
-          - { label: "Printing Tips List", name: "download.printing_tips", widget: "list", field: { label: "Tip", widget: "string" } }
+          - { label: "Printing Tips List", name: "download.printing_tips", widget: "list", field: { label: "Tip", name: "tip", widget: "string" } }
           - { label: "Materials Needed List", name: "download.materials_needed", widget: "list", fields: [
               { label: "Material Symbol Icon", name: "icon", widget: "string" },
               { label: "Material Item Name", name: "name", widget: "string" }
