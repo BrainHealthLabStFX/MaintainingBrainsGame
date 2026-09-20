@@ -1,15 +1,15 @@
 section_id: educators
 title: For Educators
 body: The Maintaining Brains Game provides educators with an engaging way to introduce students to concepts related to brain health, cognition, and lifelong wellness.
-curriculum_title: Curriculum Outcomes Alignment
-curriculum_body: We reviewed English program Nova Scotia curriculum outcomes and guidelines to identify specific outcomes that the Maintaining Brains Game helps achieve in high school science, health, and psychology classes.
+curriculum_title: Curriculum Outcomes
+curriculum_body: We reviewed English program Nova Scotia curriculum outcomes and guidelines to identify <a href="https://docs.google.com/spreadsheets/d/1CNI-ONzgC_fDCywhmCavuC1XX1EbDp0WqS9f8rFZRu0/edit?usp=sharing" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">specific outcomes that the Maintaining Brains Game helps achieve</a>.
 discussion_questions_title: Student Discussion Questions (Created by IB Psychology Students)
 questions:
   - question: Why is it important to think about brain health throughout life?
   - question: How do everyday lifestyle choices influence cognitive wellness and reserve?
   - question: What is one thing you learned that you can apply in your own daily life?
   - question: How can communities support healthy aging and brain resilience?
-feedback_title: Are you an educator using the game?
-feedback_body: 'If you use Maintaining Brains in your classroom outside Nova Scotia, <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">get in touch!</a>'
+feedback_body: Have you used Maintaining Brains? <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">Let us know!</a>
 image: assets/images/real/X-Chem-1-2xl.jpeg
 image_caption: Participants at X-Chem STEM Outreach
+feedback_title: Are you an educator using the game?
