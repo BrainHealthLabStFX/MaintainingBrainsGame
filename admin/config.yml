@@ -222,6 +222,7 @@ collections:
             summary: "{{fields.tip}}"
             fields:
               - { label: "Tip", name: "tip", widget: "string", required: false }
+          - { label: "Materials Intro Text", name: "materials_intro", widget: "text", required: false }
           - label: "Materials Needed List"
             name: "materials_needed"
             widget: "list"
@@ -348,7 +349,8 @@ collections:
         fields:
           - { label: "Project Title", name: "title", widget: "string", required: false }
           - { label: "Tagline", name: "tagline", widget: "string", required: false }
-          - { label: "Hosted By", name: "hosted_by", widget: "string", required: false, comment: "Organization/lab hosting the project (e.g. Brain Health Lab)" }
+          - { label: "Hosted By Name", name: "hosted_by", widget: "string", required: false, comment: "Organization/lab name hosting the project (e.g. Brain Health Lab)" }
+          - { label: "Hosted By URL", name: "hosted_by_url", widget: "string", required: false, comment: "Website link for the host organization (opens in new tab)" }
           - { label: "Contact Email", name: "email", widget: "string", required: false, comment: "Global contact email used across header and buttons" }
           - { label: "Department", name: "department", widget: "string", required: false }
           - { label: "Institution", name: "institution", widget: "string", required: false }

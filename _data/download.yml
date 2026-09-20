@@ -7,7 +7,12 @@ printing_tips:
   - tip: Print on white, blue, or yellow paper depending on the colour in the filename.
   - tip: Files include crop marks and bleeds for professional print shops with laser cutters.
   - tip: 'Recommended paper weight: 65 - 90 lb cardstock.'
+<<<<<<< HEAD
   - tip: Laminating increases durability, but thicker cards can be harder to handle.
+=======
+  - tip: Laminating increases durability, though cards become thicker to handle.
+materials_intro: "In addition to printed card decks and instruction sheets, game tables use simple low-cost physical items available at dollar stores:"
+>>>>>>> cd5d417 (Update contact footer with Project Hosted By header and clickable Hosted By URL field in Sveltia CMS)
 materials_needed:
   - icon: ''
     name: Straws
