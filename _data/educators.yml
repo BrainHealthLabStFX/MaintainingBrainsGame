@@ -14,5 +14,5 @@ feedback_body: <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:te
 image: assets/images/real/X-Chem-1-2xl.jpeg
 focal_point: object-center
 object_fit: object-cover
-max_height: h-80
+max_height: h-64
 image_caption: Participants at X-Chem STEM Outreach
