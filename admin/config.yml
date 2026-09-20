@@ -124,6 +124,7 @@ collections:
             summary: "{{fields.question}}"
             fields:
               - { label: "Question", name: "question", widget: "string", required: false }
+          - { label: "Feedback Card Title", name: "feedback_title", widget: "string", required: false }
           - { label: "Feedback Card Body", name: "feedback_body", widget: "text", required: false }
           - { label: "Educator Image", name: "image", widget: "image", required: false }
           - { label: "Educator Image Caption", name: "image_caption", widget: "string", required: false }
