@@ -57,6 +57,29 @@ collections:
               - { label: "Bottom", value: "object-bottom" }
               - { label: "Left", value: "object-left" }
               - { label: "Right", value: "object-right" }
+          - label: "Crop & Fitting Mode"
+            name: "object_fit"
+            widget: "select"
+            required: false
+            default: "object-cover"
+            comment: "Choose how the photo fits inside its container"
+            options:
+              - { label: "Cover (Fill & Crop — Default)", value: "object-cover" }
+              - { label: "Contain (Fit Entire Image)", value: "object-contain" }
+              - { label: "Scale Down (Shrink Without Distorting)", value: "object-scale-down" }
+          - label: "Frame Height / Dimensions"
+            name: "max_height"
+            widget: "select"
+            required: false
+            default: "h-auto"
+            comment: "Set container height on desktop screens"
+            options:
+              - { label: "Auto / Natural", value: "h-auto" }
+              - { label: "Small (224px / h-56)", value: "h-56" }
+              - { label: "Medium (256px / h-64)", value: "h-64" }
+              - { label: "Large (320px / h-80)", value: "h-80" }
+              - { label: "Extra Large (384px / h-96)", value: "h-96" }
+              - { label: "Hero Scale (450px / h-[450px])", value: "h-[450px]" }
           - label: "Highlights List"
             name: "highlights"
             widget: "list"
@@ -101,6 +124,26 @@ collections:
               - { label: "Bottom", value: "object-bottom" }
               - { label: "Left", value: "object-left" }
               - { label: "Right", value: "object-right" }
+          - label: "Crop & Fitting Mode"
+            name: "object_fit"
+            widget: "select"
+            required: false
+            default: "object-cover"
+            options:
+              - { label: "Cover (Fill & Crop — Default)", value: "object-cover" }
+              - { label: "Contain (Fit Entire Image)", value: "object-contain" }
+              - { label: "Scale Down (Shrink Without Distorting)", value: "object-scale-down" }
+          - label: "Frame Height / Dimensions"
+            name: "max_height"
+            widget: "select"
+            required: false
+            default: "h-80"
+            options:
+              - { label: "Auto / Natural", value: "h-auto" }
+              - { label: "Small (224px / h-56)", value: "h-56" }
+              - { label: "Medium (256px / h-64)", value: "h-64" }
+              - { label: "Large (320px / h-80)", value: "h-80" }
+              - { label: "Extra Large (384px / h-96)", value: "h-96" }
           - { label: "Photo Card Title", name: "image_title", widget: "string", required: false }
           - { label: "Photo Card Caption", name: "image_caption", widget: "text", required: false }
 
@@ -127,6 +170,37 @@ collections:
           - { label: "Feedback Card Title", name: "feedback_title", widget: "string", required: false }
           - { label: "Feedback Card Body", name: "feedback_body", widget: "text", required: false }
           - { label: "Educator Image", name: "image", widget: "image", required: false }
+          - label: "Photo Focus Point"
+            name: "focal_point"
+            widget: "select"
+            required: false
+            default: "object-center"
+            options:
+              - { label: "Center (Default)", value: "object-center" }
+              - { label: "Top", value: "object-top" }
+              - { label: "Bottom", value: "object-bottom" }
+              - { label: "Left", value: "object-left" }
+              - { label: "Right", value: "object-right" }
+          - label: "Crop & Fitting Mode"
+            name: "object_fit"
+            widget: "select"
+            required: false
+            default: "object-cover"
+            options:
+              - { label: "Cover (Fill & Crop — Default)", value: "object-cover" }
+              - { label: "Contain (Fit Entire Image)", value: "object-contain" }
+              - { label: "Scale Down (Shrink Without Distorting)", value: "object-scale-down" }
+          - label: "Frame Height / Dimensions"
+            name: "max_height"
+            widget: "select"
+            required: false
+            default: "h-56"
+            options:
+              - { label: "Auto / Natural", value: "h-auto" }
+              - { label: "Small (224px / h-56)", value: "h-56" }
+              - { label: "Medium (256px / h-64)", value: "h-64" }
+              - { label: "Large (320px / h-80)", value: "h-80" }
+              - { label: "Extra Large (384px / h-96)", value: "h-96" }
           - { label: "Educator Image Caption", name: "image_caption", widget: "string", required: false }
 
   - name: "download_section"
@@ -228,6 +302,25 @@ collections:
             fields:
               - { label: "Organization Name", name: "name", widget: "string", required: false }
               - { label: "Logo Image File", name: "logo", widget: "image", required: false }
+              - label: "Logo Fitting Mode"
+                name: "object_fit"
+                widget: "select"
+                required: false
+                default: "object-contain"
+                options:
+                  - { label: "Contain (Fit Full Logo — Default)", value: "object-contain" }
+                  - { label: "Cover (Fill & Crop)", value: "object-cover" }
+                  - { label: "Scale Down (Shrink Without Distorting)", value: "object-scale-down" }
+              - label: "Max Logo Height"
+                name: "max_height"
+                widget: "select"
+                required: false
+                default: "h-16"
+                options:
+                  - { label: "Small (48px / h-12)", value: "h-12" }
+                  - { label: "Medium (64px / h-16 — Default)", value: "h-16" }
+                  - { label: "Large (80px / h-20)", value: "h-20" }
+                  - { label: "Extra Large (96px / h-24)", value: "h-24" }
               - { label: "Website Link", name: "link", widget: "string", required: false }
 
   - name: "attribution_section"
