@@ -56,15 +56,22 @@ def sync():
     # 1. Hero
     if os.path.exists('_data/hero.yml'):
         hero = load_yaml('_data/hero.yml')
-        if hero and hero.get('highlights') and isinstance(hero['highlights'], list):
-            items = []
-            for item in hero['highlights']:
-                icon = item.get('icon', '')
-                text = item.get('text', '')
-                icon_html = f'<span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-xl">{icon}</span></span>' if icon else ''
-                items.append(f'<div class="flex items-center gap-3">{icon_html}<span>{text}</span></div>')
-            highlights_html = f'<div id="hero-highlights" class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-pink-950 text-xs font-extrabold">\n            ' + '\n            '.join(items) + '\n        </div>'
-            html = re.sub(r'<div id="hero-highlights"[^>]*>.*?</div>\s*</div>', highlights_html + '\n    ', html, flags=re.DOTALL)
+        if hero:
+            if hero.get('headline'):
+                html = re.sub(
+                    r'(<h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">\s*).*?(</h1>)',
+                    rf'\1{hero["headline"]}\2',
+                    html, flags=re.DOTALL
+                )
+            if hero.get('highlights') and isinstance(hero['highlights'], list):
+                items = []
+                for item in hero['highlights']:
+                    icon = item.get('icon', '')
+                    text = item.get('text', '')
+                    icon_html = f'<span class="w-10 h-10 rounded-2xl bg-pink-200/80 text-brand-darkPink flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-xl">{icon}</span></span>' if icon else ''
+                    items.append(f'<div class="flex items-center gap-3">{icon_html}<span>{text}</span></div>')
+                highlights_html = f'<div id="hero-highlights" class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-pink-950 text-xs font-extrabold">\n            ' + '\n            '.join(items) + '\n        </div>'
+                html = re.sub(r'<div id="hero-highlights"[^>]*>.*?</div>\s*</div>', highlights_html + '\n    ', html, flags=re.DOTALL)
 
     # 2. Creators
     if os.path.exists('_data/creators.yml'):
