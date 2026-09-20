@@ -348,7 +348,7 @@ collections:
         fields:
           - { label: "Project Title", name: "title", widget: "string", required: false }
           - { label: "Tagline", name: "tagline", widget: "string", required: false }
-          - { label: "Maintained By", name: "maintained_by", widget: "string", required: false, comment: "Displayed below 'Project Maintained By' in footer (e.g. Brain Health Lab)" }
+          - { label: "Hosted By", name: "hosted_by", widget: "string", required: false, comment: "Organization/lab hosting the project (e.g. Brain Health Lab)" }
           - { label: "Contact Email", name: "email", widget: "string", required: false, comment: "Global contact email used across header and buttons" }
           - { label: "Department", name: "department", widget: "string", required: false }
           - { label: "Institution", name: "institution", widget: "string", required: false }

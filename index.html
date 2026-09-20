@@ -586,9 +586,9 @@
                 </div>
 
                 <div class="space-y-2 text-xs text-pink-200 font-medium pt-3">
-                    <div>
-                        <div class="font-extrabold text-white text-sm tracking-wide">Project Maintained By</div>
-                        <div id="footer-maintained-by" class="text-pink-100 font-bold text-xs mt-0.5">Brain Health Lab</div>
+                    <div class="flex items-center gap-2.5">
+                        <span class="material-symbols-outlined text-pink-200 text-base">dns</span>
+                        <span>Project Hosted By <span id="footer-hosted-by" class="font-bold text-pink-200">Brain Health Lab</span></span>
                     </div>
                     <div class="flex items-center gap-2.5">
                         <span class="material-symbols-outlined text-pink-200 text-base">mail</span>
@@ -1108,9 +1108,9 @@
                         const taglineEl = document.getElementById('footer-tagline');
                         if (taglineEl) taglineEl.textContent = settings.tagline;
                     }
-                    if (settings.maintained_by) {
-                        const maintainedEl = document.getElementById('footer-maintained-by');
-                        if (maintainedEl) maintainedEl.textContent = settings.maintained_by;
+                    if (settings.hosted_by) {
+                        const hostedEl = document.getElementById('footer-hosted-by');
+                        if (hostedEl) hostedEl.textContent = settings.hosted_by;
                     }
                     if (settings.title) {
                         const titleEl = document.getElementById('footer-title');
