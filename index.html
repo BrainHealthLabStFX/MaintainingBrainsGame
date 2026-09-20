@@ -469,32 +469,37 @@
     <!-- Section 5: Tools & Custom Card Generator -->
     <section id="tools" class="py-20 bg-white border-b border-pink-100 text-left">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-slate-50 border border-pink-200/80 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
-                <div class="flex items-start gap-6">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-pink text-white flex items-center justify-center font-bold text-2xl shadow-md shadow-pink-200 shrink-0">
-                        <span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tool Card -->
+                <div class="bg-slate-50 border border-pink-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between gap-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-pink text-white flex items-center justify-center font-bold shadow-md shadow-pink-200 shrink-0">
+                            <span class="material-symbols-outlined text-2xl">auto_fix_high</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2">Tool To Create Custom Game Cards</h3>
+                            <p class="text-slate-700 text-sm leading-relaxed font-medium">
+                                Want to make your own custom version of the <em>Maintaining Brains Game</em> or populate card templates directly from a spreadsheet? Use our open-source generator tool!
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Tool To Create Custom Game Cards</h3>
-                        <p class="text-slate-700 text-sm max-w-2xl leading-relaxed font-medium">
-                            Want to make your own custom version of the <em>Maintaining Brains Game</em> or populate card templates directly from a spreadsheet? Use our open-source generator tool!
-                        </p>
-                    </div>
+                    
+                    <a href="https://www.maintainingbrains.ca/tools.html" target="_blank" class="self-start bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-6 py-3.5 rounded-full shadow-md shadow-pink-300/50 transition-all hover:scale-105 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">open_in_new</span>
+                        <span>Open Card Generator Tool</span>
+                    </a>
                 </div>
 
-                <a href="https://www.maintainingbrains.ca/tools.html" target="_blank" class="bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-8 py-4 rounded-full shadow-lg shadow-pink-300/50 transition-all shrink-0 hover:scale-105 flex items-center gap-2">
-                    <span class="material-symbols-outlined text-xl">open_in_new</span>
-                    <span>Open Card Generator Tool</span>
-                </a>
-            </div>
-            <div class="bg-white border border-pink-200/80 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
-                <div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-1">Have you made a custom version of the game?</h4>
-                    <p class="text-xs text-slate-600 font-medium">We'd love to hear how your students or community group used the game!</p>
+                <!-- Feedback Card -->
+                <div class="bg-white border border-pink-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between gap-6">
+                    <div>
+                        <h4 class="font-extrabold text-slate-900 text-xl mb-2">Have you made a custom version of the game?</h4>
+                        <p class="text-sm text-slate-600 font-medium leading-relaxed">We'd love to hear how your students or community group used the game!</p>
+                    </div>
+                    <a href="mailto:emazerol@stfx.ca" class="self-start bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-6 py-3.5 rounded-full transition-all inline-flex items-center gap-2 shadow-md shadow-pink-200 hover:scale-105">
+                        <span class="material-symbols-outlined text-lg">mail</span> Let Us Know
+                    </a>
                 </div>
-                <a href="mailto:emazerol@stfx.ca" class="bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-6 py-3.5 rounded-full transition-all shrink-0 inline-flex items-center gap-2 shadow-md shadow-pink-200">
-                    <span class="material-symbols-outlined text-lg">mail</span> Let Us Know
-                </a>
             </div>
         </div>
     </section>
