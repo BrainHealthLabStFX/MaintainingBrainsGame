@@ -1,10 +1,12 @@
 section_id: home
 headline: Learn to <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-amber-200 to-white">maintain your brain</span> through play!
 body: |-
-  Lifestyle changes could <strong><u>delay or prevent 45% of cognitive impairment cases</u></strong> - and everyone should know! <br><br>
-  We co-created the free <strong>Maintaining Brains Game</strong> to share research on strategies to maintain and improve brain health!
+  Lifestyle changes could <strong><u>delay or prevent 45% of cognitive impairment cases</u></strong> - and everyone should know. <br><br>
+  The <strong>Maintaining Brains Game</strong> is a co-created, free, and open resource to share research on strategies to maintain and improve brain health.
 image: assets/images/real/IMG_9999.jpeg
 focal_point: object-center
+object_fit: object-cover
+max_height: h-auto
 highlights:
   - icon: front_hand
     text: Fun, Hands-on Learning
