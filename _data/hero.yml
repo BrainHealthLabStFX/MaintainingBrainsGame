@@ -6,7 +6,7 @@ body: |-
 image: /assets/images/real/IMG_9999.jpeg
 focal_point: object-center
 highlights:
-  - icon: extension
+  - icon: front_hand
     text: Hands-on Learning
   - icon: psychology
     text: Evidence-Based
