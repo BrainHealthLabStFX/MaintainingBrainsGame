@@ -7,9 +7,9 @@ menu_links:
     url: '#educators'
   - label: Download
     url: '#download'
-  - label: Research
-    url: '#research'
   - label: Customize
     url: '#customize'
+  - label: Research
+    url: '#research'
   - label: Partners
     url: '#partners'
