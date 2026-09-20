@@ -9,7 +9,7 @@ menu_links:
     url: '#download'
   - label: Research
     url: '#research'
-  - label: Tools
-    url: '#tools'
+  - label: Customize
+    url: '#customize'
   - label: Partners
     url: '#partners'
