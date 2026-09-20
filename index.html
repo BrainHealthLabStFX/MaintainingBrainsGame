@@ -580,15 +580,19 @@
                         </div>
                         <div>
                             <span id="footer-title" class="font-extrabold text-xl text-pink-200 group-hover:text-white transition-colors block leading-tight">Maintaining Brains</span>
-                            <span id="footer-tagline" class="text-xs text-pink-200 font-semibold group-hover:text-white transition-colors">Learn how to maintain your brain through play!</span>
+                            <span id="footer-tagline" class="text-xs text-pink-200 font-semibold group-hover:text-white transition-colors">Learn to maintain your brain through play!</span>
                         </div>
                     </a>
                 </div>
 
-                <div class="space-y-2 text-xs text-pink-200 font-medium">
+                <div class="space-y-2 text-xs text-pink-200 font-medium pt-3">
+                    <div>
+                        <div class="font-extrabold text-white text-sm tracking-wide">Project Maintained By</div>
+                        <div id="footer-maintained-by" class="text-pink-100 font-bold text-xs mt-0.5">Brain Health Lab</div>
+                    </div>
                     <div class="flex items-center gap-2.5">
                         <span class="material-symbols-outlined text-pink-200 text-base">mail</span>
-                        <a href="mailto:emazerol@stfx.ca" class="hover:text-white hover:underline transition-colors font-bold text-pink-200">emazerol@stfx.ca</a>
+                        <a href="mailto:brainhealthlab@stfx.ca" class="hover:text-white hover:underline transition-colors font-bold text-pink-200">brainhealthlab@stfx.ca</a>
                     </div>
                     <div class="flex items-center gap-2.5">
                         <span class="material-symbols-outlined text-pink-200 text-base">domain</span>
@@ -1103,6 +1107,10 @@
                     if (settings.tagline) {
                         const taglineEl = document.getElementById('footer-tagline');
                         if (taglineEl) taglineEl.textContent = settings.tagline;
+                    }
+                    if (settings.maintained_by) {
+                        const maintainedEl = document.getElementById('footer-maintained-by');
+                        if (maintainedEl) maintainedEl.textContent = settings.maintained_by;
                     }
                     if (settings.title) {
                         const titleEl = document.getElementById('footer-title');
