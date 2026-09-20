@@ -3,8 +3,8 @@ backend:
   repo: BrainHealthLabStFX/MaintainingBrainsGame
   branch: main
 
-media_folder: "assets/images/uploads"
-public_folder: "assets/images/uploads"
+media_folder: "assets/images"
+public_folder: "assets/images"
 
 collections:
   - name: "site_configuration"
