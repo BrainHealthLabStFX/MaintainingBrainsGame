@@ -2,18 +2,18 @@ section_id: download
 title: Play The Game
 body: Everything you need to facilitate and play the Maintaining Brains Game in your classroom or community group. Download complete PDF card packages and instruction sheets
 button_label: Download
-button_url: '#'
+button_url: https://drive.google.com/drive/folders/1-8XYyH6yKuVknsQmA1bTiwscgonL_Rxg?usp=drive_link
 printing_tips:
-  - tip: Print on white, blue, or yellow paper matching the filename color code.
-  - tip: Files include full crop marks and bleeds for professional laser cutters.
+  - tip: Print on white, blue, or yellow paper depending on the colour in the filename.
+  - tip: Files include crop marks and bleeds for professional print shops with laser cutters.
   - tip: 'Recommended paper weight: 65 - 90 lb cardstock.'
-  - tip: Laminating increases durability, though cards become thicker to handle.
+  - tip: Laminating increases durability, but thicker cards can be harder to handle.
 materials_needed:
   - icon: ''
-    name: Plastic Straws
+    name: Straws
   - icon: ''
-    name: Pipe Cleaners
+    name: Pipe cleaners
   - icon: ''
-    name: Glass Marbles
+    name: Marbles
   - icon: ''
-    name: Face Masks
+    name: Face masks
