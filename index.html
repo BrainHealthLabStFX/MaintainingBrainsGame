@@ -37,6 +37,14 @@
         }
     </script>
     <style>
+        #footer-attribution a:hover {
+            color: white !important;
+            text-decoration: underline;
+        }
+        #footer-attribution a {
+            transition: color 0.2s;
+        }
+
         .glass-nav {
             background: rgba(253, 247, 250, 0.94);
             backdrop-filter: blur(14px);
@@ -580,27 +588,27 @@
             <div class="md:col-span-7 space-y-4 text-left">
                 <div class="flex items-center gap-3 mb-2">
                     <a href="https://www.maintainingbrains.ca/index.html" class="flex items-center gap-3 group">
-                        <div class="text-white group-hover:text-pink-200 transition-colors font-bold text-3xl shrink-0">
+                        <div class="text-pink-200 group-hover:text-white transition-colors font-bold text-3xl shrink-0">
                             <i class="fa-solid fa-brain"></i>
                         </div>
                         <div>
-                            <span id="footer-title" class="font-extrabold text-xl text-white group-hover:text-pink-200 transition-colors block leading-tight">Maintaining Brains</span>
-                            <span id="footer-tagline" class="text-xs text-pink-200 font-semibold">Learning how to maintain your brain through play!</span>
+                            <span id="footer-title" class="font-extrabold text-xl text-pink-200 group-hover:text-white transition-colors block leading-tight">Maintaining Brains</span>
+                            <span id="footer-tagline" class="text-xs text-pink-200 font-semibold group-hover:text-white transition-colors">Learning how to maintain your brain through play!</span>
                         </div>
                     </a>
                 </div>
 
-                <div class="space-y-2 text-xs text-pink-100 font-medium">
+                <div class="space-y-2 text-xs text-pink-200 font-medium">
                     <div class="flex items-center gap-2.5">
-                        <span class="material-symbols-outlined text-pink-300 text-base">mail</span>
-                        <a href="mailto:emazerol@stfx.ca" class="hover:underline font-bold text-white">emazerol@stfx.ca</a>
+                        <span class="material-symbols-outlined text-pink-200 text-base">mail</span>
+                        <a href="mailto:emazerol@stfx.ca" class="hover:text-white hover:underline transition-colors font-bold text-pink-200">emazerol@stfx.ca</a>
                     </div>
                     <div class="flex items-center gap-2.5">
-                        <span class="material-symbols-outlined text-pink-300 text-base">domain</span>
+                        <span class="material-symbols-outlined text-pink-200 text-base">domain</span>
                         <span id="footer-department">Department of Psychology</span> • <span id="footer-institution">St. Francis Xavier University</span>
                     </div>
                     <div class="flex items-center gap-2.5">
-                        <span class="material-symbols-outlined text-pink-300 text-base">location_on</span>
+                        <span class="material-symbols-outlined text-pink-200 text-base">location_on</span>
                         <span id="footer-location">Antigonish, Nova Scotia, Canada</span>
                     </div>
                 </div>
@@ -608,14 +616,14 @@
 
             <!-- Right Side: Creative Commons Attribution-NonCommercial-ShareAlike License Badge -->
             <div id="footer-attribution" class="md:col-span-5 text-left md:text-right space-y-3 pt-6 md:pt-0">
-                <div class="flex items-center justify-start md:justify-end gap-3 text-white text-2xl">
-                    <i class="fa-brands fa-creative-commons hover:text-pink-200 transition-colors"></i>
-                    <i class="fa-brands fa-creative-commons-by hover:text-pink-200 transition-colors"></i>
-                    <i class="fa-brands fa-creative-commons-nc hover:text-pink-200 transition-colors"></i>
-                    <i class="fa-brands fa-creative-commons-sa hover:text-pink-200 transition-colors"></i>
+                <div class="flex items-center justify-start md:justify-end gap-3 text-pink-200 text-2xl">
+                    <i class="fa-brands fa-creative-commons hover:text-white cursor-pointer transition-colors"></i>
+                    <i class="fa-brands fa-creative-commons-by hover:text-white cursor-pointer transition-colors"></i>
+                    <i class="fa-brands fa-creative-commons-nc hover:text-white cursor-pointer transition-colors"></i>
+                    <i class="fa-brands fa-creative-commons-sa hover:text-white cursor-pointer transition-colors"></i>
                 </div>
                 
-                <p class="text-xs text-pink-200/90 leading-relaxed font-medium">
+                <p class="text-xs text-pink-200 leading-relaxed font-medium footer-attribution-text">
                     Licensed under <strong>Creative Commons BY-NC-SA 4.0</strong> (Attribution-NonCommercial-ShareAlike 4.0 International).
                 </p>
             </div>
@@ -1081,7 +1089,7 @@
                             const iconContainer = attrSection.querySelector('div.flex.items-center');
                             if (iconContainer) {
                                 iconContainer.innerHTML = attribution.icons.map(item => 
-                                    item.icon ? `<i class="fa-brands ${item.icon} hover:text-pink-200 transition-colors"></i>` : ''
+                                    item.icon ? `<i class="fa-brands ${item.icon} hover:text-white cursor-pointer transition-colors"></i>` : ''
                                 ).join('');
                             }
                         }
