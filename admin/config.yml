@@ -177,14 +177,14 @@ collections:
               - { label: "Link Text", name: "link_text", widget: "string", required: false }
               - { label: "Link URL", name: "link_url", widget: "string", required: false }
 
-  - name: "tools_section"
+  - name: "customize_section"
     label: "Customize"
     files:
-      - file: "_data/tools.yml"
+      - file: "_data/customize.yml"
         label: "Customize Content"
-        name: "tools_data"
+        name: "customize_data"
         fields:
-          - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "tools", comment: "URL anchor (#tools)" }
+          - { label: "Section Anchor ID", name: "section_id", widget: "string", required: false, default: "customize", comment: "URL anchor (#customize)" }
           - { label: "Title", name: "title", widget: "string", required: false }
           - { label: "Body Paragraph", name: "body", widget: "text", required: false }
           - { label: "Button Label", name: "button_label", widget: "string", required: false }

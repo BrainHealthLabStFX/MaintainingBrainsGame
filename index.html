@@ -129,7 +129,7 @@
                 <a href="#educators" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Educators</a>
                 <a href="#download" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Download</a>
                 <a href="#research" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Research</a>
-                <a href="#tools" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Customize</a>
+                <a href="#customize" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Customize</a>
                 <a href="#partners" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Partners</a>
             </nav>
 
@@ -154,7 +154,7 @@
                 <a href="#educators" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Educators</a>
                 <a href="#download" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Download</a>
                 <a href="#research" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Research</a>
-                <a href="#tools" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Customize</a>
+                <a href="#customize" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Customize</a>
                 <a href="#partners" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Partners</a>
                 <a href="mailto:emazerol@stfx.ca" class="mt-2 bg-brand-pink hover:bg-brand-darkPink text-white font-black text-center py-3 rounded-full flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined text-lg">mail</span>
@@ -466,8 +466,8 @@
         </div>
     </section>
 
-    <!-- Section 5: Tools & Custom Card Generator -->
-    <section id="tools" class="py-20 bg-white border-b border-pink-100 text-left">
+    <!-- Section 5: Customize & Card Generator -->
+    <section id="customize" class="py-20 bg-white border-b border-pink-100 text-left">
         <div class="max-w-7xl mx-auto px-6">
             <div class="bg-slate-50 border border-pink-200/80 rounded-3xl p-8 md:p-12 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-10">
                 
@@ -974,9 +974,9 @@
 
                 } catch(e) { console.error("Research error", e); }
                 try { // 7. Tools Section
-                const tools = await fetchYaml('/_data/tools.yml');
+                const tools = await fetchYaml('/_data/customize.yml');
                 if (tools) {
-                    const section = document.querySelector('section#tools');
+                    const section = document.querySelector('section#customize');
                     if (section) {
                         if (tools.section_id) section.id = tools.section_id;
 
