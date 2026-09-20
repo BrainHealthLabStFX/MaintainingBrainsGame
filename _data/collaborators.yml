@@ -1,13 +1,13 @@
-section_id: "partners"
-title: "Our Partners"
-body: "We love working with partners to co-create and evaluate customized versions of the Maintaining Brains Game for their audiences!"
+section_id: partners
+title: Our Partners
+body: We love working with partners to co-create and evaluate customized versions of the Maintaining Brains Game for their audiences!
 items:
-  - icon: "groups"
-    name: "Actua"
-    description: "Canada's leading STEM outreach organization, collaborating to bring youth-focused brain health literacy to nationwide camps."
-  - icon: "biotech"
-    name: "X-Chem STEM Outreach"
-    description: "Based at StFX, bringing hands-on neuroscience workshops and game trials directly into local elementary and high schools."
-  - icon: "school"
-    name: "Dr. John Hugh Gillis Regional High School"
-    description: "Located in Antigonish, NS, collaborating on IB Psychology classroom testing and student discussion frameworks."
+  - icon: groups
+    name: Actua
+    description: Canada's leading STEM outreach organization is delivering an adapted version of the Maintaining Brains Game to youth across Canada's North.
+  - icon: biotech
+    name: X-Chem STEM Outreach
+    description: StFX's STEM outreach organization is bringing the Maintaining Brains Game to youth in Antigonish, NS and rural communities.
+  - icon: school
+    name: Dr. John Hugh Gillis Regional High School
+    description: Collaboration with the IB Psychology teacher and class enhanced co-creation and curriculum connections.
