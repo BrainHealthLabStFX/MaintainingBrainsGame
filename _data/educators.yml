@@ -10,7 +10,6 @@ questions:
   - question: What is one thing you learned that you can apply in your own daily life?
   - question: How can communities support healthy aging and brain resilience?
 feedback_title: Are you an educator using the game?
-feedback_body: If you use Maintaining Brains in your classroom outside Nova Scotia, we'd love to hear how it went!
-feedback_button_text: Contact Us
+feedback_body: 'If you use Maintaining Brains in your classroom outside Nova Scotia, <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">get in touch!</a>'
 image: assets/images/real/X-Chem-1-2xl.jpeg
 image_caption: Participants at X-Chem STEM Outreach

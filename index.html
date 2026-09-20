@@ -318,12 +318,9 @@
                 <div class="lg:col-span-5 space-y-6">
                     <div class="bg-white rounded-3xl p-8 border border-pink-200/80 shadow-sm">
                         <h4 class="font-bold text-slate-900 text-lg mb-2">Are you an educator using the game?</h4>
-                        <p class="text-slate-700 text-sm leading-relaxed mb-6 font-medium">
-                            If you use Maintaining Brains in your classroom outside Nova Scotia, we'd love to hear how it went!
+                        <p class="text-slate-700 text-sm leading-relaxed font-medium">
+                            If you use Maintaining Brains in your classroom outside Nova Scotia, <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">get in touch!</a>
                         </p>
-                        <a href="mailto:emazerol@stfx.ca" class="bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-6 py-3.5 rounded-full transition-all inline-flex items-center gap-2 shadow-md shadow-pink-200">
-                            <span class="material-symbols-outlined text-lg">mail</span> Contact Us
-                        </a>
                     </div>
 
                     <div class="photo-card rounded-3xl overflow-hidden bg-white border border-pink-200/80 shadow-sm">
@@ -873,11 +870,7 @@
                         }
                         if (educators.feedback_body) {
                             const bodyEl = section.querySelector('.lg\\:col-span-5 h4 + p');
-                            if (bodyEl) bodyEl.textContent = educators.feedback_body;
-                        }
-                        if (educators.feedback_button_text) {
-                            const btn = section.querySelector('.lg\\:col-span-5 a');
-                            if (btn) btn.innerHTML = `<span class="material-symbols-outlined text-lg">mail</span> ${educators.feedback_button_text}`;
+                            if (bodyEl) bodyEl.innerHTML = educators.feedback_body;
                         }
                         if (educators.image) {
                             const img = section.querySelector('.photo-card img');
