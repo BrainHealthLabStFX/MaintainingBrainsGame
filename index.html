@@ -469,7 +469,7 @@
     <!-- Section 5: Tools & Custom Card Generator -->
     <section id="tools" class="py-20 bg-white border-b border-pink-100 text-left">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-slate-50 border border-pink-200/80 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="bg-slate-50 border border-pink-200/80 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
                 <div class="flex items-start gap-6">
                     <div class="w-14 h-14 rounded-2xl bg-brand-pink text-white flex items-center justify-center font-bold text-2xl shadow-md shadow-pink-200 shrink-0">
                         <span class="material-symbols-outlined text-3xl">auto_fix_high</span>
@@ -485,6 +485,15 @@
                 <a href="https://www.maintainingbrains.ca/tools.html" target="_blank" class="bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-8 py-4 rounded-full shadow-lg shadow-pink-300/50 transition-all shrink-0 hover:scale-105 flex items-center gap-2">
                     <span class="material-symbols-outlined text-xl">open_in_new</span>
                     <span>Open Card Generator Tool</span>
+                </a>
+            </div>
+            <div class="bg-white border border-pink-200/80 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+                <div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-1">Have you made a custom version of the game?</h4>
+                    <p class="text-xs text-slate-600 font-medium">We'd love to hear how your students or community group used the game!</p>
+                </div>
+                <a href="mailto:emazerol@stfx.ca" class="bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-6 py-3.5 rounded-full transition-all shrink-0 inline-flex items-center gap-2 shadow-md shadow-pink-200">
+                    <span class="material-symbols-outlined text-lg">mail</span> Let Us Know
                 </a>
             </div>
         </div>
@@ -538,15 +547,6 @@
                 </div>
             </div>
 
-            <div class="bg-white border border-pink-200/80 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
-                <div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-1">Have you made a custom version of the game?</h4>
-                    <p class="text-xs text-slate-600 font-medium">We'd love to hear how your students or community group used the game!</p>
-                </div>
-                <a href="mailto:emazerol@stfx.ca" class="bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-6 py-3.5 rounded-full transition-all shrink-0 inline-flex items-center gap-2 shadow-md shadow-pink-200">
-                    <span class="material-symbols-outlined text-lg">mail</span> Let Us Know
-                </a>
-            </div>
         </div>
     </section>
 
@@ -993,12 +993,24 @@
                             if (bodyEl) bodyEl.textContent = tools.body;
                         }
                         if (tools.button_label) {
-                            const btnSpan = section.querySelector('a span:last-child');
+                            const btnSpan = section.querySelector('.bg-slate-50 a span:last-child');
                             if (btnSpan) btnSpan.textContent = tools.button_label;
                         }
                         if (tools.button_url) {
-                            const btn = section.querySelector('a');
+                            const btn = section.querySelector('.bg-slate-50 a');
                             if (btn) btn.href = tools.button_url;
+                        }
+                        if (tools.feedback_title) {
+                            const titleEl = section.querySelector('h4');
+                            if (titleEl) titleEl.textContent = tools.feedback_title;
+                        }
+                        if (tools.feedback_body) {
+                            const bodyEl = section.querySelector('h4 + p');
+                            if (bodyEl) bodyEl.textContent = tools.feedback_body;
+                        }
+                        if (tools.feedback_button_text) {
+                            const btn = section.querySelector('.bg-white a');
+                            if (btn) btn.innerHTML = `<span class="material-symbols-outlined text-lg">mail</span> ${tools.feedback_button_text}`;
                         }
                     }
                 }
@@ -1035,18 +1047,7 @@
                                 `).join('');
                             }
                         }
-                        if (col.feedback_title) {
-                            const titleEl = section.querySelector('h4');
-                            if (titleEl) titleEl.textContent = col.feedback_title;
-                        }
-                        if (col.feedback_body) {
-                            const bodyEl = section.querySelector('h4 + p');
-                            if (bodyEl) bodyEl.textContent = col.feedback_body;
-                        }
-                        if (col.feedback_button_text) {
-                            const btn = section.querySelector('a');
-                            if (btn) btn.innerHTML = `<span class="material-symbols-outlined text-lg">mail</span> ${col.feedback_button_text}`;
-                        }
+
                     }
                 }
 

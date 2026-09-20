@@ -191,6 +191,10 @@ collections:
           - { label: "Body Paragraph", name: "body", widget: "text", required: false }
           - { label: "Button Label", name: "button_label", widget: "string", required: false }
           - { label: "Tool Target URL", name: "button_url", widget: "string", required: false }
+          - { label: "Feedback Card Title", name: "feedback_title", widget: "string", required: false }
+          - { label: "Feedback Card Body", name: "feedback_body", widget: "string", required: false }
+          - { label: "Feedback Button Text", name: "feedback_button_text", widget: "string", required: false }
+
 
   - name: "collaborators_section"
     label: "Partners"
@@ -211,9 +215,6 @@ collections:
               - { label: "Icon Name", name: "icon", widget: "string", required: false, comment: "Google Material Symbol icon name (e.g. groups, biotech, school)" }
               - { label: "Partner Name", name: "name", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Feedback Card Title", name: "feedback_title", widget: "string", required: false }
-          - { label: "Feedback Card Body", name: "feedback_body", widget: "string", required: false }
-          - { label: "Feedback Button Text", name: "feedback_button_text", widget: "string", required: false }
 
   - name: "supporters_section"
     label: "Supporters"
