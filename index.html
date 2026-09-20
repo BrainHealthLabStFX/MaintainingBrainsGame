@@ -674,6 +674,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
+            const fixImg = (path) => (path && path.startsWith('/') && !path.startsWith('//')) ? '.' + path : (path || '');
             const fetchYaml = async (url) => {
                 const cleanUrl = (url.startsWith('/') && !url.startsWith('//')) ? '.' + url : url;
                 const cacheBuster = `?t=${Date.now()}`;
@@ -699,7 +700,7 @@
                     link.rel = 'icon';
                     document.head.appendChild(link);
                 }
-                link.href = config.favicon;
+                link.href = fixImg(config.favicon);
             }
             
             const startHydration = async () => {
@@ -727,7 +728,7 @@
                     if (hero.image) {
                         const img = document.querySelector('#hero-image');
                         if (img) {
-                            img.src = hero.image;
+                            img.src = fixImg(hero.image);
                             if (hero.focal_point) img.className = `w-full h-auto object-cover ${hero.focal_point} group-hover:scale-105 transition-transform duration-700`;
                         }
                     }
@@ -794,7 +795,7 @@
                         if (c.image) {
                             const img = document.querySelector('#creators-image');
                             if (img) {
-                                img.src = c.image;
+                                img.src = fixImg(c.image);
                                 if (c.focal_point) img.className = `w-full h-80 object-cover ${c.focal_point}`;
                             }
                         }
@@ -870,7 +871,7 @@
                         }
                         if (educators.image) {
                             const img = section.querySelector('.photo-card img');
-                            if (img) img.src = educators.image;
+                            if (img) img.src = fixImg(educators.image);
                         }
                         if (educators.image_caption) {
                             const caption = section.querySelector('.photo-card .p-4');
@@ -1045,7 +1046,7 @@
                             supportersContainer.innerHTML = supportersArray.map(supporter => `
                                 <div class="w-full flex items-center justify-center h-44 md:h-52 p-2">
                                     <a href="${supporter.link || '#'}" target="${supporter.link && supporter.link !== '#' ? '_blank' : '_self'}" aria-label="${supporter.name}">
-                                        <img src="${supporter.logo}" alt="${supporter.name}" class="max-h-36 md:max-h-44 max-w-full object-contain filter drop-shadow-sm hover:scale-105 transition-transform duration-300">
+                                        <img src="${fixImg(supporter.logo)}" alt="${supporter.name}" class="max-h-36 md:max-h-44 max-w-full object-contain filter drop-shadow-sm hover:scale-105 transition-transform duration-300">
                                     </a>
                                 </div>
                             `).join('');
