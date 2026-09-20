@@ -349,6 +349,7 @@ collections:
         fields:
           - { label: "Project Title", name: "title", widget: "string", required: false }
           - { label: "Tagline", name: "tagline", widget: "string", required: false }
+          - { label: "Logo & Title Link URL", name: "logo_url", widget: "string", required: false, comment: "Destination URL when clicking the footer logo/title (e.g. #home or full URL)" }
           - { label: "Hosted By Name", name: "hosted_by", widget: "string", required: false, comment: "Organization/lab name hosting the project (e.g. Brain Health Lab)" }
           - { label: "Hosted By URL", name: "hosted_by_url", widget: "string", required: false, comment: "Website link for the host organization (opens in new tab)" }
           - { label: "Contact Email", name: "email", widget: "string", required: false, comment: "Global contact email used across header and buttons" }
