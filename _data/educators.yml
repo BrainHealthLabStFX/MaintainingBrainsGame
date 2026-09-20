@@ -12,4 +12,7 @@ questions:
 feedback_title: Are you an educator using Maintaining Brains?
 feedback_body: <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">Let us know!</a>
 image: assets/images/real/X-Chem-1-2xl.jpeg
+focal_point: object-center
+object_fit: object-cover
+max_height: h-64
 image_caption: Participants at X-Chem STEM Outreach
