@@ -129,7 +129,7 @@
                 <a href="#educators" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Educators</a>
                 <a href="#download" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Download</a>
                 <a href="#research" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Research</a>
-                <a href="#tools" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Tools</a>
+                <a href="#tools" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Customize</a>
                 <a href="#partners" class="nav-link hover:text-brand-darkPink transition-colors px-1.5 py-1">Partners</a>
             </nav>
 
@@ -154,7 +154,7 @@
                 <a href="#educators" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Educators</a>
                 <a href="#download" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Download</a>
                 <a href="#research" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Research</a>
-                <a href="#tools" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Tools</a>
+                <a href="#tools" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Customize</a>
                 <a href="#partners" class="mobile-nav-link hover:text-brand-lightPink transition-colors py-2 border-b border-slate-800">Partners</a>
                 <a href="mailto:emazerol@stfx.ca" class="mt-2 bg-brand-pink hover:bg-brand-darkPink text-white font-black text-center py-3 rounded-full flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined text-lg">mail</span>
@@ -479,7 +479,7 @@
                         <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">Tool To Create Custom Game Cards</h3>
                         <div class="text-slate-700 text-sm md:text-base leading-relaxed font-medium space-y-4">
                             <p>Want to make your own custom version of the <em>Maintaining Brains Game</em> or populate card templates directly from a spreadsheet? Use our open-source generator tool!</p>
-                            <p>If you've already created a custom version for your students or community group, we'd love to hear how it went!</p>
+                            <p>If you've already created a custom version for your students or community group, <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">we'd love to hear how it went!</a></p>
                         </div>
                     </div>
                 </div>
@@ -488,10 +488,6 @@
                     <a id="btn-generator" href="https://www.maintainingbrains.ca/tools.html" target="_blank" class="bg-brand-pink hover:bg-brand-darkPink text-white font-extrabold text-sm px-8 py-4 rounded-full shadow-lg shadow-pink-300/50 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2">
                         <span class="material-symbols-outlined text-xl">open_in_new</span>
                         <span>Open Card Generator Tool</span>
-                    </a>
-                    <a id="btn-feedback" href="mailto:emazerol@stfx.ca" class="bg-white hover:bg-pink-50 text-brand-darkPink border-2 border-pink-200 font-extrabold text-sm px-8 py-4 rounded-full shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined text-xl">mail</span>
-                        <span>Let Us Know</span>
                     </a>
                 </div>
 
@@ -1004,10 +1000,7 @@
                             const btn = section.querySelector('#btn-generator');
                             if (btn) btn.href = tools.button_url;
                         }
-                        if (tools.feedback_button_text) {
-                            const btnSpan = section.querySelector('#btn-feedback span:last-child');
-                            if (btnSpan) btnSpan.textContent = tools.feedback_button_text;
-                        }
+
                     }
                 }
 
