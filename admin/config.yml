@@ -124,7 +124,6 @@ collections:
             summary: "{{fields.question}}"
             fields:
               - { label: "Question", name: "question", widget: "string", required: false }
-          - { label: "Feedback Card Title", name: "feedback_title", widget: "string", required: false }
           - { label: "Feedback Card Body", name: "feedback_body", widget: "text", required: false }
           - { label: "Feedback Button Text", name: "feedback_button_text", widget: "string", required: false }
           - { label: "Educator Image", name: "image", widget: "image", required: false }
@@ -191,8 +190,6 @@ collections:
           - { label: "Body Paragraph", name: "body", widget: "text", required: false }
           - { label: "Button Label", name: "button_label", widget: "string", required: false }
           - { label: "Tool Target URL", name: "button_url", widget: "string", required: false }
-          - { label: "Feedback Card Title", name: "feedback_title", widget: "string", required: false }
-          - { label: "Feedback Card Body", name: "feedback_body", widget: "string", required: false }
           - { label: "Feedback Button Text", name: "feedback_button_text", widget: "string", required: false }
 
 
