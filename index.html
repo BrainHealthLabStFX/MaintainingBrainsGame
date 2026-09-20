@@ -236,12 +236,8 @@
                 <div class="lg:col-span-6 text-left">
                     <h2 id="creators-title" class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8">How The Game Was Created</h2>
                     
-                    <p id="creators-p1" class="text-slate-700 mb-4 leading-relaxed font-medium">
-                        We co-created our initial draft, the Maintain Your Brain Game, at a workshop funded by the Canadian Institutes of Health Research (CIHR). The workshop brought together people with lived experience of cognitive impairment, Indigenous educators, South Asian educators, healthcare providers, and academic researchers.
-                    </p>
-                    <p id="creators-p2" class="text-slate-700 mb-6 leading-relaxed font-medium">
-                        Since then, we co-created Maintaining Brains with high school teachers and the national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments.
-                    </p>
+                    <p id="creators-p1" class="text-slate-700 mb-4 leading-relaxed font-medium">We co-created our initial draft, the Maintain Your Brain Game, at a workshop funded by the Canadian Institutes of Health Research (CIHR). The workshop brought together people with lived experience of cognitive impairment, Indigenous educators, South Asian educators, healthcare providers, and academic researchers.</p>
+                    <p id="creators-p2" class="text-slate-700 mb-6 leading-relaxed font-medium">Since then, we co-created Maintaining Brains with high school teachers and the national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments.</p>
 
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div class="bg-pink-50/80 rounded-3xl p-4 border border-pink-200/80 hover:border-brand-pink transition-colors">
@@ -319,8 +315,7 @@
                     <div class="bg-white rounded-3xl p-8 border border-pink-200/80 shadow-sm">
                         <h4 class="font-bold text-slate-900 text-lg mb-2">Are you an educator using the game?</h4>
                         <p class="text-slate-700 text-sm leading-relaxed font-medium">
-                            If you use Maintaining Brains in your classroom outside Nova Scotia, <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">get in touch!</a>
-                        </p>
+                            If you use Maintaining Brains in your classroom outside Nova Scotia, <a href="mailto:emazerol@stfx.ca" class="text-brand-pink hover:text-brand-darkPink hover:underline font-bold transition-colors">get in touch!</a></p>
                     </div>
 
                     <div class="photo-card rounded-3xl overflow-hidden bg-white border border-pink-200/80 shadow-sm">
@@ -618,8 +613,7 @@
                 
                 <p class="text-xs text-pink-200 leading-relaxed font-medium footer-attribution-text">
                     Licensed under <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a></strong><br>
-                    Attribution-NonCommercial-ShareAlike 4.0 International
-                </p>
+                    Attribution-NonCommercial-ShareAlike 4.0 International</p>
             </div>
 
         </div>
@@ -681,9 +675,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             const fetchYaml = async (url) => {
+                const cleanUrl = (url.startsWith('/') && !url.startsWith('//')) ? '.' + url : url;
                 const cacheBuster = `?t=${Date.now()}`;
                 try {
-                    const res = await fetch(url + cacheBuster);
+                    const res = await fetch(cleanUrl + cacheBuster);
                     if (res.ok) {
                         const text = await res.text();
                         return jsyaml.load(text);
@@ -694,8 +689,8 @@
                 return null;
             };
 
-            const config = await fetchYaml('/_data/configuration.yml');
-            const settings = await fetchYaml('/_data/settings.yml');
+            const config = await fetchYaml('_data/configuration.yml');
+            const settings = await fetchYaml('_data/settings.yml');
 
             if (config && config.favicon) {
                 let link = document.querySelector("link[rel~='icon']");
@@ -716,7 +711,7 @@
                     }
 
                 try { // 1. Hero
-                const hero = await fetchYaml('/_data/hero.yml');
+                const hero = await fetchYaml('_data/hero.yml');
                 if (hero) {
                     const section = document.querySelector('section#home');
                     if (section && hero.section_id) section.id = hero.section_id;
@@ -760,7 +755,7 @@
 
                 } catch(e) { console.error("Hero error", e); }
                 try { // 2. Menu Links
-                const menuData = await fetchYaml('/_data/menu.yml');
+                const menuData = await fetchYaml('_data/menu.yml');
                 if (menuData && menuData.menu_links && Array.isArray(menuData.menu_links)) {
                     const nav = document.querySelector('header nav');
                     const mobileNav = document.querySelector('#mobile-menu nav');
@@ -778,7 +773,7 @@
 
                 } catch(e) { console.error("Menu error", e); }
                 try { // 3. Creators Section
-                const c = await fetchYaml('/_data/creators.yml');
+                const c = await fetchYaml('_data/creators.yml');
                 if (c) {
                     const section = document.querySelector('section#about');
                     if (section) {
@@ -828,7 +823,7 @@
 
                 } catch(e) { console.error("Creators error", e); }
                 try { // 4. Educators Section
-                const educators = await fetchYaml('/_data/educators.yml');
+                const educators = await fetchYaml('_data/educators.yml');
                 if (educators) {
                     const section = document.querySelector('section#educators');
                     if (section) {
@@ -886,7 +881,7 @@
 
                 } catch(e) { console.error("Educators error", e); }
                 try { // 5. Download Section
-                const d = await fetchYaml('/_data/download.yml');
+                const d = await fetchYaml('_data/download.yml');
                 if (d) {
                     const section = document.querySelector('section#download');
                     if (section) {
@@ -934,7 +929,7 @@
 
                 } catch(e) { console.error("Download error", e); }
                 try { // 6. Research Section
-                const r = await fetchYaml('/_data/research.yml');
+                const r = await fetchYaml('_data/research.yml');
                 if (r) {
                     const section = document.querySelector('section#research');
                     if (section) {
@@ -968,7 +963,7 @@
 
                 } catch(e) { console.error("Research error", e); }
                 try { // 7. Tools Section
-                const tools = await fetchYaml('/_data/customize.yml');
+                const tools = await fetchYaml('_data/customize.yml');
                 if (tools) {
                     const section = document.querySelector('section#customize');
                     if (section) {
@@ -1000,7 +995,7 @@
 
                 } catch(e) { console.error("Tools error", e); }
                 try { // 8. Partners (Collaborators) Section
-                const col = await fetchYaml('/_data/collaborators.yml');
+                const col = await fetchYaml('_data/collaborators.yml');
                 if (col) {
                     const section = document.querySelector('section#partners');
                     if (section) {
@@ -1036,7 +1031,7 @@
 
                 } catch(e) { console.error("Partners error", e); }
                 try { // 9. Fetch supporters
-                const sup = await fetchYaml('/_data/partners.yml');
+                const sup = await fetchYaml('_data/partners.yml');
                 if (sup) {
                     // It's possible sup is just an object containing `partners` array
                     const supportersArray = sup.partners ? sup.partners : sup;
@@ -1061,7 +1056,7 @@
 
                 } catch(e) { console.error("Supporters error", e); }
                 try { // 9. Attribution Section
-                const attribution = await fetchYaml('/_data/attribution.yml');
+                const attribution = await fetchYaml('_data/attribution.yml');
                 if (attribution) {
                     const attrSection = document.getElementById('footer-attribution');
                     if (attrSection) {
