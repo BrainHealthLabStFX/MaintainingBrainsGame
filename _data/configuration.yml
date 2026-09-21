@@ -1,3 +1,5 @@
 password_protected: false
 site_password: brains
 favicon: assets/images/uploads/favicon.ico
+site_title: "Maintaining Brains"
+

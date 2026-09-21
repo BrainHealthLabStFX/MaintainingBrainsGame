@@ -118,7 +118,7 @@
                     <i class="fa-solid fa-brain"></i>
                 </div>
                 <div>
-                    <span class="font-black text-xl text-brand-pink tracking-tight block leading-none group-hover:text-brand-darkPink transition-colors">Maintaining Brains</span>
+                    <span id="header-site-title" class="font-black text-xl text-brand-pink tracking-tight block leading-none group-hover:text-brand-darkPink transition-colors">Maintaining Brains</span>
                 </div>
             </a>
 
@@ -702,14 +702,21 @@
             const config = await fetchYaml('_data/configuration.yml');
             const settings = await fetchYaml('_data/settings.yml');
 
-            if (config && config.favicon) {
-                let link = document.querySelector("link[rel~='icon']");
-                if (!link) {
-                    link = document.createElement('link');
-                    link.rel = 'icon';
-                    document.head.appendChild(link);
+            if (config) {
+                if (config.site_title) {
+                    document.title = config.site_title + ' | Mazerolle Lab at StFX';
+                    const headerTitleEl = document.getElementById('header-site-title');
+                    if (headerTitleEl) headerTitleEl.textContent = config.site_title;
                 }
-                link.href = fixImg(config.favicon);
+                if (config.favicon) {
+                    let link = document.querySelector("link[rel~='icon']");
+                    if (!link) {
+                        link = document.createElement('link');
+                        link.rel = 'icon';
+                        document.head.appendChild(link);
+                    }
+                    link.href = fixImg(config.favicon);
+                }
             }
             
             const startHydration = async () => {
