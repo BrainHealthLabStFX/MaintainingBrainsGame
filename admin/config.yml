@@ -15,6 +15,7 @@ collections:
         name: "configuration_data"
         fields:
           - { label: "Site Title", name: "site_title", widget: "string", required: false, default: "Maintaining Brains", comment: "The title of the website displayed in the browser tab and header" }
+          - { label: "Site Subtitle / Lab Name", name: "site_subtitle", widget: "string", required: false, default: "Mazerolle Lab at StFX", comment: "The subtitle appended to the browser tab title (e.g. 'Site Title | Subtitle')" }
           - { label: "Enable Password Protection", name: "password_protected", widget: "boolean", default: false, required: false }
           - { label: "Site Password", name: "site_password", widget: "string", required: false, comment: "Password required to view the site if protection is enabled" }
           - { label: "Favicon Image", name: "favicon", widget: "image", required: false, comment: "Upload an image (PNG/JPG/ICO) to use as the browser tab icon" }

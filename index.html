@@ -703,11 +703,12 @@
             const settings = await fetchYaml('_data/settings.yml');
 
             if (config) {
-                if (config.site_title) {
-                    document.title = config.site_title + ' | Mazerolle Lab at StFX';
-                    const headerTitleEl = document.getElementById('header-site-title');
-                    if (headerTitleEl) headerTitleEl.textContent = config.site_title;
-                }
+                const title = config.site_title || 'Maintaining Brains';
+                const subtitle = config.site_subtitle !== undefined ? config.site_subtitle : 'Mazerolle Lab at StFX';
+                document.title = subtitle ? `${title} | ${subtitle}` : title;
+                const headerTitleEl = document.getElementById('header-site-title');
+                if (headerTitleEl && config.site_title) headerTitleEl.textContent = config.site_title;
+
                 if (config.favicon) {
                     let link = document.querySelector("link[rel~='icon']");
                     if (!link) {
