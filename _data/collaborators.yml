@@ -6,7 +6,7 @@ items:
     description: Canada's leading STEM outreach organization is delivering an adapted version of the Maintaining Brains Game to youth across Canada's North.
     logo: /assets/images/logos/actua.png
     object_fit: object-contain
-    max_height: h-32
+    max_height: h-24
     link: https://actua.ca/
     icon: ''
   - name: X-Chem STEM Outreach

@@ -301,11 +301,11 @@ collections:
                 name: "max_height"
                 widget: "select"
                 required: false
-                default: "h-16"
+                default: "h-20"
                 options:
                   - { label: "Small (48px / h-12)", value: "h-12" }
-                  - { label: "Medium (64px / h-16 — Default)", value: "h-16" }
-                  - { label: "Large (80px / h-20)", value: "h-20" }
+                  - { label: "Medium (64px / h-16)", value: "h-16" }
+                  - { label: "Large (80px / h-20 — Default)", value: "h-20" }
                   - { label: "Extra Large (96px / h-24)", value: "h-24" }
                   - { label: "Jumbo (128px / h-32)", value: "h-32" }
               - { label: "Partner URL (Optional)", name: "link", widget: "string", required: false, comment: "Website link for partner name and logo (opens in new tab)" }
