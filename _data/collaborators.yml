@@ -11,7 +11,7 @@ items:
     icon: ''
   - name: X-Chem STEM Outreach
     description: StFX's STEM outreach organization is bringing the Maintaining Brains Game to youth in Antigonish, NS and rural communities.
-    logo: ''
+    logo: /assets/images/logos/Chemistry-NewXChemLogo.webp
     object_fit: object-contain
     max_height: h-16
     link: https://www.stfx.ca/x-chem
