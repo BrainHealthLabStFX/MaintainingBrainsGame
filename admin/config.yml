@@ -6,6 +6,11 @@ backend:
 media_folder: "assets/images"
 public_folder: "assets/images"
 
+media_library:
+  name: sveltia
+  config:
+    delete: true
+
 collections:
   - name: "site_configuration"
     label: "Site Configuration"
