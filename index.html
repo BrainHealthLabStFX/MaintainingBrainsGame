@@ -499,36 +499,33 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div class="bg-white border border-pink-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-brand-pink text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md shadow-pink-200">
-                            <span class="material-symbols-outlined text-2xl">groups</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Actua</h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            <a href="https://actua.ca/" target="_blank" class="hover:text-brand-pink transition-colors">Actua</a>
+                        </h3>
                         <p class="text-sm text-slate-700 leading-relaxed font-medium">
-                            Canada's leading STEM outreach organization, collaborating to bring youth-focused brain health literacy to nationwide camps.
+                            Canada's leading STEM outreach organization is delivering an adapted version of the Maintaining Brains Game to youth across Canada's North.
                         </p>
                     </div>
                 </div>
 
                 <div class="bg-white border border-pink-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-brand-pink text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md shadow-pink-200">
-                            <span class="material-symbols-outlined text-2xl">biotech</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">X-Chem STEM Outreach</h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            <a href="https://www.stfx.ca/x-chem" target="_blank" class="hover:text-brand-pink transition-colors">X-Chem STEM Outreach</a>
+                        </h3>
                         <p class="text-sm text-slate-700 leading-relaxed font-medium">
-                            Based at StFX, bringing hands-on neuroscience workshops and game trials directly into local elementary and high schools.
+                            StFX's STEM outreach organization is bringing the Maintaining Brains Game to youth in Antigonish, NS and rural communities.
                         </p>
                     </div>
                 </div>
 
                 <div class="bg-white border border-pink-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-brand-pink text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md shadow-pink-200">
-                            <span class="material-symbols-outlined text-2xl">school</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Dr. John Hugh Gillis Regional High School</h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">
+                            Dr. John Hugh Gillis Regional High School
+                        </h3>
                         <p class="text-sm text-slate-700 leading-relaxed font-medium">
-                            Located in Antigonish, NS, collaborating on IB Psychology classroom testing and student discussion frameworks.
+                            Collaboration with the IB Psychology teacher and class enhanced co-creation and curriculum connections.
                         </p>
                     </div>
                 </div>
@@ -1046,17 +1043,21 @@
                         if (col.items && Array.isArray(col.items)) {
                             const gridEl = section.querySelector('.grid');
                             if (gridEl) {
-                                gridEl.innerHTML = col.items.map(item => `
+                                gridEl.innerHTML = col.items.map(item => {
+                                    const logoHtml = item.logo ? `<div class="mb-4 h-16 flex items-center">
+                                        ${item.link ? `<a href="${item.link}" target="_blank"><img src="${fixImg(item.logo)}" alt="${item.name}" class="max-h-16 max-w-full object-contain"></a>` : `<img src="${fixImg(item.logo)}" alt="${item.name}" class="max-h-16 max-w-full object-contain">`}
+                                    </div>` : '';
+                                    const titleHtml = item.link ? `<a href="${item.link}" target="_blank" class="hover:text-brand-pink transition-colors">${item.name}</a>` : item.name;
+                                    return `
                                     <div class="bg-white border border-pink-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
                                         <div>
-                                            ${item.icon ? `<div class="w-12 h-12 rounded-2xl bg-brand-pink text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md shadow-pink-200">
-                                                <span class="material-symbols-outlined text-2xl">${item.icon}</span>
-                                            </div>` : ''}
-                                            <h3 class="text-xl font-bold text-slate-900 mb-2">${item.name}</h3>
+                                            ${logoHtml}
+                                            <h3 class="text-xl font-bold text-slate-900 mb-3">${titleHtml}</h3>
                                             <p class="text-sm text-slate-700 leading-relaxed font-medium">${item.description}</p>
                                         </div>
                                     </div>
-                                `).join('');
+                                    `;
+                                }).join('');
                             }
                         }
 

@@ -285,9 +285,10 @@ collections:
             required: false
             summary: "{{fields.name}}"
             fields:
-              - { label: "Icon Name", name: "icon", widget: "string", required: false, comment: "Google Material Symbol icon name (e.g. groups, biotech, school)" }
               - { label: "Partner Name", name: "name", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Optional Logo", name: "logo", widget: "image", required: false, comment: "Optional partner logo image" }
+              - { label: "Hyperlink URL", name: "link", widget: "string", required: false, comment: "Website link for partner name and logo (opens in new tab)" }
 
   - name: "supporters_section"
     label: "Supporters"
