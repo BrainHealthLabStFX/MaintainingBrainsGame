@@ -204,6 +204,7 @@ collections:
               - { label: "Large (320px / h-80)", value: "h-80" }
               - { label: "Extra Large (384px / h-96)", value: "h-96" }
           - { label: "Educator Image Caption", name: "image_caption", widget: "string", required: false }
+          - { label: "Educator Image Title", name: "image_title", widget: "string", required: false }
 
   - name: "download_section"
     label: "Download Game"
