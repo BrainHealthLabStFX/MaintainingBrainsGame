@@ -83,6 +83,12 @@ def sync():
                 html = re.sub(r'(<p id="creators-p1"[^>]*>).*?(</p>)', rf'\1{creators["p1"]}\2', html, flags=re.DOTALL)
             if creators.get('p2'):
                 html = re.sub(r'(<p id="creators-p2"[^>]*>).*?(</p>)', rf'\1{creators["p2"]}\2', html, flags=re.DOTALL)
+            if 'image_title' in creators:
+                img_title = creators['image_title'] or ''
+                html = re.sub(r'(<div class="photo-card[^>]*>\s*<img[^>]*>\s*<div class="p-6">\s*<h4[^>]*>).*?(</h4>)', rf'\1{img_title}\2', html, flags=re.DOTALL)
+            if 'image_caption' in creators:
+                img_cap = creators['image_caption'] or ''
+                html = re.sub(r'(<div class="photo-card[^>]*>\s*<img[^>]*>\s*<div class="p-6">\s*<h4[^>]*>.*?</h4>\s*<p[^>]*>).*?(</p>)', rf'\1{img_cap}\2', html, flags=re.DOTALL)
 
     # 3. Educators
     if os.path.exists('_data/educators.yml'):

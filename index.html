@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintaining Brains | Mazerolle Lab at StFX</title>
+    <title>Maintaining Brains | A Free, Open, and Fun Way to Learn Brain Health</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts & Material Symbols Outlined -->
@@ -235,7 +235,7 @@
                 <div class="lg:col-span-6 text-left">
                     <h2 id="creators-title" class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8">About the Game</h2>
                     
-                    <p id="creators-p1" class="text-slate-700 mb-4 leading-relaxed font-medium">Problems with thinking or memory (also called <b>cognitive impairment</b>) rates are rising. Almost half of cognitive impairment cases can be prevented or delayed by making lifestyle changes. We wanted to get the word out!
+                    <p id="creators-p1" class="text-slate-700 mb-4 leading-relaxed font-medium">Cases of cognitive impairment (problems with thinking or memory) are increasing. Almost half of cognitive impairment cases can be prevented or delayed by making lifestyle changes. We wanted to get the word out!
 <br><br>
 We hosted a workshop which brought together over 25 people with lived experience of cognitive impairment, care partners, Indigenous educators, South Asian educators, healthcare providers, and academic researchers. We co-created our initial draft, the Maintain Your Brain game, at this workshop.</p>
                     <p id="creators-p2" class="text-slate-700 mb-6 leading-relaxed font-medium">Since then, we co-created Maintaining Brains with a high school teacher and a national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments.</p>
@@ -260,8 +260,8 @@ We hosted a workshop which brought together over 25 people with lived experience
                     <div class="photo-card rounded-3xl overflow-hidden bg-white border border-pink-200/80 shadow-md">
                         <img id="creators-image" src="assets/images/real/Workshop-1-2.jpeg" alt="Adult Co-Creation Workshop participants collaborating on brain models" class="w-full h-80 object-cover object-top">
                         <div class="p-6">
-                            <h4 class="font-bold text-slate-900 text-lg mb-1">Co-Creators at Toronto Workshop</h4>
-                            <p class="text-xs text-slate-600 font-medium">Developed by educators, clinicians, and people with lived experience.</p>
+                            <h4 class="font-bold text-slate-900 text-lg mb-1">Co-creators at our initial workshop in 2025</h4>
+                            <p class="text-xs text-slate-600 font-medium"></p>
                         </div>
                     </div>
                 </div>
@@ -833,13 +833,13 @@ We hosted a workshop which brought together over 25 people with lived experience
                                 `).join('');
                             }
                         }
-                        if (c.image_title) {
+                        if (c.image_title !== undefined) {
                             const titleEl = section.querySelector('h4');
-                            if (titleEl) titleEl.textContent = c.image_title;
+                            if (titleEl) titleEl.textContent = c.image_title || '';
                         }
-                        if (c.image_caption) {
+                        if (c.image_caption !== undefined) {
                             const pEl = section.querySelector('.photo-card p');
-                            if (pEl) pEl.textContent = c.image_caption;
+                            if (pEl) pEl.textContent = c.image_caption || '';
                         }
                     }
                 }
