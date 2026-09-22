@@ -137,13 +137,34 @@ def sync():
             if st.get('tagline'):
                 html = re.sub(r'(<span id="footer-tagline"[^>]*>).*?(</span>)', rf'\1{st["tagline"]}\2', html, flags=re.DOTALL)
 
-    # 7. Configuration (Site Title)
+    # 7. Configuration (Site Title & Social Preview Metadata)
     if os.path.exists('_data/configuration.yml'):
         cfg = load_yaml('_data/configuration.yml')
-        if cfg and cfg.get('site_title'):
-            site_title = cfg['site_title']
-            html = re.sub(r'(<title>).*?(</title>)', rf'\1{site_title} | Mazerolle Lab at StFX\2', html, flags=re.DOTALL)
+        if cfg:
+            site_title = cfg.get('site_title', 'Maintaining Brains')
+            site_subtitle = cfg.get('site_subtitle', 'Mazerolle Lab at StFX')
+            full_title = f"{site_title} | {site_subtitle}"
+            
+            html = re.sub(r'(<title>).*?(</title>)', rf'\1{full_title}\2', html, flags=re.DOTALL)
             html = re.sub(r'(<span id="header-site-title"[^>]*>).*?(</span>)', rf'\1{site_title}\2', html, flags=re.DOTALL)
+            html = re.sub(r'(<meta id="og-title" property="og:title" content=")[^"]*(">)', rf'\1{full_title}\2', html)
+            html = re.sub(r'(<meta id="twitter-title" name="twitter:title" content=")[^"]*(">)', rf'\1{full_title}\2', html)
+
+            if 'site_description' in cfg:
+                desc = cfg['site_description'] or ''
+                html = re.sub(r'(<meta id="meta-description" name="description" content=")[^"]*(">)', rf'\1{desc}\2', html)
+                html = re.sub(r'(<meta id="og-description" property="og:description" content=")[^"]*(">)', rf'\1{desc}\2', html)
+                html = re.sub(r'(<meta id="twitter-description" name="twitter:description" content=")[^"]*(">)', rf'\1{desc}\2', html)
+
+            if 'og_image' in cfg:
+                img_path = cfg['og_image'] or ''
+                if img_path and not img_path.startswith('http'):
+                    img_path = img_path.lstrip('/')
+                    img_url = f"https://www.maintainingbrains.ca/{img_path}"
+                else:
+                    img_url = img_path
+                html = re.sub(r'(<meta id="og-image" property="og:image" content=")[^"]*(">)', rf'\1{img_url}\2', html)
+                html = re.sub(r'(<meta id="twitter-image" name="twitter:image" content=")[^"]*(">)', rf'\1{img_url}\2', html)
 
     # 8. Menu Links
     if os.path.exists('_data/menu.yml'):

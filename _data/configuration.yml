@@ -3,3 +3,5 @@ site_subtitle: A Free, Open, and Fun Way to Learn Brain Health
 password_protected: false
 site_password: brains
 favicon: assets/images/uploads/favicon.ico
+site_description: A free, open, and fun way to learn brain health through interactive play and community co-creation.
+og_image: assets/images/real/hero_lab_team.jpg

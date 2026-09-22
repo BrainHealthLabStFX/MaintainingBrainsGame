@@ -18,6 +18,8 @@ collections:
           - { label: "Site Subtitle / Lab Name", name: "site_subtitle", widget: "string", required: false, default: "Mazerolle Lab at StFX", comment: "The subtitle appended to the browser tab title (e.g. 'Site Title | Subtitle')" }
           - { label: "Enable Password Protection", name: "password_protected", widget: "boolean", default: false, required: false }
           - { label: "Site Password", name: "site_password", widget: "string", required: false, comment: "Password required to view the site if protection is enabled" }
+          - { label: "Site Description", name: "site_description", widget: "string", required: false, comment: "Short summary used by Google search and link previews when shared on social media / messaging apps" }
+          - { label: "Social Share Preview Image", name: "og_image", widget: "image", required: false, comment: "Preview image displayed when sharing the site link on iMessage, WhatsApp, Twitter/X, Facebook, LinkedIn, etc." }
           - { label: "Favicon Image", name: "favicon", widget: "image", required: false, comment: "Upload an image (PNG/JPG/ICO) to use as the browser tab icon" }
 
   - name: "navigation"
