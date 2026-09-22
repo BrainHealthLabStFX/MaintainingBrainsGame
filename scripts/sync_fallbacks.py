@@ -85,20 +85,27 @@ def sync():
                 html = re.sub(r'(<p id="creators-p2"[^>]*>).*?(</p>)', rf'\1{creators["p2"]}\2', html, flags=re.DOTALL)
             if 'image_title' in creators:
                 img_title = creators['image_title'] or ''
-                html = re.sub(r'(<div class="photo-card[^>]*>\s*<img[^>]*>\s*<div class="p-6">\s*<h4[^>]*>).*?(</h4>)', rf'\1{img_title}\2', html, flags=re.DOTALL)
+                html = re.sub(r'(<section id="about".*?<div class="photo-card[^>]*>\s*<img[^>]*>\s*<div class="p-6">\s*<h4[^>]*>).*?(</h4>)', rf'\1{img_title}\2', html, flags=re.DOTALL)
             if 'image_caption' in creators:
                 img_cap = creators['image_caption'] or ''
-                html = re.sub(r'(<div class="photo-card[^>]*>\s*<img[^>]*>\s*<div class="p-6">\s*<h4[^>]*>.*?</h4>\s*<p[^>]*>).*?(</p>)', rf'\1{img_cap}\2', html, flags=re.DOTALL)
+                html = re.sub(r'(<section id="about".*?<div class="photo-card[^>]*>\s*<img[^>]*>\s*<div class="p-6">\s*<h4[^>]*>.*?</h4>\s*<p[^>]*>).*?(</p>)', rf'\1{img_cap}\2', html, flags=re.DOTALL)
 
     # 3. Educators
     if os.path.exists('_data/educators.yml'):
         edu = load_yaml('_data/educators.yml')
-        if edu and edu.get('feedback_body'):
-            html = re.sub(
-                r'(<h4 class="font-bold text-slate-900 text-lg mb-2">Are you an educator using the game\?</h4>\s*<p class="text-slate-700 text-sm leading-relaxed font-medium">\s*).*?(</p>)',
-                rf'\1{edu["feedback_body"]}\2',
-                html, flags=re.DOTALL
-            )
+        if edu:
+            if edu.get('feedback_body'):
+                html = re.sub(
+                    r'(<h4 class="font-bold text-slate-900 text-lg mb-2">Are you an educator using the game\?</h4>\s*<p class="text-slate-700 text-sm leading-relaxed font-medium">\s*).*?(</p>)',
+                    rf'\1{edu["feedback_body"]}\2',
+                    html, flags=re.DOTALL
+                )
+            if 'image_title' in edu:
+                img_title = edu['image_title'] or ''
+                html = re.sub(r'(<section id="educators".*?<div class="photo-card[^>]*>\s*<img[^>]*>\s*<div class="p-6">\s*<h4[^>]*>).*?(</h4>)', rf'\1{img_title}\2', html, flags=re.DOTALL)
+            if 'image_caption' in edu:
+                img_cap = edu['image_caption'] or ''
+                html = re.sub(r'(<section id="educators".*?<div class="photo-card[^>]*>\s*<img[^>]*>\s*<div class="p-6">\s*<h4[^>]*>.*?</h4>\s*<p[^>]*>).*?(</p>)', rf'\1{img_cap}\2', html, flags=re.DOTALL)
 
     # 4. Customize
     if os.path.exists('_data/customize.yml'):

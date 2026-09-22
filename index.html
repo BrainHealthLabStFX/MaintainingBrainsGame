@@ -322,8 +322,8 @@ We hosted a workshop which brought together over 25 people with lived experience
                     <div class="photo-card rounded-3xl overflow-hidden bg-white border border-pink-200/80 shadow-sm">
                         <img src="assets/images/real/X-Chem-1-2xl.jpeg" alt="X-Chem STEM Workshop session with high school students" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <h4 class="font-bold text-slate-900 text-lg mb-1">Co-creators at our initial workshop in 2025</h4>
-                            <p class="text-xs text-slate-600 font-medium"></p>
+                            <h4 class="font-bold text-slate-900 text-lg mb-1"></h4>
+                            <p class="text-xs text-slate-600 font-medium">Participants at X-Chem STEM Outreach</p>
                         </div>
                     </div>
                 </div>
@@ -902,9 +902,13 @@ We hosted a workshop which brought together over 25 people with lived experience
                                 img.className = `w-full ${h} ${fit} ${focal}`;
                             }
                         }
-                        if (educators.image_caption) {
-                            const caption = section.querySelector('.photo-card .p-4');
-                            if (caption) caption.textContent = educators.image_caption;
+                        if (educators.image_title !== undefined) {
+                            const titleEl = section.querySelector('.photo-card h4');
+                            if (titleEl) titleEl.textContent = educators.image_title || '';
+                        }
+                        if (educators.image_caption !== undefined) {
+                            const captionEl = section.querySelector('.photo-card p');
+                            if (captionEl) captionEl.textContent = educators.image_caption || '';
                         }
                     }
                 }
