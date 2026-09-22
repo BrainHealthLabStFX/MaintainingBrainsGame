@@ -124,7 +124,15 @@ def sync():
             if st.get('tagline'):
                 html = re.sub(r'(<span id="footer-tagline"[^>]*>).*?(</span>)', rf'\1{st["tagline"]}\2', html, flags=re.DOTALL)
 
-    # 7. Menu Links
+    # 7. Configuration (Site Title)
+    if os.path.exists('_data/configuration.yml'):
+        cfg = load_yaml('_data/configuration.yml')
+        if cfg and cfg.get('site_title'):
+            site_title = cfg['site_title']
+            html = re.sub(r'(<title>).*?(</title>)', rf'\1{site_title} | Mazerolle Lab at StFX\2', html, flags=re.DOTALL)
+            html = re.sub(r'(<span id="header-site-title"[^>]*>).*?(</span>)', rf'\1{site_title}\2', html, flags=re.DOTALL)
+
+    # 8. Menu Links
     if os.path.exists('_data/menu.yml'):
         menu = load_yaml('_data/menu.yml')
         if menu and menu.get('menu_links'):
