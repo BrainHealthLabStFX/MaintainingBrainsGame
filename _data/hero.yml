@@ -2,9 +2,9 @@ section_id: home
 headline: Learn to <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-amber-200 to-pink-200">maintain your brain</span> through play!
 body: |-
   Two million Canadians face memory and thinking problems, known as <strong>cognitive impairment</strong>. 
-
+  <br>
   The good news? Half of those cases could be delayed or reduced through lifestyle changes.  
-
+  <br>
   We co-created the free and open <strong>Maintaining Brains game</strong> to share research on strategies to maintain and improve brain health.
 image: /assets/images/knowlege seekers clean.jpg
 focal_point: object-center
