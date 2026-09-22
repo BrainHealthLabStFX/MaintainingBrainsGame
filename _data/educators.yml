@@ -15,4 +15,5 @@ image: assets/images/real/X-Chem-1-2xl.jpeg
 focal_point: object-center
 object_fit: object-cover
 max_height: h-64
-image_caption: Participants at X-Chem STEM Outreach
+image_caption: ''
+image_title: Participants at X-Chem STEM Outreach
