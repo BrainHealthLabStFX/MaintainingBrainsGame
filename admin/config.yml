@@ -287,8 +287,8 @@ collections:
             fields:
               - { label: "Partner Name", name: "name", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "text", required: false }
-              - { label: "Optional Logo", name: "logo", widget: "image", required: false, comment: "Optional partner logo image" }
-              - { label: "Hyperlink URL", name: "link", widget: "string", required: false, comment: "Website link for partner name and logo (opens in new tab)" }
+              - { label: "Partner Logo (Optional)", name: "logo", widget: "image", required: false, comment: "Optional partner logo image file" }
+              - { label: "Partner URL (Optional)", name: "link", widget: "string", required: false, comment: "Website link for partner name and logo (opens in new tab)" }
 
   - name: "supporters_section"
     label: "Supporters"
