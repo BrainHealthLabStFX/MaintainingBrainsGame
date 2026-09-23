@@ -7,7 +7,7 @@ media_folder: "assets/images"
 public_folder: "assets/images"
 
 media_library:
-  name: sveltia
+  name: default
   config:
     delete: true
 
