@@ -1,14 +1,28 @@
+# URL anchor (#supporters)
 section_id: supporters
 partners:
   - name: Canadian Institutes of Health Research (CIHR)
     logo: assets/images/logos/CIHR-Logo.png
+    object_fit: object-contain
+    max_height: h-16
     link: https://cihr-irsc.gc.ca
   - name: St. Francis Xavier University
     logo: assets/images/logos/STFX-Logo.png
+    object_fit: object-contain
+    max_height: h-16
     link: https://www.stfx.ca
   - name: Research Nova Scotia
     logo: assets/images/logos/ResearchNS-Logo.png
+    object_fit: object-contain
+    max_height: h-16
     link: https://researchns.ca
   - name: VAST
     logo: assets/images/logos/VASTlogo.webp
+    object_fit: object-contain
+    max_height: h-16
     link: https://www.vast-training.org/
+  - name: Western
+    logo: /assets/images/logos/western.svg
+    object_fit: object-contain
+    max_height: h-16
+    link: http://www.uwo.ca
