@@ -127,6 +127,59 @@
         </div>
     </div>
 
+    <!-- Download Prompt Modal -->
+    <div id="download-modal" class="fixed inset-0 z-[120] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center hidden opacity-0 transition-opacity duration-300 p-3 sm:p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full border border-pink-100 p-5 sm:p-6 text-left relative max-h-[96vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-2.5">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-xl bg-pink-100 text-brand-darkPink flex items-center justify-center font-bold text-lg shrink-0">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-slate-900">Download</h3>
+                    </div>
+                </div>
+                <button type="button" onclick="window.closeDownloadModal();" class="text-slate-400 hover:text-slate-600 transition-colors p-1" aria-label="Close modal">
+                    <span class="material-symbols-outlined text-xl">close</span>
+                </button>
+            </div>
+
+            <p class="text-xs text-slate-600 mb-3 font-medium leading-relaxed bg-pink-50/70 p-2.5 rounded-xl border border-pink-100">
+                Thank you for your interest in the Maintaining Brains game!<br>Please consider completing this <strong>optional</strong> registration form to help us track impact.
+            </p>
+
+            <form id="download-form" onsubmit="event.preventDefault(); window.submitDownloadForm();" class="space-y-2.5">
+                <div>
+                    <label for="df-name" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-0.5">Name</label>
+                    <input type="text" id="df-name" class="w-full px-3 py-1.5 rounded-lg border border-pink-200 focus:border-brand-pink focus:ring-1 focus:ring-pink-100 outline-none font-medium text-slate-800 text-xs transition-all" placeholder="Optional">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                        <label for="df-institution" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-0.5">Institution / Org</label>
+                        <input type="text" id="df-institution" class="w-full px-3 py-1.5 rounded-lg border border-pink-200 focus:border-brand-pink focus:ring-1 focus:ring-pink-100 outline-none font-medium text-slate-800 text-xs transition-all" placeholder="Optional">
+                    </div>
+                    <div>
+                        <label for="df-country" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-0.5">Country / Region</label>
+                        <input type="text" id="df-country" class="w-full px-3 py-1.5 rounded-lg border border-pink-200 focus:border-brand-pink focus:ring-1 focus:ring-pink-100 outline-none font-medium text-slate-800 text-xs transition-all" placeholder="Optional">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="df-audience" class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-0.5">Intended Audience</label>
+                    <input type="text" id="df-audience" class="w-full px-3 py-1.5 rounded-lg border border-pink-200 focus:border-brand-pink focus:ring-1 focus:ring-pink-100 outline-none font-medium text-slate-800 text-xs transition-all" placeholder="Optional (e.g. Grade 10 biology students, seniors workshop)">
+                </div>
+
+                <div class="pt-1.5">
+                    <button type="submit" id="df-submit-btn" class="w-full bg-brand-pink hover:bg-brand-darkPink text-white font-black py-2.5 px-6 rounded-full shadow-md shadow-pink-300/50 transition-all hover:scale-[1.01] active:scale-[0.98] text-sm flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                        <span>Download Now</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-pink-200/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -370,7 +423,7 @@ We hosted a workshop which brought together over 25 people with lived experience
                 </div>
 
                 <div class="shrink-0">
-                    <a href="#" class="inline-flex items-center gap-3 bg-brand-pink hover:bg-brand-darkPink text-white font-black text-lg px-8 py-5 rounded-full shadow-xl shadow-pink-300/60 transition-all hover:scale-105 group focus:ring-4 focus:ring-pink-300 w-full sm:w-auto justify-center">
+                    <a id="download-btn" href="#" onclick="event.preventDefault(); window.openDownloadModal();" class="inline-flex items-center gap-3 bg-brand-pink hover:bg-brand-darkPink text-white font-black text-lg px-8 py-5 rounded-full shadow-xl shadow-pink-300/60 transition-all hover:scale-105 group focus:ring-4 focus:ring-pink-300 w-full sm:w-auto justify-center cursor-pointer">
                         <span class="material-symbols-outlined text-3xl group-hover:animate-bounce">download</span>
                         <span>Download</span>
                     </a>
@@ -1046,12 +1099,25 @@ We hosted a workshop which brought together over 25 people with lived experience
                             if (bodyEl) bodyEl.textContent = d.body;
                         }
                         if (d.button_label) {
-                            const btnSpan = section.querySelector('a span:last-child');
+                            const btnSpan = section.querySelector('#download-btn span:last-child') || section.querySelector('a span:last-child');
                             if (btnSpan) btnSpan.textContent = d.button_label;
                         }
                         if (d.button_url) {
-                            const btn = section.querySelector('a');
-                            if (btn) btn.href = d.button_url;
+                            window.currentDownloadUrl = d.button_url;
+                            const btn = section.querySelector('#download-btn') || section.querySelector('a');
+                            if (btn) {
+                                btn.href = "#";
+                                btn.onclick = (e) => {
+                                    e.preventDefault();
+                                    window.openDownloadModal();
+                                };
+                            }
+                        }
+                        if (d.google_form_id) {
+                            window.googleFormId = d.google_form_id;
+                        }
+                        if (d.google_form_entries) {
+                            window.googleFormEntries = d.google_form_entries;
                         }
                         if (d.printing_tips && Array.isArray(d.printing_tips)) {
                             const listEl = section.querySelector('ul');
@@ -1323,6 +1389,112 @@ We hosted a workshop which brought together over 25 people with lived experience
             startHydration();
         }
         });
+
+        // Download Modal & Google Form Submission Logic
+        window.currentDownloadUrl = 'https://drive.google.com/drive/folders/1-8XYyH6yKuVknsQmA1bTiwscgonL_Rxg?usp=drive_link';
+        window.googleFormId = '1FAIpQLSeq3ymdsRqKViDCzUsb-M6KIRWw9-aG6VmWh5euPh0SjE6_oQ';
+        window.googleFormEntries = {
+            name: 'entry.1257026285',
+            institution: 'entry.1890025633',
+            country: 'entry.1849122367',
+            audience: 'entry.1033508246'
+        };
+
+        window.openDownloadModal = () => {
+            const modal = document.getElementById('download-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 20);
+            }
+        };
+
+        window.closeDownloadModal = () => {
+            const modal = document.getElementById('download-modal');
+            if (modal) {
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        };
+
+        window.skipDownloadForm = () => {
+            window.closeDownloadModal();
+            const url = window.currentDownloadUrl || 'https://drive.google.com/drive/folders/1-8XYyH6yKuVknsQmA1bTiwscgonL_Rxg?usp=drive_link';
+            window.open(url, '_blank');
+        };
+
+        window.submitDownloadForm = async () => {
+            const submitBtn = document.getElementById('df-submit-btn');
+            const originalText = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-lg"></i><span>Submitting...</span>';
+            }
+
+            const name = document.getElementById('df-name') ? document.getElementById('df-name').value.trim() : '';
+            const institution = document.getElementById('df-institution') ? document.getElementById('df-institution').value.trim() : '';
+            const country = document.getElementById('df-country') ? document.getElementById('df-country').value.trim() : '';
+            const audience = document.getElementById('df-audience') ? document.getElementById('df-audience').value.trim() : '';
+
+            const formId = window.googleFormId || '1FAIpQLSeq3ymdsRqKViDCzUsb-M6KIRWw9-aG6VmWh5euPh0SjE6_oQ';
+            const entries = window.googleFormEntries || {
+                name: 'entry.1257026285',
+                institution: 'entry.1890025633',
+                country: 'entry.1849122367',
+                audience: 'entry.1033508246'
+            };
+
+            const submitUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+            
+            // Submit via hidden iframe for guaranteed delivery
+            try {
+                let iframe = document.getElementById('gform-hidden-iframe');
+                if (!iframe) {
+                    iframe = document.createElement('iframe');
+                    iframe.id = 'gform-hidden-iframe';
+                    iframe.name = 'gform-hidden-iframe';
+                    iframe.style.display = 'none';
+                    document.body.appendChild(iframe);
+                }
+
+                const hiddenForm = document.createElement('form');
+                hiddenForm.action = submitUrl;
+                hiddenForm.method = 'POST';
+                hiddenForm.target = 'gform-hidden-iframe';
+                hiddenForm.style.display = 'none';
+
+                const addInput = (name, val) => {
+                    const inp = document.createElement('input');
+                    inp.type = 'hidden';
+                    inp.name = name;
+                    inp.value = val;
+                    hiddenForm.appendChild(inp);
+                };
+
+                if (entries.name) addInput(entries.name, name);
+                if (entries.institution) addInput(entries.institution, institution);
+                if (entries.country) addInput(entries.country, country);
+                if (entries.audience) addInput(entries.audience, audience);
+
+                document.body.appendChild(hiddenForm);
+                hiddenForm.submit();
+                setTimeout(() => hiddenForm.remove(), 1000);
+            } catch (err) {
+                console.warn('Iframe submission fallback note:', err);
+            }
+
+            // Reset form and close modal
+            const form = document.getElementById('download-form');
+            if (form) form.reset();
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+            window.closeDownloadModal();
+
+            // Redirect to the download URL
+            const url = window.currentDownloadUrl || 'https://drive.google.com/drive/folders/1-8XYyH6yKuVknsQmA1bTiwscgonL_Rxg?usp=drive_link';
+            window.open(url, '_blank');
+        };
     </script>
 
     </body>
