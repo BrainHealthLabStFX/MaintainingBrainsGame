@@ -6,11 +6,6 @@ backend:
 media_folder: "assets/images"
 public_folder: "assets/images"
 
-media_library:
-  name: default
-  config:
-    delete: true
-
 collections:
   - name: "site_configuration"
     label: "Site Configuration"

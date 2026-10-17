@@ -257,19 +257,28 @@
 We hosted a workshop which brought together over 25 people with lived experience of cognitive impairment, care partners, Indigenous educators, South Asian educators, healthcare providers, and academic researchers. We co-created our initial draft, the Maintain Your Brain game, at this workshop.</p>
                     <p id="creators-p2" class="text-slate-700 mb-6 leading-relaxed font-medium">Since then, we co-created Maintaining Brains with a high school teacher and a national youth-serving organization, Actua. This youth-focused version incorporates trauma-informed principles of agency, strengths-based approaches, and safe environments.</p>
 
-                    <div class="grid grid-cols-3 gap-4 text-center">
+                    <div id="creators-badges" class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
                         <div class="bg-pink-50/80 rounded-3xl p-4 border border-pink-200/80 hover:border-brand-pink transition-colors">
-                            <div class="text-2xl font-black text-brand-pink">CIHR</div>
-                            <div class="text-xs text-slate-600 font-bold mt-1">Workshop Grant</div>
+                            <div class="text-2xl font-black text-brand-pink">1,000</div>
+                            <div class="text-xs text-slate-600 font-bold mt-1">Players Across Canada</div>
                         </div>
                         <div class="bg-pink-50/80 rounded-3xl p-4 border border-pink-200/80 hover:border-brand-pink transition-colors">
-                            <div class="text-2xl font-black text-brand-pink">Actua</div>
-                            <div class="text-xs text-slate-600 font-bold mt-1">STEM Outreach</div>
+                            <div class="text-2xl font-black text-brand-pink">7</div>
+                            <div class="text-xs text-slate-600 font-bold mt-1">Partner Organizations</div>
                         </div>
                         <div class="bg-pink-50/80 rounded-3xl p-4 border border-pink-200/80 hover:border-brand-pink transition-colors">
-                            <div class="text-2xl font-black text-brand-pink">Trauma</div>
-                            <div class="text-xs text-slate-600 font-bold mt-1">Informed Design</div>
+                            <div class="text-2xl font-black text-brand-pink">30+</div>
+                            <div class="text-xs text-slate-600 font-bold mt-1">Communities Reached</div>
                         </div>
+                        <div class="bg-pink-50/80 rounded-3xl p-4 border border-pink-200/80 hover:border-brand-pink transition-colors">
+                            <div id="co-creators-count" class="text-2xl font-black text-brand-pink">X</div>
+                            <div class="text-xs text-slate-600 font-bold mt-1">Co-creators</div>
+                        </div>
+                    </div>
+
+                    <div id="co-creators-container" class="mt-8 pt-6 border-t border-pink-100">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Co-Creators</h3>
+                        <p id="co-creators-list" class="text-slate-600 text-sm leading-relaxed font-medium">Loading co-creators...</p>
                     </div>
                 </div>
 
@@ -841,14 +850,19 @@ We hosted a workshop which brought together over 25 people with lived experience
                         }
                         if (c.badges && Array.isArray(c.badges)) {
                             // Find the badges grid inside this section using relative or specific selector
-                            const badgeContainer = section.querySelector('.grid.grid-cols-3');
+                            const badgeContainer = section.querySelector('#creators-badges') || section.querySelector('.grid.grid-cols-2') || section.querySelector('.grid.grid-cols-3');
                             if (badgeContainer) {
-                                badgeContainer.innerHTML = c.badges.map(b => `
+                                badgeContainer.className = 'grid grid-cols-2 sm:grid-cols-4 gap-4 text-center';
+                                badgeContainer.innerHTML = c.badges.map(b => {
+                                    const isCoCreators = b.subtitle && b.subtitle.toLowerCase().includes('co-creator');
+                                    const countId = isCoCreators ? 'id="co-creators-count"' : '';
+                                    return `
                                     <div class="bg-pink-50/80 rounded-3xl p-4 border border-pink-200/80 hover:border-brand-pink transition-colors">
-                                        <div class="text-2xl font-black text-brand-pink">${b.title}</div>
+                                        <div ${countId} class="text-2xl font-black text-brand-pink">${b.title}</div>
                                         <div class="text-xs text-slate-600 font-bold mt-1">${b.subtitle}</div>
                                     </div>
-                                `).join('');
+                                    `;
+                                }).join('');
                             }
                         }
                         if (c.image_title !== undefined) {
@@ -861,6 +875,86 @@ We hosted a workshop which brought together over 25 people with lived experience
                         }
                     }
                 }
+
+                // Fetch live Co-Creators from Public Google Sheet
+                const loadCoCreators = () => {
+                    const sheetId = '1EsuMAUJ29pKglrLaVtPV7pvmL3S_nF6eT0m6SL5U32U';
+                    const sheetGid = '0';
+                    
+                    const handleData = (data) => {
+                        try {
+                            if (!data || !data.table) return;
+                            const cols = data.table.cols || [];
+                            const rows = data.table.rows || [];
+                            
+                            // Find column index for "Names" (case-insensitive)
+                            let namesColIdx = cols.findIndex(col => col && col.label && col.label.trim().toLowerCase() === 'names');
+                            let startIndex = 0;
+                            
+                            // If header wasn't in cols label, check first row
+                            if (namesColIdx === -1 && rows.length > 0) {
+                                const firstRowVals = rows[0].c ? rows[0].c.map(cell => cell ? String(cell.v !== undefined ? cell.v : (cell.f || '')).trim().toLowerCase() : '') : [];
+                                namesColIdx = firstRowVals.findIndex(v => v === 'names');
+                                if (namesColIdx !== -1) startIndex = 1;
+                            }
+                            
+                            if (namesColIdx === -1) namesColIdx = 0;
+                            
+                            const names = [];
+                            for (let i = startIndex; i < rows.length; i++) {
+                                const row = rows[i];
+                                if (row && row.c && row.c[namesColIdx]) {
+                                    const cell = row.c[namesColIdx];
+                                    const val = cell.v !== undefined && cell.v !== null 
+                                        ? String(cell.v).trim() 
+                                        : (cell.f ? String(cell.f).trim() : '');
+                                    if (val && val.toLowerCase() !== 'names') {
+                                        names.push(val);
+                                    }
+                                }
+                            }
+                            
+                            if (names.length > 0) {
+                                const countEl = document.getElementById('co-creators-count');
+                                if (countEl) countEl.textContent = names.length.toLocaleString();
+                                
+                                const listEl = document.getElementById('co-creators-list');
+                                if (listEl) listEl.textContent = names.join(' • ');
+                            }
+                        } catch (err) {
+                            console.error('Error parsing co-creators table:', err);
+                        }
+                    };
+
+                    // Define callback for JSONP
+                    window.handleGoogleSheetResponse = (resp) => {
+                        handleData(resp);
+                    };
+
+                    // Attempt via JSONP script tag (bypasses any browser CORS or file:// limitations)
+                    const script = document.createElement('script');
+                    script.src = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=responseHandler:handleGoogleSheetResponse&gid=${sheetGid}&_=${Date.now()}`;
+                    script.onerror = async () => {
+                        // Fallback to fetch
+                        try {
+                            const res = await fetch(`https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&gid=${sheetGid}`);
+                            if (res.ok) {
+                                const text = await res.text();
+                                const m = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\);/);
+                                if (m && m[1]) handleData(JSON.parse(m[1]));
+                            }
+                        } catch (e) {
+                            console.warn("Could not load co-creators:", e);
+                            const listEl = document.getElementById('co-creators-list');
+                            if (listEl && listEl.textContent.includes('Loading')) {
+                                listEl.textContent = 'Please make sure the Google Sheet is shared with "Anyone with the link can view".';
+                            }
+                        }
+                    };
+                    document.head.appendChild(script);
+                };
+
+                loadCoCreators();
 
                 } catch(e) { console.error("Creators error", e); }
                 try { // 4. Educators Section
